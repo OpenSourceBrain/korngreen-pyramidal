@@ -1,0 +1,35 @@
+#!/bin/sh
+### Set the job name
+#PBS -N GL-g7e-E84
+
+### Combine standard error and standard out to one file.
+#PBS -j oe
+
+### Have PBS mail you results
+#PBS -m ae
+#PBS -M gurkie@mail.biu.ac.il
+
+### Set the queue name, given to you when you get a reservation.
+#PBS -q makbil
+
+### Specify the number of cpus for your job.  This example will run on 32 cpus
+### using 8 nodes with 4 processes per node.
+#PBS -l nodes=20:ppn=7
+#PBS -l walltime=40:00:00
+# Switch to the working directory; by default PBS launches processes from your home directory.
+# Jobs should only be run from /home, /project, or /work; PBS returns results via NFS.
+echo Working directory is $PBS_O_WORKDIR
+cd $PBS_O_WORKDIR
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo This jobs runs on the following processors:
+echo `cat $PBS_NODEFILE`
+# Define number of processors
+NPROCS=`wc -l < $PBS_NODEFILE`
+# And the number or hosts
+NHOSTS=`cat $PBS_NODEFILE|uniq|wc -l`
+echo This job has allocated $NPROCS cpus
+
+mpirun  nrniv -mpi ga.hoc

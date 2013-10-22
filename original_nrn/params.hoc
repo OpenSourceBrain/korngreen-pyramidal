@@ -1,0 +1,98 @@
+strdef ExperimentName, CellName,CellFileName,ApicalDendSectionName
+objref minvec,maxvec
+minvec = new Vector()
+maxvec = new Vector()
+
+
+//---------------------------------------------------------------------
+// data to change in each model or execution-----------------------------
+//-------------------------------------------------------------------------
+read_data = 0
+VoltageClampMode = 0
+WithTTX = 0
+stimPosS = 0.5
+stimPosD = 0.85
+CellName  =  "A140612.hoc"  //"a280998.nrn" //simple.hoc"
+ExperimentName = "A140612cont.data"  
+ApicalDendSectionName = "apic"  //TBD - also in Fit.hoc file  in newsectionref
+PrePulseDt = 0.05
+RecordDt = 0.1
+NumPointsPerPrePulse = 200
+NumPointsPerPulse = 7000        //int(PulseDuration/RecordDt)
+PrePulseDuration = NumPointsPerPrePulse*PrePulseDt
+PulseDuration = NumPointsPerPulse*RecordDt
+
+CCDelay=200
+CCDuration=500
+
+
+NumVSteps = 4
+VStep = 0.5
+FirstStep = -0.5
+celsius = 34 
+
+NP = 37                        //num of parameters for ga
+minvec.append(100,7000,0.5,-50,90, 350,-0.015,2.0,1.0, 3,-0.1, 200, 20, -0.015,290, 340, 50, 400 ,-11,-10,1e-5, 1e-7, 10, -5, -8,0.003, 0.0003, 900, -10, -3, 1.1, 0,0,0,0,0,0)
+maxvec.append(250,52000,1.1,-20,120,390,-0.01,2.9,1.5, 4,-0.05,230, 30, -0.010,350 ,360, 80, 500, -9 , -9,1e-3, 1e-3, 11, -4, -6,0.009, 0.0005, 950, -9,  -1, 1.2, 4,4,900,4,4,900)
+
+
+
+passiveonly=0
+if(passiveonly==1 && read_data==1){
+  gkslow_start= 1
+  gkslow_alpha= -0.01
+  gkslow_beta= 100
+  gka_start= 1
+  gka_alpha= -0.01
+  gka_beta= 100
+}
+if(WithTTX==1){
+   gna_soma =0
+   gna_api =0
+   dist_na =0
+pcah_soma=0
+pcah_api=pcah_soma
+dist_cah=600
+
+pcar_soma=0
+pcar_api=pcar_soma
+dist_car=600
+}
+
+//
+//----------------------------------------------------------------------------
+
+// general parameters
+objref SomaStimSec,DendStimSec
+objref VC,CC
+strdef loadProg
+objref VProt,TVec
+TotalNumPoints=0
+FirstVStep = 0
+LastVStep = NumVSteps-1
+Vrest = -62				// resting potential in mV
+sprint(CellFileName,"cells/%s",CellName)
+double vclmp[NumVSteps]   
+for VStepCount=0,NumVSteps-1 {
+   vclmp[VStepCount] =FirstStep+VStepCount*VStep
+   print "Vclamp = ", vclmp[VStepCount]," count= ", VStepCount, " firststep = ", FirstStep, " VStep= ",VStep
+}
+objref SOMA[NumVSteps], DENDRITE[NumVSteps], SimSom[NumVSteps], SimDend[NumVSteps],DT,dvs,dvd,dvsSim,dvdSim
+objref TIME[NumVSteps], SimTime[NumVSteps], dVSdT[NumVSteps], dVDdT[NumVSteps],dVSdTSim[NumVSteps],dVDdTSim[NumVSteps]
+DT = new Vector()
+dvs= new Vector()
+dvd= new Vector()
+dvsSim = new Vector()
+dvdSim = new Vector()
+double NumPointsPerV[NumVSteps]               
+DebugOn=0    //trun on debugging here
+
+
+cm_myelin = 0.04
+g_pas_node = 0.02
+v_init    = -62
+Ek = -100
+Ena = 60
+Eca = 130
+
+

@@ -1,0 +1,261 @@
+objref Graphs[NumVSteps],GraphsDend[VStepCount]
+
+proc ShowSoma() { local temp1, VStepCount,col
+//col=2
+  for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+  if(DebugOn==2) print "2. Somatic Current injection ", vclmp[VStepCount]," nA"
+  Graphs[VStepCount] = new Graph()
+  Graphs[VStepCount].brush(0)	
+  Graphs[VStepCount].beginline()	
+ // col = col+1
+  Graphs[VStepCount].color(2)	
+  for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+    Graphs[VStepCount].line(TIME[VStepCount].x[FitTStepCount], SOMA[VStepCount].x[FitTStepCount])	
+    temp1=TIME[VStepCount].x[FitTStepCount]
+   }
+  
+  Graphs[VStepCount].exec_menu("View = plot")
+  Graphs[VStepCount].size(0,temp1,-100,80)
+  Graphs[VStepCount].label(0.5,0.95,"Somatic Fit",2, 1, 0.5, 0.5, 2)
+  //Graphs[VStepCount].label(0.5,0.9,ExperimentName,2, 1, 0.5, 0.5, 2)
+  strdef CurrentInject 
+  sprint(CurrentInject,"Current step: %f nA",vclmp[VStepCount])
+  Graphs[VStepCount].label(0.5,0.85,CurrentInject,2, 1, 0.5, 0.5, 2)
+  Graphs[VStepCount].flush()
+}
+}   
+
+proc ShowDend() { local temp1,VStepCount,col
+//col=2
+for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+  if(DebugOn==2) print "2. Current injection ", vclmp[VStepCount]," nA"
+  GraphsDend[VStepCount] = new Graph()
+  GraphsDend[VStepCount].color(3)
+  GraphsDend[VStepCount].brush(0)	
+  GraphsDend[VStepCount].beginline()
+//  col = col+1
+//  GraphsDend[VStepCount].color(col)		
+  for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+    GraphsDend[VStepCount].line(TIME[VStepCount].x[FitTStepCount], DENDRITE[VStepCount].x[FitTStepCount])
+     temp1=TIME[VStepCount].x[FitTStepCount]
+
+  }
+  GraphsDend[VStepCount].size(0,temp1,-100,80)
+  GraphsDend[VStepCount].label(0.5,0.95,"Dendritic Fit",2, 1, 0.5, 0.5, 2)
+  //GraphsDend[VStepCount].label(0.5,0.9,ExperimentName,2, 1, 0.5, 0.5, 2)
+  strdef CurrentInject 
+  sprint(CurrentInject,"Current step: %f nA",vclmp[VStepCount])	
+  GraphsDend[VStepCount].label(0.5,0.85,CurrentInject,2, 1, 0.5, 0.5, 2)
+  GraphsDend[VStepCount].flush()
+} 
+}   
+
+
+
+
+proc UpdateSoma() { local temp1,VStepCount,col
+//col =2
+for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+        if(DebugOn==2) print "2. Somatic Current injection ", vclmp[VStepCount]," nA"
+  //      col = col+1
+	Graphs[VStepCount].exec_menu("Erase")
+	Graphs[VStepCount].brush(0)
+        Graphs[VStepCount].beginline()
+        Graphs[VStepCount].color(1)	
+        for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+                Graphs[VStepCount].line(TIME[VStepCount].x[FitTStepCount], SOMA[VStepCount].x[FitTStepCount])
+                temp1=TIME[VStepCount].x[FitTStepCount]
+
+        }
+}
+
+//col=1
+for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+       	if(DebugOn==2) print "2. Somatic Current injection ", vclmp[VStepCount]," nA"
+	//col = col+1
+	Graphs[VStepCount].brush(0)
+        Graphs[VStepCount].beginline()
+        Graphs[VStepCount].color(2)
+        for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+             Graphs[VStepCount].line(TIME[VStepCount].x[FitTStepCount], SimSom[VStepCount].x[FitTStepCount])
+        }
+
+   Graphs[VStepCount].size(0,temp1,-100,80)
+   Graphs[VStepCount].flush()
+}
+}   
+
+
+proc UpdateDend() { local temp1,VStepCount,col
+//col=2
+for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+        if(DebugOn==2) print "2. Current injection ", vclmp[VStepCount]," nA"
+	GraphsDend[VStepCount].exec_menu("Erase")
+	GraphsDend[VStepCount].color(3)
+	GraphsDend[VStepCount].brush(0)
+        GraphsDend[VStepCount].beginline()
+        //col = col+1
+        //g2.color(col)	
+        for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+                GraphsDend[VStepCount].line(TIME[VStepCount].x[FitTStepCount], DENDRITE[VStepCount].x[FitTStepCount])
+                temp1=TIME[VStepCount].x[FitTStepCount]
+
+        }
+}
+//col=1
+for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+        if(DebugOn==2) print "2. Current injection ", vclmp[VStepCount]," nA"
+	GraphsDend[VStepCount].color(1)
+	GraphsDend[VStepCount].brush(0)
+        GraphsDend[VStepCount].beginline()
+	//col = col+1
+        //g2.color(col)
+        for FitTStepCount=0,NumPointsPerV[VStepCount]-2 {
+                GraphsDend[VStepCount].line(TIME[VStepCount].x[FitTStepCount], SimDend[VStepCount].x[FitTStepCount])
+        }
+	GraphsDend[VStepCount].size(0,temp1,-80,80)
+	GraphsDend[VStepCount].flush()
+}
+}   
+
+proc AlllocateStructures(){
+  
+  File_NumVSteps=NumVSteps
+  for VStepCount=0,NumVSteps-1 {
+    File_vclmp=vclmp[VStepCount]
+    File_measTime=NumPointsPerPrePulse+NumPointsPerPulse
+    NumPointsPerV[VStepCount]=File_measTime
+    //print "For injection of ", File_vclmp, " nA N = ", NumPointsPerV[VStepCount], " Points"
+
+    VProt=new Vector(File_measTime,0)
+    TVec=new Vector(File_measTime,0)
+    SOMA[VStepCount] = new Vector(File_measTime,0)
+    DENDRITE[VStepCount] = new Vector(File_measTime,0)
+    SimSom[VStepCount] = new Vector(File_measTime,0)
+    SimDend[VStepCount] = new Vector(File_measTime,0)
+    SimTime[VStepCount] = new Vector(File_measTime,0)
+    TIME[VStepCount] = new Vector(File_measTime,0)
+    dVSdT[VStepCount] = new Vector(File_measTime,0)
+    dVDdT[VStepCount] = new Vector(File_measTime,0)
+    dVSdTSim[VStepCount] = new Vector(File_measTime,0)
+    dVDdTSim[VStepCount] = new Vector(File_measTime,0)
+   }
+}
+
+proc Read_Exp() {local COUNT, i, File_NumVSteps, TStepCount,File_measTime, VStepCount
+     // $s1 = parent file name
+ 
+  sprint(loadProg,"data/%s",$s1)
+  print " Loading voltages from " , loadProg  // debug
+  ropen(loadProg)
+  File_NumVSteps=fscan()
+  print "File_NumVSteps: ",File_NumVSteps
+  
+  if (File_NumVSteps!=NumVSteps) {
+    print "Total Number of  Steps - Mismatch File<>Experiment (.s)"
+    print "File_NumVSteps: ",File_NumVSteps, "NumVSteps: ", NumVSteps
+  }  // debug
+
+  for VStepCount=0,NumVSteps-1 {
+    File_vclmp = fscan()
+    if (File_vclmp!=vclmp[VStepCount]) {
+      print "VClmp  - Mismatch (.s) "
+      print "VStepCount:", VStepCount, "File_vclmp: ",File_vclmp,"vclmp[VStepCount]:", vclmp[VStepCount]
+    }
+
+    File_measTime=fscan() 
+    NumPointsPerV[VStepCount]=File_measTime
+    //print "For injection of ", File_vclmp, " nA N = ", NumPointsPerV[VStepCount], " Points"
+    
+    VProt=new Vector(File_measTime,0)
+    TVec=new Vector(File_measTime,0)
+    SOMA[VStepCount] = new Vector(File_measTime,0)
+    DENDRITE[VStepCount] = new Vector(File_measTime,0)
+    SimSom[VStepCount] = new Vector(File_measTime,0)
+    SimDend[VStepCount] = new Vector(File_measTime,0)
+    TIME[VStepCount] = new Vector(File_measTime,0)
+    SimTime[VStepCount] = new Vector(File_measTime,0)
+    dVSdT[VStepCount] = new Vector(File_measTime,0)
+    dVDdT[VStepCount] = new Vector(File_measTime,0)
+    dVSdTSim[VStepCount] = new Vector(File_measTime,0)
+    dVDdTSim[VStepCount] = new Vector(File_measTime,0)
+    for TStepCount=0,File_measTime-1 {
+      TIME[VStepCount].x[TStepCount]=fscan()
+      SOMA[VStepCount].x[TStepCount]=fscan()
+      DENDRITE[VStepCount].x[TStepCount]=fscan()
+      TotalNumPoints+=1
+    }
+  }
+  print "Total number of data points to fit = ", TotalNumPoints
+  ropen()
+
+}
+
+// Naomi - add this function for writting Row Data (according to alon_hoc.hoc parameters file)
+objref RowDataFile
+RowDataFile = new File() 
+proc WriteRowData(){
+        sprint(loadProg,"data/%s",$s1)
+        RowDataFile.wopen(loadProg) 
+        print "Writing voltages to ", loadProg
+
+        RowDataFile.printf("Number of recorded traces:  ")
+        RowDataFile.printf("%d\n", NumVSteps)
+        for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+                RowDataFile.printf("\nCurrent =  ")
+                RowDataFile.printf("%f",vclmp[VStepCount])
+                RowDataFile.printf("   Num points = ")
+                RowDataFile.printf("%f\n",NumPointsPerV[VStepCount])
+                for FitTStepCount=0,NumPointsPerV[VStepCount]-1{
+                       RowDataFile.printf("%f  %f  %f\n", SimTime[VStepCount].x[FitTStepCount],SimSom[VStepCount].x[FitTStepCount],SimDend[VStepCount].x[FitTStepCount])
+                }
+        }
+        RowDataFile.close()
+}
+
+proc WriteNewRowData(){
+        sprint(loadProg,"data/%s",$s1)
+        RowDataFile.wopen(loadProg) 
+        print "Writing voltages to ", loadProg
+
+        RowDataFile.printf("Number of recorded traces:  ")
+        RowDataFile.printf("%d\n", NumVSteps)
+        for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+                RowDataFile.printf("\nCurrent =  ")
+                RowDataFile.printf("%f",vclmp[VStepCount])
+                RowDataFile.printf("   Num points = ")
+                RowDataFile.printf("%f\n",NumPointsPerV[VStepCount])
+                for FitTStepCount=0,NumPointsPerV[VStepCount]-1{
+                       RowDataFile.printf("%f  %f  %f\n", TIME[VStepCount].x[FitTStepCount],SimSom[VStepCount].x[FitTStepCount],SimDend[VStepCount].x[FitTStepCount])
+                }
+        }
+	
+        RowDataFile.close()
+}
+
+
+proc WriteSpecialRowData(){
+        sprint(loadProg,"data/%s",$s1)
+        RowDataFile.wopen(loadProg) 
+        print "Writing voltages to ", loadProg
+
+        RowDataFile.printf("Number of recorded traces:  ")
+        RowDataFile.printf("%d\n", NumVSteps)
+        for (VStepCount=FirstVStep;VStepCount<=LastVStep;VStepCount+=1) {
+                RowDataFile.printf("\nCurrent =  ")
+                RowDataFile.printf("%f",vclmp[VStepCount])
+                RowDataFile.printf("   Num points = ")
+                RowDataFile.printf("%f\n",NumPointsPerV[VStepCount]+NumPointsPerPrePulse)
+		t=0
+		for FitTStepCount=0,NumPointsPerPrePulse-1{
+			RowDataFile.printf("%f  %f  %f\n", t,SOMA[VStepCount].x[0],DENDRITE[VStepCount].x[0])
+			t=t+PrePulseDt
+		}
+                for FitTStepCount=0,NumPointsPerV[VStepCount]-1{
+                       RowDataFile.printf("%f  %f  %f\n", t,SOMA[VStepCount].x[FitTStepCount],DENDRITE[VStepCount].x[FitTStepCount])
+			t=t+RecordDt
+                }
+        }
+	
+        RowDataFile.close()
+}

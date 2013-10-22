@@ -1,0 +1,28 @@
+load_file("nrngui.hoc")
+xopen("parameterslist.hoc")
+track_data=1
+objref PC
+objref  transvec
+transvec = new Vector(40)
+xopen("params.hoc")
+xopen("model.hoc")
+xopen("InOut.hoc")
+//xopen("Fit.hoc")
+
+objref p_file
+p_file = new File()
+p_file.ropen("best.params")
+                transvec.scanf(p_file)
+		transvec.printf
+p_file.close()
+
+objref FF
+FF = new File()
+FF.wopen("bac5.txt")
+
+xopen("Fit.hoc")
+
+xopen("bac6.ses")
+//WriteSpecialRowData("prepulse_220206Co300.data")
+tfunk()
+//WriteRowData("all_converged.data")

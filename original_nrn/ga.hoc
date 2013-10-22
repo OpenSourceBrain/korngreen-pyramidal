@@ -1,0 +1,290 @@
+track_data =0
+xopen("parameterslist.hoc")
+xopen("params.hoc")
+xopen("model.hoc")
+xopen("InOut.hoc")
+
+MaxNP = 40
+pop_size=1000  		// size of the population.
+TotalGenerations=20000
+NUM_GENERATIONS=20000	
+Num_to_select=2			// elitism
+Mutate_prob=0.05	// initial probablity of mutation. 
+Cross_prob=0.5			// probability to crossover
+Switch_mut_mode = 250		// generation in which to move from total to incremental mutation
+Best=1e150			// curent best individual
+objref pop,res,sort_ind,temp_pop,temp_res,avg_par,std_par,temp_vec,best_indiv,p_file,g_file,score_file,PC,avg_file
+LOAD_GENERATION=0       // if zero generates random initial population, if one load generation from file
+
+//open main log file
+g_file = new File()
+if(LOAD_GENERATION==0){
+
+  g_file.wopen("ga_log.txt")
+}else{
+  g_file.aopen("ga_log.txt")
+}
+
+p_file= new File()
+score_file = new File()
+//avg_file = new File()
+//avg_file.wopen("track_things")
+
+
+PC= new ParallelContext()
+
+strdef brain,strmv
+
+pop=new Matrix(pop_size,NP)
+temp_pop=new Matrix(pop_size,NP)
+res=new Vector(pop_size,1e50)
+temp_res=new Vector(pop_size,1e50)
+sort_ind= new Vector(pop_size)
+temp_vec=new Vector(pop_size)
+avg_par=new Vector(NP)
+std_par=new Vector(NP)
+best_indiv=new Vector(NP)
+
+num_gen=0
+Tolorance=1e-4		//termination criterion (currently not implemented)
+
+objref  r[MaxNP],transvec,rn
+transvec = new Vector(MaxNP)
+highindex = 2
+lowindex = mcell_ran4_init(int(startsw()%999))
+
+for (j=0;j<NP;j+=1){
+	r[j] = new Random()
+	r[j].MCellRan4(highindex+j*j)
+	r[j].uniform(minvec.x[j],maxvec.x[j])
+}
+rn = new Random()
+rn.MCellRan4(1)
+rn.normal(1,0.1)
+
+startsw()
+xopen("Fit.hoc")	//Fit function
+
+//=======================MAIN LOOP================================
+proc GA(){local i,j,k,itteration
+
+	init_pop()
+	Param_dist()
+	itteration=0
+	while(num_gen<TotalGenerations && itteration<NUM_GENERATIONS){
+        	sort_pop()
+	        Select_Best()
+               	POPULATE()
+	//	Param_dist()
+		print_things()
+		Evaluate_pop()
+		num_gen+=1
+		itteration+=1
+	}
+ 	print "-------------------------------final parameters----------------------------------"
+	for (j=0;j<=NP-1;j+=1) printf("%10.5f ",pop.x[0][j])
+	g_file.close()
+}
+
+//-----------elitism operator selecting only best indiv for further breeding
+proc Select_Best(){local i,j
+
+	temp_pop.zero()
+	for (i=0;i<=Num_to_select-1;i+=1){
+		for (j=0;j<=NP-1;j+=1){
+			temp_pop.x[i][j]=pop.x[i][j]
+		}	
+	}
+}
+
+//-----------------create new population using crossover and mutation
+proc POPULATE(){local i,j,k,aba,ima,cross_point,cross1,cross2,temp1,temp2
+
+	//turnamant selection and one point crossover
+	for(i=Num_to_select;i<=pop_size-1;i+=2){
+		
+		aba=int((pop_size-1)*mcell_ran4(&highindex))		// turnament selection of father
+		temp1=int((pop_size-1)*mcell_ran4(&highindex))
+		if(res.x[temp1]<res.x[aba])  aba=temp1
+
+                ima=int((pop_size-1)*mcell_ran4(&highindex))            // turnament selection of mother
+                temp1=int((pop_size-1)*mcell_ran4(&highindex))
+                if(res.x[temp1]<res.x[ima])  ima=temp1
+
+		for(j=0;j<=NP-1;j+=1) {
+			temp_pop.x[i][j]=pop.x[aba][j]
+			temp_pop.x[i+1][j]=pop.x[ima][j]
+		}
+
+		if (mcell_ran4(&highindex)<=Cross_prob){
+			cross_point=int((NP-1)*mcell_ran4(&highindex))  	//point in genom for one point crossover 
+			for(j=cross_point;j<=NP-1;j+=1) {
+				temp_pop.x[i][j]=pop.x[ima][j] 
+				temp_pop.x[i+1][j]=pop.x[aba][j]
+			}		
+		}
+	}
+
+/*
+	for(i=1;i<=pop_size-1;i+=1){
+                        for(j=0;j<=NP-1;j+=1) {	
+				if (mcell_ran4(&highindex)<=0.4){
+                                	if (mcell_ran4(&highindex)<Mutate_prob*2) temp_pop.x[i][j]*=rn.repick()
+					if(temp_pop.x[i][j]>maxvec.x[j]) temp_pop.x[i][j]=r[j].repick()
+                                        if(temp_pop.x[i][j]<minvec.x[j]) temp_pop.x[i][j]=r[j].repick()
+                                } else {
+					if (mcell_ran4(&highindex)<Mutate_prob) temp_pop.x[i][j]=r[j].repick()
+			}
+
+                  }
+        } */
+
+
+	//mutation for all but best individual using population stdev  - initial phase large steps
+
+	if(num_gen<Switch_mut_mode){
+		for(i=1;i<=pop_size-1;i+=1){
+			for(j=0;j<=NP-1;j+=1) {
+				if (mcell_ran4(&highindex)<Mutate_prob) temp_pop.x[i][j]=r[j].repick() 
+			}
+		}
+	}
+	if(num_gen>=Switch_mut_mode){
+                for(i=1;i<=pop_size-1;i+=1){
+                        for(j=0;j<=NP-1;j+=1) {
+                                if (mcell_ran4(&highindex)<Mutate_prob) temp_pop.x[i][j]*=rn.repick()
+                                if(temp_pop.x[i][j]>maxvec.x[j]) temp_pop.x[i][j]=r[j].repick()
+                                if(temp_pop.x[i][j]<minvec.x[j]) temp_pop.x[i][j]=r[j].repick()
+	
+                        }
+                }
+	}
+
+	pop=temp_pop.c()
+}
+
+//---------------------------------initial random population-----------------	
+proc init_pop(){local i,j,tmp_pop_size,tmp_np
+
+	if(LOAD_GENERATION==0){
+		for (i=0;i<=pop_size-1;i+=1){
+			for (j=0;j<=NP-1;j+=1)pop.x[i][j]=r[j].repick()
+		}
+	} else {
+		p_file.ropen("curr_population")
+		pop.scanf(p_file)
+		p_file.close()
+                if(LOAD_GENERATION==1){
+		    ropen("curr_population_num")
+	            num_gen=fscan()		
+ 		}	
+	        print "num gen = " , num_gen	
+                p_file.close()
+	}
+	Evaluate_pop()
+}
+
+//---------------------------------reset population save for best one-----------------	
+proc reset_pop(){local i,j,temp2
+	for (i=1;i<=pop_size-1;i+=1){
+		for (j=0;j<=NP-1;j+=1){
+                       	 pop.x[i][j]=abs(r[j].repick())
+		}
+	}
+}
+
+//----------------sorting of population 
+proc sort_pop(){local A,B,i,j,dumm
+
+	sort_ind=res.sortindex
+	for (i=0;i<=pop_size-1;i+=1){
+	        if(res.x[i]<Best){
+        	        best_indiv=pop.getrow(i)
+                	Best=res.x[i]
+        	}
+		A=sort_ind.x[i]
+		temp_res.x[i]=res.x[A]
+		for (j=0;j<=NP-1;j+=1){
+			temp_pop.x[i][j]=pop.x[A][j]
+		}	
+	}
+
+	pop=temp_pop.c
+	res=temp_res.c
+       
+	//dumping best individual and entire population to files 
+	p_file.wopen("best.params")
+        best_indiv.printf(p_file,"%g \n")
+        p_file.close()
+	p_file.wopen("curr_population")
+	pop.fprint(p_file,"%g\t","\n")
+        p_file.close()
+        p_file.wopen("curr_population_num")
+	p_file.printf("%d\n",num_gen)
+	p_file.close()	
+	score_file.wopen("scores")
+	res.printf(score_file,"%g \n")
+	score_file.close()
+}
+//-------------evaluate each individual. modify to add parallel work
+proc Evaluate_pop(){local i,j,count
+
+	temp_chi=0
+	for (i=0;i<=pop_size-1;i+=1){ 
+		for(j=0;j<=NP-1;j+=1) transvec.x[j]=pop.x[i][j]
+		brain="NULL"
+ 		PC.post("TASK",temp_chi,i,brain,transvec)
+          	PC.submit("tfunk()\n")
+	}
+	count=0
+	temp_loc=0
+	while(PC.working()){
+		PC.take("DONE",&temp_chi,&temp_loc,brain,transvec)
+		res.x[temp_loc]=temp_chi
+//		print "Machine ",brain," returned point # ", temp_loc,temp_chi 
+	}
+}
+proc Evaluate_pop_sing(){local i,j,count
+
+	temp_chi=0
+	for (i=0;i<=pop_size-1;i+=1){ 
+		for(j=0;j<=NP-1;j+=1) transvec.x[j]=pop.x[i][j]
+		res.x[i]=tfunk()
+	}
+}
+
+//----------------------output function
+proc print_things(){local j
+
+	printf("[Generation # %g]  ",num_gen)
+        Etime=stopsw()/60
+	g_file.printf("%10.1f min  %g\t  ",Etime,num_gen)
+	for (j=0;j<=NP-1;j+=1) {
+		printf("%10.5f \t",best_indiv.x[j]) 
+		g_file.printf("%10.5f \t",best_indiv.x[j])
+	}
+	printf("%15.7e\n",Best)
+	g_file.printf("%15.7e\n",Best)
+	g_file.flush()
+}
+
+//---------------Calculate mean and variance of population
+
+proc Param_dist(){local i,j
+
+        for (j=0;j<=NP-1;j+=1) {
+                temp_vec=pop.getcol(j)
+                avg_par.x[j]=temp_vec.mean(0,pop_size-1)
+                std_par.x[j]=temp_vec.var(0,pop_size-1)
+        }
+}
+
+
+
+
+PC.runworker()
+
+GA()
+
+PC.done()
+
