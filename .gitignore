@@ -1,3 +1,7 @@
+/test.nml
+x86_64
+i386
+umac
 *.bak
 neuroConstruct/generatedMOOSE
 neuroConstruct/generatedNeuroML
