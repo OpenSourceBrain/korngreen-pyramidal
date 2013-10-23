@@ -72,8 +72,83 @@ part of NeuroML or any standardised XML specification. -->
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.CellGroupsInfo"/>
- <object class="ucl.physiol.neuroconstruct.project.SimPlotInfo"/>
+ <object class="ucl.physiol.neuroconstruct.project.CellGroupsInfo">
+  <void property="internalData">
+   <void method="get">
+    <string>Cell Packing Adapter</string>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.SinglePositionedCellPackingAdapter"/>
+    </void>
+   </void>
+   <void method="get">
+    <string>Cell Type</string>
+    <void method="add">
+     <string>A140612_pas</string>
+    </void>
+   </void>
+   <void method="get">
+    <string>Priority</string>
+    <void method="add">
+     <int>10</int>
+    </void>
+   </void>
+   <void method="get">
+    <string>Colour</string>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>89</int>
+      <int>12</int>
+      <int>89</int>
+      <int>255</int>
+     </object>
+    </void>
+   </void>
+   <void method="get">
+    <string>Region Name</string>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
+   </void>
+   <void method="get">
+    <string>Cell Group Name</string>
+    <void method="add">
+     <string>CG_Test</string>
+    </void>
+   </void>
+  </void>
+ </object>
+ <object class="ucl.physiol.neuroconstruct.project.SimPlotInfo">
+  <void property="allSimPlots">
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>CG_Test</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>CG_Test_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>CG_Test_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
   <void property="preferredSaveFormat">
    <string>Java Serialized Object Format</string>
@@ -149,11 +224,21 @@ part of NeuroML or any standardised XML specification. -->
   <void property="allSimConfigs">
    <void method="add">
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>CG_Test</string>
+      </void>
+     </void>
      <void property="description">
       <string>This is the default configuration of the Cell Groups, stimulations, plots, etc for this project</string>
      </void>
      <void property="name">
       <string>Default Simulation Configuration</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>CG_Test_v</string>
+      </void>
      </void>
      <void property="simDuration">
       <float>100.0</float>
