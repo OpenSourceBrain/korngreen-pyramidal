@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:meta="http://morphml.org/metadata/schema"
+    xsi:schemaLocation="http://morphml.org/channelml/schema  ../../../../NeuroMLValidator/web/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd"
+    units="Physiological Units">
+
+  <meta:notes>ChannelML file containing a single (Ca activated) K+ Channel (BK-type) description, from a model of Layer 5 Pyramidal Neurons described in Almog, M and Korngreen, A (2013) A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci</meta:notes>
+
+    <channel_type name="BK">
+
+        <status value="in_progress">
+            <meta:contributor>
+        <meta:name>Boris Marin</meta:name>
+            </meta:contributor>
+        </status>
+
+        <meta:authorList>
+            <meta:modelAuthor>
+                <meta:name>Mara Almog</meta:name>
+            </meta:modelAuthor>
+            <meta:modelAuthor>
+                <meta:name>Alon Korngreen</meta:name>
+            </meta:modelAuthor>
+            <meta:modelTranslator>
+                <meta:name>Boris Marin</meta:name>
+                <meta:email>borismarin -at- gmail.com</meta:email>
+            </meta:modelTranslator>
+        </meta:authorList>
+
+        <meta:publication>
+            <meta:comment>Model originially described in this article</meta:comment>
+            <meta:fullTitle> Akemann, W., &amp; Knöpfel, T. (2006). Interaction of Kv3 potassium channels and resurgent sodium current influences the rate of spontaneous firing of Purkinje neurons. J Neuroscience, 26(17), 4602–12</meta:fullTitle>
+            <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/16641240</meta:pubmedRef>
+        </meta:publication>
+
+        <parameters>
+	    <parameter name="q10" value="3"/>
+
+	    <parameter name="cvm" value="28.9"/>
+	    <parameter name="ckm" value="6.2"/>
+
+	    <parameter name="ctm" value="0.000505"/>
+	    <parameter name="cvtm1" value="86.4"/>
+	    <parameter name="cktm1" value="-10.1"/>
+	    <parameter name="cvtm2" value="-33.3"/>
+	    <parameter name="cktm2" value="10"/>
+
+	    <parameter name="ctauz" value="1"/>
+
+	    <parameter name="ch" value="0.085"/>
+	    <parameter name="cvh" value="32"/>
+	    <parameter name="ckh" value="-5.8"/>
+	    <parameter name="cth" value="0.0019"/>
+	    <parameter name="cvth1" value="48.5"/>
+	    <parameter name="ckth1" value="-5.2"/>
+	    <parameter name="cvth2" value="-54.2"/>
+	    <parameter name="ckth2" value="12.9"/>
+
+	    <parameter name="gbar" value="40"/>
+	    <parameter name="zhalf" value="0.01"/>
+
+        </parameters>
+
+        <current_voltage_relation cond_law="ohmic" ion="k"> 
+
+	<conc_dependence name="Calcium" ion="ca" charge="2" variable_name="ca_conc" min_conc="0" max_conc="1"/>
+
+            <q10_settings q10_factor="2.3" experimental_temp="22"/>
+
+            <gate name="m" instances="3">
+                <closed_state id="mc"/>
+                <open_state id="mo"/>
+                <time_course name="tau" from="mc" to="mo" expr_form="generic" expr="(1e3) * ( ctm + 1 / ( exp(-((v+5) + cvtm1)/cktm1) + exp(-((v + 5)+cvtm2)/cktm2) )  "/>
+                <steady_state name="inf" from="mc" to="mo" expr_form="generic" expr="1 / ( 1+exp(-((v+5)+cvm)/ckm) )"/>
+            </gate>
+
+            <gate name="z" instances="2">
+                <closed_state id="zc"/>
+                <open_state id="zo"/>
+                <time_course name="tau" from="zc" to="zo" expr_form="generic" expr="1 / (1 + zhalf/ca_conc)"/>
+                <steady_state name="inf" from="zc" to="zo" expr_form="generic" expr="ctauz"/>
+            </gate>
+        
+            <gate name="h" instances="1">
+                <closed_state id="hc"/>
+                <open_state id="ho"/>
+                <time_course name="tau" from="hc" to="ho" expr_form="generic" expr="(1e3) * ( cth + 1 / ( exp(-((v+5)+cvth1)/ckth1) + exp(-((v+5)+cvth2)/ckth2) ) ) "/>
+                <steady_state name="inf" from="hc" to="ho" expr_form="generic" expr="ch + (1-ch) / ( 1+exp(-((v+5)+cvh)/ckh) )"/>
+            </gate>
+
+        </current_voltage_relation>
+
+    </channel_type>
+
+</channelml>
