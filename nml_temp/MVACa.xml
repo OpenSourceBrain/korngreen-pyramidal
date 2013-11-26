@@ -5,9 +5,9 @@
 	   xsi:schemaLocation="http://morphml.org/channelml/schema  ../../../../NeuroMLValidator/web/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd"
 	   units="Physiological Units">
 
-  <meta:notes>ChannelML file containing a single High Voltage Activated (HVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</meta:notes> 
+  <meta:notes>ChannelML file containing a single Medium Voltage Activated (MVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730–42.</meta:notes>
 
-  <channel_type name="HVACa">
+  <channel_type name="MVACa">
 
     <status value="in_progress">
       <meta:contributor>
@@ -35,31 +35,31 @@
     </meta:publication>
 
     <parameters>
-      <parameter name="pbar" value=".2e-3"/> 
+      <parameter name="pbar" value=".4e-4"/> 
       <parameter name="shift" value="2"/> 
       <parameter name="shifth" value="0"/> 
-      <parameter name="qm" value="4"/> 
-      <parameter name="qh" value="2"/> 
+      <parameter name="qm" value="1"/> 
+      <parameter name="qh" value="1"/> 
     </parameters>
 
     <current_voltage_relation cond_law="ohmic" ion="ca"> 
 
       <!-- TODO: can't use parameters here... -->
-      <q10_settings q10_factor="4" gate="m" experimental_temp="24"/>
-      <q10_settings q10_factor="2" gate="h" experimental_temp="24"/>
+      <q10_settings q10_factor="1" gate="m" experimental_temp="24"/>
+      <q10_settings q10_factor="1" gate="h" experimental_temp="24"/>
 
       <gate name="m" instances="2">
         <closed_state id="mc"/>
         <open_state id="mo"/>
-        <time_course name="tau" from="mc" to="mo" expr_form="generic" expr="0.97/(cosh(0.032*(v+shift+26.31)))"/>
-        <steady_state name="inf" from="mc" to="mo" expr_form="generic" expr="1.092/(1+exp(-(v+shift+14.17)/9.76))"/>
+        <time_course name="tau" from="mc" to="mo" expr_form="generic" expr="5.5/(cosh(0.032*(v+shift+23)))"/>
+        <steady_state name="inf" from="mc" to="mo" expr_form="generic" expr="1/(1+exp(-(v+shift+23)/7.4))"/>
       </gate>
 
       <gate name="h" instances="1">
         <closed_state id="hc"/>
         <open_state id="ho"/>
-        <time_course name="tau" from="hc" to="ho" expr_form="generic" expr="70/(cosh(0.047*(v+shifth-19.73)))"/>
-        <steady_state name="inf" from="hc" to="ho" expr_form="generic" expr="0.75/(1+exp((v+shifth+22.63)/6.6))"/>
+        <time_course name="tau" from="hc" to="ho" expr_form="generic" expr="771/(cosh(0.047*(v+shifth+79)))"/>
+        <steady_state name="inf" from="hc" to="ho" expr_form="generic" expr="1/(1+exp((v+shifth+79)/7.8))"/>
       </gate>
       
     </current_voltage_relation>
