@@ -5,7 +5,7 @@
 	   xsi:schemaLocation="http://morphml.org/channelml/schema  ../../../../NeuroMLValidator/web/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd"
 	   units="Physiological Units">
 
-  <meta:notes>ChannelML file containing a single High Threshold Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730–42.</meta:notes>
+  <meta:notes>ChannelML file containing a single High Threshold Ca Channel description from a cortical layer V pyramidal neuron, described in Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</meta:notes> 
 
   <channel_type name="HVCa">
 
