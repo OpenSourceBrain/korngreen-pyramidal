@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_25" class="java.beans.XMLDecoder">
+ <object class="ucl.physiol.neuroconstruct.project.InternalPhysicalParameter" id="InternalPhysicalParameter0">
+  <void class="ucl.physiol.neuroconstruct.project.InternalPhysicalParameter" method="getField">
+   <string>units</string>
+   <void method="set">
+    <object idref="InternalPhysicalParameter0"/>
+    <object class="ucl.physiol.neuroconstruct.utils.units.Units">
+     <void property="name">
+      <string>neuroConstruct_conductanceDensity</string>
+     </void>
+     <void property="subUnitList">
+      <array class="ucl.physiol.neuroconstruct.utils.units.Unit" length="2">
+       <void index="0">
+        <object class="ucl.physiol.neuroconstruct.utils.units.Unit">
+         <void property="prefix">
+          <object class="ucl.physiol.neuroconstruct.utils.units.Prefix">
+           <void property="multiplier">
+            <double>0.001</double>
+           </void>
+           <void property="name">
+            <string>milli</string>
+           </void>
+           <void property="symbol">
+            <string>m</string>
+           </void>
+          </object>
+         </void>
+        </object>
+       </void>
+       <void index="1">
+        <object class="ucl.physiol.neuroconstruct.utils.units.Unit">
+         <void property="exponent">
+          <int>-2</int>
+         </void>
+         <void property="prefix">
+          <object class="ucl.physiol.neuroconstruct.utils.units.Prefix">
+           <void property="multiplier">
+            <double>1.0E-6</double>
+           </void>
+           <void property="name">
+            <string>micro</string>
+           </void>
+           <void property="symbol">
+            <string>μ</string>
+           </void>
+          </object>
+         </void>
+        </object>
+       </void>
+      </array>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+   <string>parameterName</string>
+   <void method="set">
+    <object idref="InternalPhysicalParameter0"/>
+    <string>Max Conductance Density</string>
+   </void>
+  </void>
+  <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+   <string>parameterDescription</string>
+   <void method="set">
+    <object idref="InternalPhysicalParameter0"/>
+    <string>DEFAULT Maximum conductance for the channel mechanism per unitarea. NOTE: overwritten when mechanism is placed on membrane</string>
+   </void>
+  </void>
+  <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+   <string>defaultValue</string>
+   <void method="set">
+    <object idref="InternalPhysicalParameter0"/>
+    <float>1.0E-6</float>
+   </void>
+  </void>
+  <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+   <string>value</string>
+   <void method="set">
+    <object idref="InternalPhysicalParameter0"/>
+    <float>1.0E-6</float>
+   </void>
+  </void>
+ </object>
+</java>
