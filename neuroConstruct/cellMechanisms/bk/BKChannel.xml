@@ -2,7 +2,7 @@
 <channelml xmlns="http://morphml.org/channelml/schema"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:meta="http://morphml.org/metadata/schema"
-	   xsi:schemaLocation="http://morphml.org/channelml/schema  ../../../../NeuroMLValidator/web/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd"
+	   xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level2/ChannelML_v1.8.1.xsd"
 	   units="Physiological Units">
 
   <meta:notes>ChannelML file containing a single (Ca activated) K+ Channel (BK-type) description, from a model of Layer 5 Pyramidal Neurons described in Almog, M &amp; Korngreen, A (2013) A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci</meta:notes>
