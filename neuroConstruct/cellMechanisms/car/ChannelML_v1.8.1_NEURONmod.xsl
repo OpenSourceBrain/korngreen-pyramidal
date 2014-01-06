@@ -700,7 +700,8 @@ DERIVATIVE states {
     <xsl:for-each select="cml:current_voltage_relation/cml:ohmic/cml:conductance/cml:gate">temp_adj_<xsl:value-of 
     select="cml:state/@name"/> = 1
     </xsl:for-each>
-    <xsl:for-each select="cml:current_voltage_relation/cml:gate/cml:open_state">temp_adj_<xsl:value-of 
+    <!-- <xsl:for-each select="cml:current_voltage_relation/cml:gate/cml:open_state">temp_adj_<xsl:value-of  -->
+    <xsl:for-each select="cml:current_voltage_relation/cml:gate">temp_adj_<xsl:value-of 
     select="@id"/> = 1
     </xsl:for-each>
         </xsl:otherwise>
