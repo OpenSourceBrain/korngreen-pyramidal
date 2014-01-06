@@ -54,7 +54,7 @@
             <parameter name="vmax" value="100"/>
         </parameters>
 
-        <current_voltage_relation cond_law="ohmic" ion="na"> 
+        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="0" default_erev="60"> 
 
 	    <!-- TODO: can't use q10 here
             <q10_settings q10_factor="q10" experimental_temp="temp"/>

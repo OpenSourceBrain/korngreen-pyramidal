@@ -55,7 +55,7 @@
             <parameter name="vmax" value="100"/>
         </parameters>
 
-        <current_voltage_relation cond_law="ohmic" ion="h" charge="1"> 
+        <current_voltage_relation cond_law="ohmic" ion="h" charge="1" default_gmax="0" default_erev="-33"> 
 
             <q10_settings q10_factor="2.3" experimental_temp="21"/>
 
