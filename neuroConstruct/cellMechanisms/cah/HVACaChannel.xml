@@ -1,70 +1,143 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<channelml xmlns="http://morphml.org/channelml/schema"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:meta="http://morphml.org/metadata/schema"
-	   xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level2/ChannelML_v1.8.1.xsd"
-	   units="Physiological Units">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:ns_1="http://www.w3.org/2001/XMLSchema-instance" ns_1:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" id="cah">
 
-  <meta:notes>ChannelML file containing a single High Voltage Activated (HVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</meta:notes> 
+    <notes>ChannelML file containing a single High Voltage Activated (HVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</notes>
 
-  <channel_type name="cah">
+    <ionChannel id="cah" conductance="10pS" type="ionChannelHH" species="ca">
 
-    <status value="in_progress">
-      <meta:contributor>
-        <meta:name>Boris Marin</meta:name>
-      </meta:contributor>
-    </status>
+        <notes>ChannelML file containing a single High Voltage Activated (HVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</notes>
+                
+        <annotation>
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <rdf:Description rdf:about="cah">
+                    
+                    <bqmodel:isDescribedBy xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+                        <rdf:Bag>
+                            <rdf:li>Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</rdf:li>
+                            <rdf:li rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/"/>
+                        </rdf:Bag>
+                    </bqmodel:isDescribedBy>
 
-    <meta:authorList>
-      <meta:modelAuthor>
-        <meta:name>Mara Almog</meta:name>
-      </meta:modelAuthor>
-      <meta:modelAuthor>
-        <meta:name>Alon Korngreen</meta:name>
-      </meta:modelAuthor>
-      <meta:modelTranslator>
-        <meta:name>Boris Marin</meta:name>
-        <meta:email>borismarin -at- gmail.com</meta:email>
-      </meta:modelTranslator>
-    </meta:authorList>
+                </rdf:Description>
+            </rdf:RDF>
+        </annotation>
 
-    <meta:publication>
-      <meta:comment>Model described in this article</meta:comment>
-      <meta:fullTitle>Almog, Mara and Korngreen, Alon. A quantitative description of dendritic conductances and its application to dendritic excitation in layer 5 pyramidal neurons. J Neurosci 2013</meta:fullTitle>
-      <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/</meta:pubmedRef>
-    </meta:publication>
+        <gate id="m" type="gateHHtauInf" instances="2">
+            <q10Settings type="q10ExpTemp" q10Factor="4" experimentalTemp="24 degC"/>
+            <timeCourse type="cah_m_tau_tau"/>
+            <steadyState type="cah_m_inf_inf"/>
+        </gate>
 
-    <parameters>
-      <parameter name="pbar" value=".2e-3"/> 
-      <parameter name="shift" value="2"/> 
-      <parameter name="shifth" value="0"/> 
-      <parameter name="qm" value="4"/> 
-      <parameter name="qh" value="2"/> 
-    </parameters>
+        <gate id="h" type="gateHHtauInf" instances="1">
+            <q10Settings type="q10ExpTemp" q10Factor="4" experimentalTemp="24 degC"/>
+            <timeCourse type="cah_h_tau_tau"/>
+            <steadyState type="cah_h_inf_inf"/>
+        </gate>
+                            
+    </ionChannel>
 
-    <current_voltage_relation cond_law="ohmic" ion="ca" charge="2"> 
+    <ComponentType name="cah_m_tau_tau" extends="baseVoltageDepTime">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <Constant name="pbar" dimension="none" value=".2e-3">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shift" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shifth" dimension="none" value="0">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qm" dimension="none" value="4">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qh" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
 
-      <!-- TODO: can't use parameters here... -->
-      <q10_settings q10_factor="4" gate="m" experimental_temp="24"/>
-      <q10_settings q10_factor="2" gate="h" experimental_temp="24"/>
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="t" exposure="t" dimension="time" value="(0.97/(cosh(0.032*(V+shift+26.31)))) * TIME_SCALE"/>
+        </Dynamics>
 
-      <gate name="m" instances="2">
-        <closed_state id="mc"/>
-        <open_state id="mo"/>
-        <time_course name="tau" from="mc" to="mo" expr_form="generic" expr="0.97/(cosh(0.032*(v+shift+26.31)))"/>
-        <steady_state name="inf" from="mc" to="mo" expr_form="generic" expr="1.092/(1+exp(-(v+shift+14.17)/9.76))"/>
-      </gate>
+    </ComponentType>
 
-      <gate name="h" instances="1">
-        <closed_state id="hc"/>
-        <open_state id="ho"/>
-        <time_course name="tau" from="hc" to="ho" expr_form="generic" expr="70/(cosh(0.047*(v+shifth-19.73)))"/>
-        <steady_state name="inf" from="hc" to="ho" expr_form="generic" expr="0.75/(1+exp((v+shifth+22.63)/6.6))"/>
-      </gate>
-      
-    </current_voltage_relation>
+    <ComponentType name="cah_m_inf_inf" extends="baseVoltageDepVariable">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <Constant name="pbar" dimension="none" value=".2e-3">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shift" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shifth" dimension="none" value="0">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qm" dimension="none" value="4">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qh" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
 
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="x" exposure="x" dimension="none" value="1.092/(1+exp(-(V+shift+14.17)/9.76))"/>
+        </Dynamics>
 
-  </channel_type>
+    </ComponentType>
 
-</channelml>
+    <ComponentType name="cah_h_tau_tau" extends="baseVoltageDepTime">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <Constant name="pbar" dimension="none" value=".2e-3">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shift" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shifth" dimension="none" value="0">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qm" dimension="none" value="4">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qh" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="t" exposure="t" dimension="time" value="(70/(cosh(0.047*(V+shifth-19.73)))) * TIME_SCALE"/>
+        </Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="cah_h_inf_inf" extends="baseVoltageDepVariable">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <Constant name="pbar" dimension="none" value=".2e-3">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shift" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="shifth" dimension="none" value="0">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qm" dimension="none" value="4">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+        <Constant name="qh" dimension="none" value="2">
+            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
+        </Constant>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="x" exposure="x" dimension="none" value="0.75/(1+exp((V+shifth+22.63)/6.6))"/>
+        </Dynamics>
+
+    </ComponentType>
+
+</neuroml>
+
