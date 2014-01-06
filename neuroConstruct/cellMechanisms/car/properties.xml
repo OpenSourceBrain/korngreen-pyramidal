@@ -11,16 +11,10 @@ Note the following:
    Mechanism Type should only have values: Channel mechanism, Synaptic mechanism, Ion concentration, Point process, Gap junction
 
 </comment>
-<entry key="Description"></entry>
-<entry key="NEURON mapping">ChannelML_v1.8.1_NEURONmod.xsl</entry>
-<entry key="GENESIS mapping">ChannelML_v1.8.1_GENESIStab.xsl</entry>
-<entry key="PSICS file requires compilation">false</entry>
-<entry key="Implementation method">ChannelML based Cell Mechanism</entry>
-<entry key="NEURON file requires compilation">true</entry>
-<entry key="Mechanism Type">Channel mechanism</entry>
-<entry key="ChannelML file">MVACaChannel.xml</entry>
-<entry key="PSICS mapping">ChannelML_v1.8.1_PSICS.xsl</entry>
-<entry key="GENESIS file requires compilation">false</entry>
-<entry key="Mechanism Name">car</entry>
 <entry key="Mechanism Model">Template based ChannelML file</entry>
+<entry key="Mechanism Name">car</entry>
+<entry key="Mechanism Type">NeuroML 2 ion channel</entry>
+<entry key="Implementation method">NeuroML 2 Component</entry>
+<entry key="ChannelML file">MVACaChannel.xml</entry>
+<entry key="Description">ChannelML file containing a single Medium Voltage Activated (MVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730–42.</entry>
 </properties>
