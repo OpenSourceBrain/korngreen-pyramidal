@@ -64,7 +64,7 @@
             <gate name="m" instances="3">
                 <closed_state id="mc"/>
                 <open_state id="m"/>
-                <time_course name="tau" from="mc" to="m" expr_form="generic" expr="a1+a2*exp(-((v+vshiftm-a3)/a4))^2"/>
+                <time_course name="tau" from="mc" to="m" expr_form="generic" expr="a1+a2*exp(-((v+vshiftm-a3)/a4)^2)"/>
                 <steady_state name="inf" from="mc" to="m" expr_form="generic" expr="1/(1+exp(-(v+vshiftm-v05m)/km))"/>
                 <!-- TODO: can't use -km here 
                 <steady_state name="inf" from="mc" to="m" expr_form="sigmoid" rate="1" scale="-km" midpoint="v05m"/>
@@ -75,7 +75,7 @@
             <gate name="h" instances="1">
                 <closed_state id="hc"/>
                 <open_state id="h"/>
-                <time_course name="tau" from="hc" to="h" expr_form="generic" expr="i1+i2*exp(-((v+vshifth-i3)/i4))^2"/>
+                <time_course name="tau" from="hc" to="h" expr_form="generic" expr="i1+i2*exp(-((v+vshifth-i3)/i4)^2)"/>
                 <steady_state name="inf" from="hc" to="h" expr_form="generic" expr="1/(1+exp(-(v+vshifth-v05h)/kh))"/>
                 <!-- same as above, use of -paramater in sigmoid def
                 <steady_state name="inf" from="hc" to="h" expr_form="sigmoid" rate="1" scale="-kh" midpoint="v05h"/>
