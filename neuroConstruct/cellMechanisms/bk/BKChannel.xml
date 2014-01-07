@@ -73,8 +73,8 @@
       <gate name="z" instances="2">
         <closed_state id="zc"/>
         <open_state id="zo"/>
-        <time_course name="tau" from="zc" to="zo" expr_form="generic" expr="1 / (1 + zhalf/ca_conc)"/>
-        <steady_state name="inf" from="zc" to="zo" expr_form="generic" expr="ctauz"/>
+        <time_course name="tau" from="zc" to="zo" expr_form="generic" expr="ctauz"/>
+        <steady_state name="inf" from="zc" to="zo" expr_form="generic" expr="1 / (1 + zhalf/(1e6*ca_conc))"/>
       </gate>
       
       <gate name="h" instances="1">
