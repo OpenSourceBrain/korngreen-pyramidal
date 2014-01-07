@@ -65,19 +65,19 @@
 
         <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0" default_erev="-100"> 
 
-            <q10_settings q10_factor="2.3" experimental_temp="21"/>
+            <q10_settings q10_factor="2.3" gate="a" experimental_temp="21"/>
+            <q10_settings q10_factor="1" gate="b" experimental_temp="21"/>
+            <q10_settings q10_factor="1" gate="b1" experimental_temp="21"/>
 
             <gate name="a" instances="2">
                 <closed_state id="ac"/>
                 <open_state id="a"/>
-                <!-- TODO: does q10 work with alpha, beta or tau only? i.e. will alpha, beta be mult by q10^((t-t0)/10) ?-->
                 <transition name="alpha_a" from="ac" to="a" expr_form="generic" expr="a0*(v-a1)/(1-exp(-(v-a1)/a2))"/>
-                <transition name="beta_a" from="a" to="ac" expr_form="generic" expr="a3*exp(-(v-a4)/a5)+a6"/>
+                <transition name="beta_a" from="a" to="ac" expr_form="generic" expr="a3*exp(-(v-a4)/a5)+a6/temp_adj_a"/>
             </gate>
 
             <gate name="b" instances="1">
                 <closed_state id="bc"/>
-                <!-- TODO: check fraction attribute -->
                 <open_state id="b" fraction="0.5"/>
                 <time_course name="tau" from="bc" to="b" expr_form="generic" expr="b0+(b11+b4*(v-b5))*exp(-(v-b2)*(v-b2)/(b3*b3))"/>
                 <steady_state name="inf" from="bc" to="b" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/>
@@ -85,7 +85,6 @@
         
             <gate name="b1" instances="1">
                 <closed_state id="b1c"/>
-                <!-- TODO: check fraction attribute -->
                 <open_state id="b1" fraction="0.5"/>
                 <time_course name="tau" from="b1c" to="b1" expr_form="generic" expr="bb0+bb1*exp(-bb2*v)+bb3*exp(-bb4*v)"/>
                 <steady_state name="inf" from="b1c" to="b1" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/>
