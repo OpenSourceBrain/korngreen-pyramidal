@@ -59,8 +59,8 @@
       <gate name="w" instances="1">
         <closed_state id="wc"/>
         <open_state id="wo"/>
-        <time_course name="tau" from="wc" to="wo" expr_form="generic" expr="1/((a0 * ca_conc^4) + b0)"/>
-        <steady_state name="inf" from="wc" to="wo" expr_form="generic" expr="1 / (1 + b0/(a0 * ca_conc^4))"/>
+        <time_course name="tau" from="wc" to="wo" expr_form="generic" expr="1/((a0 * ((1e6)*ca_conc)^4) + b0)"/>
+        <steady_state name="inf" from="wc" to="wo" expr_form="generic" expr="1 / (1 + b0/(a0 * ((1e6)*ca_conc)^4))"/>
       </gate>
 
     </current_voltage_relation>
