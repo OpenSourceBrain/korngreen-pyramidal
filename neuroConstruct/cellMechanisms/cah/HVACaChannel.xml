@@ -28,7 +28,7 @@
         </gate>
 
         <gate id="h" type="gateHHtauInf" instances="1">
-            <q10Settings type="q10ExpTemp" q10Factor="4" experimentalTemp="24 degC"/>
+            <q10Settings type="q10ExpTemp" q10Factor="2" experimentalTemp="24 degC"/>
             <timeCourse type="cah_h_tau_tau"/>
             <steadyState type="cah_h_inf_inf"/>
         </gate>
