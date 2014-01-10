@@ -468,10 +468,13 @@ part of NeuroML or any standardised XML specification. -->
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_57</string>
+   <string>Sim_62</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
+  </void>
+  <void property="temperature">
+   <float>34.0</float>
   </void>
   <void property="whatToRecord">
    <int>2</int>
