@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema  http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level2/ChannelML_v1.8.1.xsd" units="Physiological Units">
+
+    <ion name="ca" charge="2" role="SignallingSubstance"/> 
+    
+    <ion_concentration name="cad">
+        
+        <status value="stable">
+            <meta:contributor>
+                <meta:name>Boris Marin</meta:name>
+            </meta:contributor>
+        </status>
+    
+        <meta:notes>Intracellular [Ca2+] decay</meta:notes>
+	
+        <meta:authorList>
+            <meta:modelAuthor>
+                <meta:name>Alain Destexhe</meta:name>
+	    </meta:modelAuthor>
+            <meta:modelAuthor>
+                <meta:name>Mara Almog</meta:name>
+            </meta:modelAuthor>
+            <meta:modelAuthor>
+                <meta:name>Alon Korngreen</meta:name>
+            </meta:modelAuthor>
+            <meta:modelTranslator>
+                <meta:name>Boris Marin</meta:name>
+                <meta:email>borismarin -at- gmail.com</meta:email>
+            </meta:modelTranslator>
+        </meta:authorList>
+
+        <meta:publication>
+            <meta:comment>The .mod file in modelDB refers to: Destexhe, A. Babloyantz, A. and Sejnowski, TJ. Ionic mechanisms for intrinsic slow oscillations in thalamic relay neurons. Biophys. J. 65: 1538-1552, 1993</meta:comment>
+            <meta:fullTitle>Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730-42</meta:fullTitle>
+            <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/16093338</meta:pubmedRef>
+        </meta:publication>
+
+        <ion_species name="ca"/>
+        
+        <decaying_pool_model resting_conc="1e-10" decay_constant="80">
+            <pool_volume_info shell_thickness="0.1e-4"/>
+        </decaying_pool_model>
+        
+    </ion_concentration>
+</channelml>
