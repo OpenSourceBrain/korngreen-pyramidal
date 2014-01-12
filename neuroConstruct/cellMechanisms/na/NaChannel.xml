@@ -31,7 +31,6 @@
         </meta:publication>
 
         <parameters>
-            <parameter name="gbar" value="0.0"/> 
             <parameter name="vshiftm" value="-5"/>
             <parameter name="vshifth" value="-10"/>
             <parameter name="taum_scale" value="1"/>

@@ -35,7 +35,6 @@
         </meta:publication>
 
         <parameters>
-            <parameter name="gbar" value="0.0"/> 
             <parameter name="vshift" value="0"  />
             <parameter name="v05a" value="-14.3"/>
             <parameter name="za" value="14.6"/>

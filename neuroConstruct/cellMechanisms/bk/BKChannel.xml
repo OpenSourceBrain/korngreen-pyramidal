@@ -52,7 +52,6 @@
       <parameter name="ckth1" value="-5.2"/>
       <parameter name="cvth2" value="-54.2"/>
       <parameter name="ckth2" value="12.9"/>
-      <parameter name="gbar" value="40"/>
       <parameter name="zhalf" value="0.01"/>
     </parameters>
 
