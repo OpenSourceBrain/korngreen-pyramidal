@@ -41,7 +41,6 @@
         </meta:publication>
 
         <parameters>
-            <parameter name="gbar" value="0.0"/> 
             <parameter name="v05" value="-91"/>
             <parameter name="k" value="6"/>
             <parameter name="t0" value="0.0003933"/>

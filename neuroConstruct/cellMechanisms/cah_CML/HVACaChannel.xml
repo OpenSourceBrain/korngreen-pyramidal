@@ -42,7 +42,7 @@
       <parameter name="qh" value="2"/> 
     </parameters>
 
-    <current_voltage_relation cond_law="ohmic" ion="ca" charge="2"> 
+    <current_voltage_relation cond_law="ohmic" ion="ca" charge="2" default_gmax="0" default_erev="120"> 
 
       <!-- TODO: can't use parameters here... -->
       <q10_settings q10_factor="4" gate="m" experimental_temp="24"/>

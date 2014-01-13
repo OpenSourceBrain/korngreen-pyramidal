@@ -35,7 +35,6 @@
         </meta:publication>
 
         <parameters>
-            <parameter name="gbar" value="0.0"/> 
             <parameter name="vshift" value="0"  />
             <parameter name="v05a" value="-14.3"/>
             <parameter name="za" value="14.6"/>
@@ -67,7 +66,7 @@
 
             <q10_settings q10_factor="2.3" gate="a" experimental_temp="21"/>
             <q10_settings q10_factor="1" gate="b" experimental_temp="21"/>
-            <q10_settings q10_factor="1" gate="b1" experimental_temp="21"/>
+            <!-- <q10_settings q10_factor="1" gate="b1" experimental_temp="21"/> -->
 
             <gate name="a" instances="2">
                 <closed_state id="ac"/>
@@ -79,16 +78,19 @@
             <gate name="b" instances="1">
                 <closed_state id="bc"/>
                 <open_state id="b" fraction="0.5"/>
+                <open_state id="b1" fraction="0.5"/>
                 <time_course name="tau" from="bc" to="b" expr_form="generic" expr="b0+(b11+b4*(v-b5))*exp(-(v-b2)*(v-b2)/(b3*b3))"/>
                 <steady_state name="inf" from="bc" to="b" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/>
+                <time_course name="tau" from="bc" to="b1" expr_form="generic" expr="bb0+bb1*exp(-bb2*v)+bb3*exp(-bb4*v)"/>
+                <steady_state name="inf" from="bc" to="b1" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/>
             </gate>
         
-            <gate name="b1" instances="1">
-                <closed_state id="b1c"/>
-                <open_state id="b1" fraction="0.5"/>
-                <time_course name="tau" from="b1c" to="b1" expr_form="generic" expr="bb0+bb1*exp(-bb2*v)+bb3*exp(-bb4*v)"/>
-                <steady_state name="inf" from="b1c" to="b1" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/>
-            </gate>
+            <!-- <gate name="b1" instances="1"> -->
+            <!--     <closed_state id="b1c"/> -->
+            <!--     <open_state id="b1" fraction="0.5"/> -->
+            <!--     <time_course name="tau" from="b1c" to="b1" expr_form="generic" expr="bb0+bb1*exp(-bb2*v)+bb3*exp(-bb4*v)"/> -->
+            <!--     <steady_state name="inf" from="b1c" to="b1" expr_form="generic" expr="1/(1 + exp(-(v-v05b)/zb))"/> -->
+            <!-- </gate> -->
         </current_voltage_relation>
 
     </channel_type>
