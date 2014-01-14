@@ -592,7 +592,9 @@ DERIVATIVE states {
     <xsl:for-each select="cml:current_voltage_relation/cml:gate"
     ><xsl:variable name="gateName"><xsl:value-of select="@name"/></xsl:variable>, temp_adj_<xsl:value-of select="$gateName"/>,alpha_<xsl:value-of select="$gateName"/>, beta_<xsl:value-of select="$gateName"/>
         <xsl:for-each select='cml:transition | cml:time_course | cml:steady_state'
-        ><xsl:variable name="stateName"><xsl:value-of select="@id"/></xsl:variable><xsl:if test="$favourPublicParameters = 0">,<xsl:text>
+        ><xsl:variable name="stateName"><xsl:value-of
+        select="@id"/></xsl:variable><xsl:if
+        test="$favourPublicParameters = 0 and @expr_form!='generic'">,<xsl:text>
         </xsl:text> A_<xsl:value-of select="@name"/>_<xsl:value-of select="$gateName"/>, B_<xsl:value-of select="@name"/>_<xsl:value-of
             select="$gateName"/>, Vhalf_<xsl:value-of select="@name"/>_<xsl:value-of select="$gateName"/>  </xsl:if>
     </xsl:for-each>
