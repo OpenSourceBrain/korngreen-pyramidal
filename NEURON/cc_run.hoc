@@ -1,0 +1,21 @@
+load_file("nrngui.hoc")
+track_data=1
+xopen("params.hoc")
+xopen("model.hoc")
+
+objref  transvec
+transvec = new Vector(40)
+
+
+objref p_file
+p_file = new File()
+p_file.ropen("best.params")
+                transvec.scanf(p_file)
+		transvec.printf
+p_file.close()
+
+
+xopen("main.hoc")
+
+xopen("bac6.ses")
+tfunk()

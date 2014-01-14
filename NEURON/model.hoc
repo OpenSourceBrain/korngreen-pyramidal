@@ -1,3 +1,4 @@
+// The axon is the venerable Mainen 1996 axon.  Not perfect, yet very stable.  
 
 create a_soma
 n_axon_seg = 2
@@ -81,10 +82,8 @@ proc load_3dcell() {
     nseg = n 
     if (n3d() == 0) diam = diam_save
   }    
-  // show cell
-  if(VoltageClampMode==0) create_axon()
+  create_axon()
   init_cell()
-  //sh = new PlotShape()
 }
 
 
@@ -98,11 +97,9 @@ proc init_cell() {
     g_pas = 1/rm
     e_pas = epas_sim
   }
-  if(VoltageClampMode==0){
     // exceptions along the axon
      forsec "myelin" cm = cm_myelin
      forsec "node" g_pas = g_pas_node
-  }
   forall {
   	insert iA 
 	insert kslow 
@@ -145,7 +142,6 @@ proc density() {
 
 
   add_spines(2)
-  if(VoltageClampMode==0){ 
    // exceptions along the axon
    forsec "myelin" cm = cm_myelin
    forsec "node" g_pas = g_pas_node
@@ -179,7 +175,6 @@ proc density() {
 	gbar_iA = gka_node
 	gbar_kslow = gkslow_node
   }
- }
 
    // we put in all of teh dendrites the same values as in the a_soma and then overwrite the appical values	
   forsec "dend" {
@@ -248,9 +243,6 @@ proc density() {
 
 	
     }
-    if(WithTTX==1){   
-      forall gbar_na=0
-    }
 
         forsec  ApicalDendSectionName {
 
@@ -283,10 +275,3 @@ proc density() {
 
 
 }
-
-proc init() {
-  finitialize(v_init) 
-  fcurrent()  
-}
-
-

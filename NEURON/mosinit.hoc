@@ -1,0 +1,2 @@
+load_file("nrngui.hoc")
+load_file("cc_run.hoc")

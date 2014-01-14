@@ -1,0 +1,65 @@
+
+load_3dcell(CellFileName)
+    track_data =0
+
+proc init(){
+            finitialize(-70)
+            save_dt=dt
+            dt=10
+            i=0
+            for i=1,38 fadvance()
+            print t
+            dt=save_dt
+}
+
+
+a_soma SomaStimSec = new SectionRef()
+apic[11] DendStimSec = new SectionRef()
+DendStimSec.sec {nseg=40}
+
+func tfunk(){local Chisq,dumm
+        Chisq=0
+        ra  = transvec.x(0)
+        rm = transvec.x(1)
+        c_m = transvec.x(2)
+        epas_sim  = transvec.x(3)
+        gih_end  = transvec.x(4)
+	gih_x2 = transvec.x(5)
+        gih_alpha=transvec.x(6)
+	gih_start=transvec.x(7)
+	ih_q10=transvec.x(8)
+	gkslow_start= transvec.x(9)
+	gkslow_alpha= transvec.x(10)
+	gkslow_beta=transvec.x(11)
+	gka_start= transvec.x(12)
+	gka_alpha= transvec.x(13)
+	gka_beta= transvec.x(14)
+	gna_soma = transvec.x(15)
+	gna_api = transvec.x(16)
+	dist_na = transvec.x(17)
+	na_shift1 = transvec.x(18)
+	na_shift2 = transvec.x(19)
+	pcah_soma = transvec.x(20)
+	pcah_api = transvec.x(21)
+	dist_cah = transvec.x(22)
+	cah_shift=transvec.x(23)
+	cah_shifth=transvec.x(24)
+
+	pcar_soma = transvec.x(25)
+	pcar_api = transvec.x(26)
+	dist_car = transvec.x(27)
+        car_shift=transvec.x(28)
+	car_shifth=transvec.x(29)
+	car_qm=transvec.x(30)	
+	
+	gsk_soma=transvec.x(31)
+	gsk_dend=transvec.x(32)
+	dist_sk=transvec.x(33)
+	gbk_soma=transvec.x(34)
+	gbk_dend=transvec.x(35)
+	dist_bk=transvec.x(36)		
+        density()
+	return Chisq
+}
+
+
