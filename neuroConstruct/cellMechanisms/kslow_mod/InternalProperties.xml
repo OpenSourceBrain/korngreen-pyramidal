@@ -78,7 +78,7 @@
    <string>value</string>
    <void method="set">
     <object idref="InternalPhysicalParameter0"/>
-    <float>1.0E-6</float>
+    <float>0</float>
    </void>
   </void>
  </object>
