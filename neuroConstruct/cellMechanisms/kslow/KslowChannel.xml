@@ -71,8 +71,8 @@
             <gate name="a" instances="2">
                 <closed_state id="ac"/>
                 <open_state id="a"/>
-                <transition name="alpha_a" from="ac" to="a" expr_form="generic" expr="a0*(v-a1)/(1-exp(-(v-a1)/a2))"/>
-                <transition name="beta_a" from="a" to="ac" expr_form="generic" expr="a3*exp(-(v-a4)/a5)+a6/temp_adj_a"/>
+                <transition name="alpha" from="ac" to="a" expr_form="generic" expr="a0*(v-a1)/(1-exp(-(v-a1)/a2))"/>
+                <transition name="beta" from="a" to="ac" expr_form="generic" expr="a3*exp(-(v-a4)/a5)+a6/temp_adj_a"/>
             </gate>
 
             <gate name="b" instances="1">
