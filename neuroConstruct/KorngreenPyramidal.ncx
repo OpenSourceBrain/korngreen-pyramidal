@@ -518,7 +518,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>*</string>
      </void>
      <void property="graphWindow">
-      <string>test_nonCa_nrn_v</string>
+      <string>test_nonCa_v</string>
      </void>
      <void property="maxValue">
       <float>50.0</float>
@@ -562,6 +562,118 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="segmentId">
       <string>0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>test_nonCa</string>
+     </void>
+     <void property="cellNumber">
+      <string>0</string>
+     </void>
+     <void property="graphWindow">
+      <string>GraphWin_0</string>
+     </void>
+     <void property="maxValue">
+      <float>1.0</float>
+     </void>
+     <void property="minValue">
+      <float>0.0</float>
+     </void>
+     <void property="plotReference">
+      <string>na_m_cml</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+     <void property="valuePlotted">
+      <string>na:m</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>test_nonCa_nrn</string>
+     </void>
+     <void property="cellNumber">
+      <string>0</string>
+     </void>
+     <void property="graphWindow">
+      <string>GraphWin_0</string>
+     </void>
+     <void property="maxValue">
+      <float>1.0</float>
+     </void>
+     <void property="minValue">
+      <float>0.0</float>
+     </void>
+     <void property="plotReference">
+      <string>na_m_mod</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+     <void property="valuePlotted">
+      <string>na_mod:m</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>test_nonCa</string>
+     </void>
+     <void property="cellNumber">
+      <string>0</string>
+     </void>
+     <void property="graphWindow">
+      <string>GraphWin_0</string>
+     </void>
+     <void property="maxValue">
+      <float>1.0</float>
+     </void>
+     <void property="minValue">
+      <float>0.0</float>
+     </void>
+     <void property="plotReference">
+      <string>na_h_cml</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+     <void property="valuePlotted">
+      <string>na:h</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>test_nonCa_nrn</string>
+     </void>
+     <void property="cellNumber">
+      <string>0</string>
+     </void>
+     <void property="graphWindow">
+      <string>GraphWin_0</string>
+     </void>
+     <void property="maxValue">
+      <float>1.0</float>
+     </void>
+     <void property="minValue">
+      <float>0.0</float>
+     </void>
+     <void property="plotReference">
+      <string>na_h_mod</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+     <void property="valuePlotted">
+      <string>na_mod:h</string>
      </void>
     </object>
    </void>
@@ -626,7 +738,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_63</string>
+   <string>Sim_71</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -912,6 +1024,18 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="plots">
       <void method="add">
+       <string>na_h_cml</string>
+      </void>
+      <void method="add">
+       <string>na_h_mod</string>
+      </void>
+      <void method="add">
+       <string>na_m_cml</string>
+      </void>
+      <void method="add">
+       <string>na_m_mod</string>
+      </void>
+      <void method="add">
        <string>test_nonCa_nrn_v</string>
       </void>
       <void method="add">
@@ -919,7 +1043,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       </void>
      </void>
      <void property="simDuration">
-      <float>2000.0</float>
+      <float>200.0</float>
      </void>
     </object>
    </void>
@@ -956,7 +1080,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       </void>
      </void>
      <void property="simDuration">
-      <float>2000.0</float>
+      <float>500.0</float>
      </void>
     </object>
    </void>
