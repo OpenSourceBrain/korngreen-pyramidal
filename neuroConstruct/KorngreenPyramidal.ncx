@@ -130,7 +130,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <string>test_non_Ca_nrn</string>
     </void>
     <void method="add">
-     <string>A140612_pas</string>
+     <string>A140612</string>
     </void>
    </void>
    <void method="get">
@@ -853,7 +853,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_72</string>
+   <string>Sim_75</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
