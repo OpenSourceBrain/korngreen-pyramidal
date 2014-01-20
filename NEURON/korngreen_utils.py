@@ -1,4 +1,5 @@
 class AlmogKorngreenPars(object):
+
     def __init__(self):
         #This is a rough initial parameter set. It is overwritten by parameters loaded from best.params
         self.cm_myelin = 0.04
@@ -118,7 +119,7 @@ class AlmogKorngreenPars(object):
     def forall(self):
         return dict(Ra = self.ra, cm = self.c_m, g_pas = 1./self.rm, e_pas = self.epas_sim, vshiftm_na= self.na_shift1, vshifth_na= self.na_shift2, taum_scale_na= self.na_taum_scale, tauh_scale_na= self.na_tauh_scale, q10_iH= self.ih_q10, shift_cah= self.cah_shift, shifth_cah= self.cah_shifth, shift_car= self.car_shift, shifth_car= self.car_shifth, qm_car= self.car_qm)
 
-    def limit_value(self,expr, cond, lim):
+    def limit_value(self, expr, cond, lim):
         harg = "-".join((expr,lim))
         if cond == '>':
             f1 = expr
@@ -128,14 +129,40 @@ class AlmogKorngreenPars(object):
                 f2 = lim
         return "%s*H(%s)+%s*H(-(%s))"%(f1,harg,f2,harg)
 
+    sigmoid_t = "%f+%f/(1+exp(%f*(p-%f)))"
+    exp_t = "%f+%f*exp(%f*p)"
+    lin_t = "%f+p*(%f-%f)/%f"
 
-    def iH_expr(self):
+    def giH_expr(self):
         p = (self.gih_start,self.gih_end,self.gih_alpha,self.gih_x2)
-        return "%f+%f/(1+exp(%f*(x-%f)))"%p
+        return self.sigmoid_t % p
 
+    def giA_expr(self):
+        p = (self.gka_start,self.gka_beta,self.gka_alpha)
+        return self.exp_t % p
 
+    def gkslow_expr(self):
+        p = (self.gkslow_start,self.gkslow_beta,self.gkslow_alpha)
+        return self.exp_t % p
+
+    def gna_expr(self):
+        p = (self.gna_soma,self.gna_api,self.gna_soma, self.dist_na)
+        return self.lin_t % p
+
+    def gsk_expr(self):
+        p = (self.gsk_soma,self.gsk_dend,self.gsk_soma, self.dist_sk)
+        return self.lin_t % p
+
+    def gbk_expr(self):
+        p = (self.gbk_soma,self.gbk_dend,self.gbk_soma, self.dist_bk)
+        return self.lin_t % p
 
 if __name__ == '__main__':
     p = AlmogKorngreenPars()
     p.pars_from_file('best.params')
-    print p.iH_expr()
+    print p.giH_expr()
+    print p.giA_expr()
+    print p.gkslow_expr()
+    print p.gna_expr()
+    print p.gsk_expr()
+    print p.gbk_expr()
