@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_25" class="java.beans.XMLDecoder">
+<java version="1.7.0_45" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -1035,19 +1035,13 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>test_nonCa</string>
-      </void>
-      <void method="add">
-       <string>test_nonCa_nrn</string>
+       <string>TestL5</string>
       </void>
      </void>
      <void property="description">
       <string>This is the default configuration of the Cell Groups, stimulations, plots, etc for this project</string>
      </void>
      <void property="inputs">
-      <void method="add">
-       <string>clamp_nonCa</string>
-      </void>
       <void method="add">
        <string>clamp_nonCa_nrn</string>
       </void>
@@ -1056,9 +1050,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>Default Simulation Configuration</string>
      </void>
      <void property="plots">
-      <void method="add">
-       <string>test_nonCa_nrn_v</string>
-      </void>
       <void method="add">
        <string>test_nonCa_v</string>
       </void>
