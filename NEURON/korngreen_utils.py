@@ -129,9 +129,9 @@ class AlmogKorngreenPars(object):
                 f2 = lim
         return "%s*H(%s)+%s*H(-(%s))"%(f1,harg,f2,harg)
 
-    sigmoid_t = "%f+%f/(1+exp(%f*(p-%f)))"
-    exp_t = "%f+%f*exp(%f*p)"
-    lin_t = "%f+p*(%f-%f)/%f"
+    sigmoid_t = "%g+%g/(1+exp(%g*(p-%g)))"
+    exp_t = "%g+%g*exp(%g*p)"
+    lin_t = "%g+p*(%g-%g)/%g"
 
     def giH_expr(self):
         p = (self.gih_start,self.gih_end,self.gih_alpha,self.gih_x2)
@@ -157,12 +157,23 @@ class AlmogKorngreenPars(object):
         p = (self.gbk_soma,self.gbk_dend,self.gbk_soma, self.dist_bk)
         return self.lin_t % p
 
+    def pcah_expr(self):
+        p = (self.pcah_soma, self.pcah_api , self.pcah_soma, self.dist_cah)
+        return self.lin_t % p
+
+    def pcar_expr(self):
+        p = (self.pcar_soma, self.pcar_api, self.pcar_soma, self.dist_car)
+        return self.lin_t % p
+
 if __name__ == '__main__':
     p = AlmogKorngreenPars()
     p.pars_from_file('best.params')
-    print p.giH_expr()
-    print p.giA_expr()
-    print p.gkslow_expr()
-    print p.gna_expr()
-    print p.gsk_expr()
-    print p.gbk_expr()
+    print 'giH:', p.giH_expr()
+    print 'giA:', p.giA_expr()
+    print 'gkslow:', p.gkslow_expr()
+    print 'gna:', p.gna_expr()
+    print 'gsk:', p.gsk_expr()
+    print 'gbk:', p.gbk_expr()
+    print 'pcah:', p.pcah_expr()
+    print 'pcar:', p.pcar_expr()
+
