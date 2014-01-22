@@ -802,9 +802,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
   </void>
   <void property="backgroundColour3D">
    <object class="java.awt.Color">
-    <int>255</int>
-    <int>255</int>
-    <int>255</int>
+    <int>204</int>
+    <int>204</int>
+    <int>204</int>
     <int>255</int>
    </object>
   </void>
@@ -853,7 +853,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_75</string>
+   <string>Sim_76</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
