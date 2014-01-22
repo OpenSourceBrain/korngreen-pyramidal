@@ -1,4 +1,28 @@
+
+def ineq_to_heaviside(cond, ifTrue, ifFalse):
+    import re
+
+    r = re.compile("(.+)([><]+)(.+)")
+    s = r.search(cond)
+    f1,op,f2 = [g.strip() for g in s.groups()]
+
+    if op == '>':
+        harg = f1 + ' - ' + f2
+    elif op == '<':
+        harg = f2 + ' - ' + f1
+
+    return "(%s) * H(%s) + (%s) * H(-(%s))" % (ifTrue, harg, ifFalse, harg)
+
 class AlmogKorngreenPars(object):
+    
+    #Distances will be translated by half the length of the soma, as nC measures 
+    # from soma(0) and the model used soma(0.5)
+    origin = 16.228978
+    indepvar = '(p - %g)' % origin
+
+    sigmoid_t = "{gsoma} + {gdend}/(1+exp({slope}*({x} - {half})))"
+    exp_t = "{gdend} + {gsoma} * exp({slope} * {x})"
+    lin_t = "{gsoma} + {x} * ({gdend} - {gsoma}) / {dist}"
 
     def __init__(self):
         #This is a rough initial parameter set. It is overwritten by parameters loaded from best.params
@@ -119,51 +143,66 @@ class AlmogKorngreenPars(object):
     def forall(self):
         return dict(Ra = self.ra, cm = self.c_m, g_pas = 1./self.rm, e_pas = self.epas_sim, vshiftm_na= self.na_shift1, vshifth_na= self.na_shift2, taum_scale_na= self.na_taum_scale, tauh_scale_na= self.na_tauh_scale, q10_iH= self.ih_q10, shift_cah= self.cah_shift, shifth_cah= self.cah_shifth, shift_car= self.car_shift, shifth_car= self.car_shifth, qm_car= self.car_qm)
 
-    def limit_value(self, expr, cond, lim):
-        harg = "-".join((expr,lim))
-        if cond == '>':
-            f1 = expr
-            f2 = lim
-        elif cond == '<':
-                f1 = expr
-                f2 = lim
-        return "%s*H(%s)+%s*H(-(%s))"%(f1,harg,f2,harg)
-
-    sigmoid_t = "%g+%g/(1+exp(%g*(p-%g)))"
-    exp_t = "%g+%g*exp(%g*p)"
-    lin_t = "%g+p*(%g-%g)/%g"
+        
 
     def giH_expr(self):
-        p = (self.gih_start,self.gih_end,self.gih_alpha,self.gih_x2)
-        return self.sigmoid_t % p
+        return self.sigmoid_t.format(gsoma=self.gih_start,
+                                     gdend=self.gih_end,
+                                     slope=self.gih_alpha,
+                                     half=self.gih_x2,
+                                     x=self.indepvar)
 
     def giA_expr(self):
-        p = (self.gka_start,self.gka_beta,self.gka_alpha)
-        return self.exp_t % p
+        return self.exp_t.format(gdend=self.gka_start,
+                                 gsoma=self.gka_beta,
+                                 slope=self.gka_alpha,
+                                 x=self.indepvar)
 
     def gkslow_expr(self):
-        p = (self.gkslow_start,self.gkslow_beta,self.gkslow_alpha)
-        return self.exp_t % p
+        return self.exp_t.format(gdend=self.gkslow_start,
+                                 gsoma=self.gkslow_beta,
+                                 slope=self.gkslow_alpha,
+                                 x=self.indepvar)
 
     def gna_expr(self):
-        p = (self.gna_soma,self.gna_api,self.gna_soma, self.dist_na)
-        return self.lin_t % p
+        distr = self.lin_t.format(gsoma=self.gna_soma,
+                                  gdend=self.gna_api,
+                                  dist=self.dist_na,
+                                  x=self.indepvar)
+        cond = ' '.join((self.indepvar, '<', str(self.dist_na)))
+        return ineq_to_heaviside(cond, distr, self.gna_api)
 
     def gsk_expr(self):
-        p = (self.gsk_soma,self.gsk_dend,self.gsk_soma, self.dist_sk)
-        return self.lin_t % p
+        distr = self.lin_t.format(gsoma=self.gsk_soma,
+                                  gdend=self.gsk_dend,
+                                  dist=self.dist_sk,
+                                  x=self.indepvar)
+        cond = ' '.join((self.indepvar, '<', str(self.dist_sk)))
+        return ineq_to_heaviside(cond, distr, self.gsk_dend)
 
     def gbk_expr(self):
-        p = (self.gbk_soma,self.gbk_dend,self.gbk_soma, self.dist_bk)
-        return self.lin_t % p
+        distr = self.lin_t.format(gsoma=self.gbk_soma,
+                                  gdend=self.gbk_dend,
+                                  dist=self.dist_bk,
+                                  x=self.indepvar)
+        cond = ' '.join((self.indepvar, '<', str(self.dist_bk)))
+        return ineq_to_heaviside(cond, distr, self.gbk_dend)
 
     def pcah_expr(self):
-        p = (self.pcah_soma, self.pcah_api , self.pcah_soma, self.dist_cah)
-        return self.lin_t % p
+        distr = self.lin_t.format(gsoma=self.pcah_soma,
+                                  gdend=self.pcah_api,
+                                  dist=self.dist_cah,
+                                  x=self.indepvar)
+        cond = ' '.join((self.indepvar, '<', str(self.dist_cah)))
+        return ineq_to_heaviside(cond, distr, self.pcah_api)
 
     def pcar_expr(self):
-        p = (self.pcar_soma, self.pcar_api, self.pcar_soma, self.dist_car)
-        return self.lin_t % p
+        distr = self.lin_t.format(gsoma=self.pcar_soma,
+                                  gdend=self.pcar_api,
+                                  dist=self.dist_car,
+                                  x=self.indepvar)
+        cond = ' '.join((self.indepvar, '<', str(self.dist_car)))
+        return ineq_to_heaviside(cond, distr, self.pcar_api)
 
 if __name__ == '__main__':
     p = AlmogKorngreenPars()
@@ -174,6 +213,7 @@ if __name__ == '__main__':
     print 'gna:', p.gna_expr()
     print 'gsk:', p.gsk_expr()
     print 'gbk:', p.gbk_expr()
+    print "attention, the ones below require extra checks\n\t (see last 'forsec ApicalDendSectionName' in model.hoc)"
     print 'pcah:', p.pcah_expr()
     print 'pcar:', p.pcar_expr()
 
