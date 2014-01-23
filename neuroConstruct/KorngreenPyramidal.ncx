@@ -838,7 +838,11 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <boolean>false</boolean>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings"/>
+ <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings">
+  <void property="varTimeStep">
+   <boolean>true</boolean>
+  </void>
+ </object>
  <object class="ucl.physiol.neuroconstruct.genesis.GenesisSettings"/>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
@@ -849,7 +853,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_85</string>
+   <string>Sim_90</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -1037,11 +1041,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <void property="description">
       <string>This is the default configuration of the Cell Groups, stimulations, plots, etc for this project</string>
      </void>
-     <void property="inputs">
-      <void method="add">
-       <string>clamp_nonCa_nrn</string>
-      </void>
-     </void>
      <void property="name">
       <string>Default Simulation Configuration</string>
      </void>
@@ -1049,9 +1048,12 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <void method="add">
        <string>test_nonCa_v</string>
       </void>
+      <void method="add">
+       <string>TestL5_v</string>
+      </void>
      </void>
      <void property="simDuration">
-      <float>50.0</float>
+      <float>0.1</float>
      </void>
     </object>
    </void>
