@@ -853,7 +853,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_90</string>
+   <string>Sim_92</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
