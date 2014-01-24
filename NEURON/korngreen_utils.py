@@ -20,18 +20,18 @@ class AlmogKorngreenPars(object):
     origin = 16.228978
     indepvar = '(p - %g)' % origin
 
-    sigmoid_t = "{gsoma} + {gdend}/(1+exp({slope}*({x} - {half})))"
-    exp_t = "{gdend} + {gsoma} * exp({slope} * {x})"
-    lin_t = "{gsoma} + {x} * ({gdend} - {gsoma}) / {dist}"
+    sigmoid_t = "%(gsoma)g + %(gdend)g/(1+exp(%(slope)g*(%(x)s - %(half)g)))"
+    exp_t = "%(gdend)g + %(gsoma)g * exp(%(slope)g * %(x)s)"
+    lin_t = "%(gsoma)g + %(x)s * (%(gdend)g - %(gsoma)g) / %(dist)g"
 
     def __init__(self):
         #This is a rough initial parameter set. It is overwritten by parameters loaded from best.params
         self.cm_myelin = 0.04
         self.g_pas_node = 0.02
-        self.v_init = -62
-        self.Ek = -100
-        self.Ena = 60
-        self.Eca = 130
+        self.v_init = -62.
+        self.Ek = -100.
+        self.Ena = 60.
+        self.Eca = 130.
 
         #passive
         self.ra = 68.16690
@@ -62,37 +62,42 @@ class AlmogKorngreenPars(object):
         self.dist_na = 687.53800
         self.na_shift1 =-5.56301
         self.na_shift2 =-4.52361
-        self.na_taum_scale = 1
-        self.na_tauh_scale = 1
+        self.na_taum_scale = 1.
+        self.na_tauh_scale = 1.
 
         #Ca
         self.pcah_soma = 1.33e-3
         self.pcah_api = self.pcah_soma
-        self.dist_cah = 600
-        self.cah_qm = 2
-        self.ca_qh = 2
-        self.cah_shift = 0
-        self.cah_shifth = 0
+        self.dist_cah = 600.
+        self.cah_qm = 2.
+        self.ca_qh = 2.
+        self.cah_shift = 0.
+        self.cah_shifth = 0.
 
         self.pcar_soma = 0.27e-3
         self.pcar_api = self.pcar_soma
-        self.dist_car = 600
-        self.car_qh = 1
-        self.car_qm = 1
-        self.car_shift = 0
-        self.car_shifth = 0
+        self.dist_car = 600.
+        self.car_qh = 1.
+        self.car_qm = 1.
+        self.car_shift = 0.
+        self.car_shifth = 0.
 
         #axon parameters
-        self.gkslow_node = 1500
-        self.gka_node = 1000
-        self.gna_node = 30000
-        self.shift_na_act_axon = 7
-        self.shift_na_inact_axon = 3
+        self.gkslow_node = 1500.
+        self.gka_node = 1000.
+        self.gna_node = 30000.
+        self.shift_na_act_axon = 7.
+        self.shift_na_inact_axon = 3.
 
     
-    def pars_from_file(self, fname):
-        from numpy import loadtxt
-        p = loadtxt('best.params')
+    def pars_from_file(self, fname='best.params'):
+        #no numpy in jyton...
+        #from numpy import loadtxt
+        #p = loadtxt(fname)
+        
+        import csv
+        rdr = csv.reader(open(fname), delimiter=' ')
+        p = [float(r[0]) for r in rdr if len(r) > 1]
 
         self.ra = p[0]
         self.rm = p[1]
@@ -139,70 +144,75 @@ class AlmogKorngreenPars(object):
         self.gbk_soma = p[34]*1e-5
         self.gbk_dend = p[35]*1e-5
         self.dist_bk = p[36]		
+        
+        self.inhomogeneous_mechs = dict(zip(
+            ['na', 'kslow', 'iA', 'iH', 'sk', 'bk'],
+            [self.gna_expr(), self.giA_expr(), self.gkslow_expr(),
+             self.giA_expr(), self.giH_expr(), self.gsk_expr(), self.gbk_expr()]))
 
     def forall(self):
         return dict(Ra = self.ra, cm = self.c_m, g_pas = 1./self.rm, e_pas = self.epas_sim, vshiftm_na= self.na_shift1, vshifth_na= self.na_shift2, taum_scale_na= self.na_taum_scale, tauh_scale_na= self.na_tauh_scale, q10_iH= self.ih_q10, shift_cah= self.cah_shift, shifth_cah= self.cah_shifth, shift_car= self.car_shift, shifth_car= self.car_shifth, qm_car= self.car_qm)
 
-        
 
     def giH_expr(self):
-        return self.sigmoid_t.format(gsoma=self.gih_start,
-                                     gdend=self.gih_end,
-                                     slope=self.gih_alpha,
-                                     half=self.gih_x2,
-                                     x=self.indepvar)
+        return self.sigmoid_t%{'gsoma':self.gih_start,
+                                     'gdend':self.gih_end,
+                                     'slope':self.gih_alpha,
+                                     'half':self.gih_x2,
+                                     'x':self.indepvar}
 
     def giA_expr(self):
-        return self.exp_t.format(gdend=self.gka_start,
-                                 gsoma=self.gka_beta,
-                                 slope=self.gka_alpha,
-                                 x=self.indepvar)
+        return self.exp_t%{'gdend':self.gka_start,
+                                 'gsoma':self.gka_beta,
+                                 'slope':self.gka_alpha,
+                                 'x':self.indepvar}
 
     def gkslow_expr(self):
-        return self.exp_t.format(gdend=self.gkslow_start,
-                                 gsoma=self.gkslow_beta,
-                                 slope=self.gkslow_alpha,
-                                 x=self.indepvar)
+        return self.exp_t%{'gdend':self.gkslow_start,
+                                 'gsoma':self.gkslow_beta,
+                                 'slope':self.gkslow_alpha,
+                                 'x':self.indepvar}
 
     def gna_expr(self):
-        distr = self.lin_t.format(gsoma=self.gna_soma,
-                                  gdend=self.gna_api,
-                                  dist=self.dist_na,
-                                  x=self.indepvar)
+        distr = self.lin_t % {'gsoma':self.gna_soma,
+                                  'gdend':self.gna_api,
+                                  'dist':self.dist_na,
+                                  'x':self.indepvar}
         cond = ' '.join((self.indepvar, '<', str(self.dist_na)))
         return ineq_to_heaviside(cond, distr, self.gna_api)
 
     def gsk_expr(self):
-        distr = self.lin_t.format(gsoma=self.gsk_soma,
-                                  gdend=self.gsk_dend,
-                                  dist=self.dist_sk,
-                                  x=self.indepvar)
+        distr = self.lin_t%{'gsoma':self.gsk_soma,
+                                  'gdend':self.gsk_dend,
+                                  'dist':self.dist_sk,
+                                  'x':self.indepvar}
         cond = ' '.join((self.indepvar, '<', str(self.dist_sk)))
         return ineq_to_heaviside(cond, distr, self.gsk_dend)
 
     def gbk_expr(self):
-        distr = self.lin_t.format(gsoma=self.gbk_soma,
-                                  gdend=self.gbk_dend,
-                                  dist=self.dist_bk,
-                                  x=self.indepvar)
+        distr = self.lin_t%{'gsoma':self.gbk_soma,
+                                  'gdend':self.gbk_dend,
+                                  'dist':self.dist_bk,
+                                  'x':self.indepvar}
         cond = ' '.join((self.indepvar, '<', str(self.dist_bk)))
         return ineq_to_heaviside(cond, distr, self.gbk_dend)
 
     def pcah_expr(self):
-        distr = self.lin_t.format(gsoma=self.pcah_soma,
-                                  gdend=self.pcah_api,
-                                  dist=self.dist_cah,
-                                  x=self.indepvar)
+        distr = self.lin_t%{'gsoma':self.pcah_soma,
+                                  'gdend':self.pcah_api,
+                                  'dist':self.dist_cah,
+                                  'x':self.indepvar}
         cond = ' '.join((self.indepvar, '<', str(self.dist_cah)))
         return ineq_to_heaviside(cond, distr, self.pcah_api)
 
     def pcar_expr(self):
-        distr = self.lin_t.format(gsoma=self.pcar_soma,
-                                  gdend=self.pcar_api,
-                                  dist=self.dist_car,
-                                  x=self.indepvar)
+        distr = self.lin_t%{'gsoma':self.pcar_soma,
+                                  'gdend':self.pcar_api,
+                                  'dist':self.dist_car,
+                                  'x':self.indepvar}
         cond = ' '.join((self.indepvar, '<', str(self.dist_car)))
         return ineq_to_heaviside(cond, distr, self.pcar_api)
+    
 
 if __name__ == '__main__':
     p = AlmogKorngreenPars()
