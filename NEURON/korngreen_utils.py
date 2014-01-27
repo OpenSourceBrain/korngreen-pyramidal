@@ -40,25 +40,25 @@ class AlmogKorngreenPars(object):
         self.epas_sim = -31.40480
 
         #gih
-        self.gih_end = 271.90500*1e-5
+        self.gih_end = 271.90500*1e-9
         self.gih_x2 = 382.51900
         self.gih_alpha =-0.08090
-        self.gih_start = 22.51460*1e-5
+        self.gih_start = 22.51460*1e-9
         self.ih_q10 = 2
         
         #kslow
-        self.gkslow_start = 2.03452*1e-5
+        self.gkslow_start = 2.03452*1e-9
         self.gkslow_alpha =-0.00986
-        self.gkslow_beta = 127.82800*1e-5
+        self.gkslow_beta = 127.82800*1e-9
         
         #kfast
-        self.gka_start = 20.34520*1e-5
+        self.gka_start = 20.34520*1e-9
         self.gka_alpha = -0.00297
-        self.gka_beta = 320.43100*1e-5
+        self.gka_beta = 320.43100*1e-9
 
         #na
-        self.gna_soma = 128.14300*1e-5
-        self.gna_api = 2.69229*1e-5
+        self.gna_soma = 128.14300*1e-9
+        self.gna_api = 2.69229*1e-9
         self.dist_na = 687.53800
         self.na_shift1 =-5.56301
         self.na_shift2 =-4.52361
@@ -104,45 +104,45 @@ class AlmogKorngreenPars(object):
         self.c_m = p[2]
         self.epas_sim = p[3]
 
-        self.gih_end  = p[4]*1e-5
+        self.gih_end  = p[4]*1e-9
         self.gih_x2 = p[5]
         self.gih_alpha = p[6]
-        self.gih_start = p[7]*1e-5
+        self.gih_start = p[7]*1e-9
         self.ih_q10 = p[8]
 
-        self.gkslow_start = p[9]*1e-5
+        self.gkslow_start = p[9]*1e-9
         self.gkslow_alpha = p[10]
-        self.gkslow_beta = p[11]*1e-5
+        self.gkslow_beta = p[11]*1e-9
 
-        self.gka_start = p[12]*1e-5
+        self.gka_start = p[12]*1e-9
         self.gka_alpha = p[13]
-        self.gka_beta = p[14]*1e-5
+        self.gka_beta = p[14]*1e-9
 
-        self.gna_soma = p[15]*1e-5
-        self.gna_api = p[16]*1e-5
+        self.gna_soma = p[15]*1e-9
+        self.gna_api = p[16]*1e-9
         self.dist_na = p[17]
         self.na_shift1 = p[18]
         self.na_shift2 = p[19]
 
-        self.pcah_soma = p[20]*1e-5
-        self.pcah_api = p[21]*1e-5
+        self.pcah_soma = p[20]*1e-9
+        self.pcah_api = p[21]*1e-9
         self.dist_cah = p[22]
         self.cah_shift = p[23]
         self.cah_shifth = p[24]
 
-        self.pcar_soma = p[25]*1e-5
-        self.pcar_api = p[26]*1e-5
+        self.pcar_soma = p[25]*1e-9
+        self.pcar_api = p[26]*1e-9
         self.dist_car = p[27]
         self.car_shift = p[28]
         self.car_shifth = p[29]
         self.car_qm = p[30]	
 
-        self.gsk_soma = p[31]*1e-5
-        self.gsk_dend = p[32]*1e-5
+        self.gsk_soma = p[31]*1e-9
+        self.gsk_dend = p[32]*1e-9
         self.dist_sk = p[33]
 
-        self.gbk_soma = p[34]*1e-5
-        self.gbk_dend = p[35]*1e-5
+        self.gbk_soma = p[34]*1e-9
+        self.gbk_dend = p[35]*1e-9
         self.dist_bk = p[36]		
         
         self.inhomogeneous_mechs = dict(zip(
