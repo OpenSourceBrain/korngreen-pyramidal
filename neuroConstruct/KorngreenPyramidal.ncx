@@ -105,6 +105,12 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.packing.SinglePositionedCellPackingAdapter"/>
     </void>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
+    </void>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.SinglePositionedCellPackingAdapter"/>
+    </void>
    </void>
    <void method="get">
     <string>Cell Type</string>
@@ -132,6 +138,12 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <string>A140612</string>
     </void>
+    <void method="add">
+     <string>A140612_mod</string>
+    </void>
+    <void method="add">
+     <string>A140612_nml</string>
+    </void>
    </void>
    <void method="get">
     <string>Priority</string>
@@ -158,6 +170,12 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <int>3</int>
+    </void>
+    <void method="add">
+     <int>2</int>
+    </void>
+    <void method="add">
+     <int>1</int>
     </void>
    </void>
    <void method="get">
@@ -226,9 +244,31 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <int>255</int>
      </object>
     </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>49</int>
+      <int>159</int>
+      <int>178</int>
+      <int>255</int>
+     </object>
+    </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>1</int>
+      <int>208</int>
+      <int>238</int>
+      <int>255</int>
+     </object>
+    </void>
    </void>
    <void method="get">
     <string>Region Name</string>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
     <void method="add">
      <string>Regions_1</string>
     </void>
@@ -279,6 +319,12 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <string>TestL5</string>
+    </void>
+    <void method="add">
+     <string>FullCell_mod</string>
+    </void>
+    <void method="add">
+     <string>FullCell_nml</string>
     </void>
    </void>
   </void>
@@ -789,6 +835,62 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>FullCell_mod</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>FullCell_mod_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>FullCell_mod_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>FullCell_nml</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>FullCell_nml_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>FullCell_nml_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
@@ -853,7 +955,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_92</string>
+   <string>Sim_94</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -1192,6 +1294,26 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="simDuration">
       <float>500.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>FullCell_nml</string>
+      </void>
+     </void>
+     <void property="name">
+      <string>FullCell_nml</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>FullCell_nml_v</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>2000.0</float>
      </void>
     </object>
    </void>
