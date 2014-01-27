@@ -124,14 +124,14 @@ class AlmogKorngreenPars(object):
         self.na_shift1 = p[18]
         self.na_shift2 = p[19]
 
-        self.pcah_soma = p[20]*1e-9
-        self.pcah_api = p[21]*1e-9
+        self.pcah_soma = p[20]
+        self.pcah_api = p[21]
         self.dist_cah = p[22]
         self.cah_shift = p[23]
         self.cah_shifth = p[24]
 
-        self.pcar_soma = p[25]*1e-9
-        self.pcar_api = p[26]*1e-9
+        self.pcar_soma = p[25]
+        self.pcar_api = p[26]
         self.dist_car = p[27]
         self.car_shift = p[28]
         self.car_shifth = p[29]
