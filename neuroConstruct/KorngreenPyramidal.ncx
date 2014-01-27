@@ -941,6 +941,39 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings">
+  <void property="nativeBlocks">
+   <void method="put">
+    <float>0.0</float>
+    <string>        forsec  &quot;apical&quot; {
+
+                if (pcah_soma&lt;pcah_api){
+                        if (pbar_cah&gt;pcah_api){
+                                pbar_cah=pcah_api
+                        }
+                }
+                if (pcah_soma&gt;pcah_api){
+                        if (pbar_cah&lt;pcah_api){
+                                pbar_cah=pcah_api
+                        }
+                }
+
+                if (pcar_soma&lt;pcar_api){
+                        if (pbar_car&gt;pcar_api){
+                                pbar_car=pcar_api
+                        }
+                }
+                if (pcar_soma&gt;pcar_api){
+                        if (pbar_car&lt;pcar_api){
+                                pbar_car=pcar_api
+                        }
+                }
+
+                if (gbar_na&lt;gna_api) gbar_na=gna_api
+                if (gbar_bk&lt;gbk_dend) gbar_bk=gbk_dend
+                if (gbar_sk&lt;gsk_dend) gbar_sk=gsk_dend
+        }</string>
+   </void>
+  </void>
   <void property="varTimeStep">
    <boolean>true</boolean>
   </void>
@@ -955,7 +988,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_96</string>
+   <string>Sim_97</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
