@@ -28,12 +28,12 @@ class Mechanism(object):
     def __init__(self, name, gmax=0.0, extrapars={}):
         self.name = name
         self.gmax = gmax
-        self.extrapars = extrapars
+        self.extra_parameters = extrapars
         
     def __repr__(self):
         r = "mechanism:" + self.name + "\n"
         r += "\tgmax:" + str(self.gmax) + "\n"
-        r += "\textra pars:" + str(self.extrapars) + "\n"
+        r += "\textra pars:" + str(self.extra_parameters) + "\n"
         return r
         
 
@@ -223,9 +223,9 @@ class AlmogKorngreenPars(object):
                     Mechanism('iA', self.gka_node),
                     Mechanism('car', 0 , extra_car_axon),
                     Mechanism('cah', 0, extra_cah_axon),
-                    Mechanism('bk', 40.0)]
+                    Mechanism('bk', 40e-5)]
         self.hill_group = SectionGroup('hill_group', mechaxon)
-        self.nodes_group = SectionGroup('nodes_group', mechaxon)
+        self.node_group = SectionGroup('node_group', mechaxon)
         self.iseg_group = SectionGroup('iseg_group', mechaxon)
         
 
@@ -234,7 +234,7 @@ class AlmogKorngreenPars(object):
                       Mechanism('iA', self.gka_beta),
                       Mechanism('car', 0 , extra_car_axon),
                       Mechanism('cah', 0, extra_cah_axon),
-                      Mechanism('bk', 40.0)]
+                      Mechanism('bk', 40e-5)]
         self.myelin_group = SectionGroup('myelin_group', mechmyelin)
 
 
@@ -308,7 +308,7 @@ if __name__ == '__main__':
     print p.basal_dend_group
     print p.iseg_group
     print p.hill_group
-    print p.nodes_group
+    print p.node_group
     print p.myelin_group
 
 
