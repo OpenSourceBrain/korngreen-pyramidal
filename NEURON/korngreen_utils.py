@@ -13,6 +13,30 @@ def ineq_to_heaviside(cond, ifTrue, ifFalse):
 
     return "(%s) * H(%s) + (%s) * H(-(%s))" % (ifTrue, harg, ifFalse, harg)
 
+class SectionGroup(object):
+    def __init__(self, name, mechs):
+        self.name = name
+        self.mechanisms = mechs
+        
+    def __repr__(self):
+        r = "section group:" + self.name + "\n"
+        for m in self.mechanisms:
+            r += "\t" + str(m) + "\n"
+        return r
+
+class Mechanism(object):
+    def __init__(self, name, gmax=0.0, extrapars={}):
+        self.name = name
+        self.gmax = gmax
+        self.extrapars = extrapars
+        
+    def __repr__(self):
+        r = "mechanism:" + self.name + "\n"
+        r += "\tgmax:" + str(self.gmax) + "\n"
+        r += "\textra pars:" + str(self.extrapars) + "\n"
+        return r
+        
+
 class AlmogKorngreenPars(object):
     
     #Distances will be translated by half the length of the soma, as nC measures 
@@ -70,7 +94,7 @@ class AlmogKorngreenPars(object):
         self.pcah_api = self.pcah_soma
         self.dist_cah = 600.
         self.cah_qm = 2.
-        self.ca_qh = 2.
+        self.cah_qh = 2.
         self.cah_shift = 0.
         self.cah_shifth = 0.
 
@@ -83,9 +107,9 @@ class AlmogKorngreenPars(object):
         self.car_shifth = 0.
 
         #axon parameters
-        self.gkslow_node = 1500.
-        self.gka_node = 1000.
-        self.gna_node = 30000.
+        self.gkslow_node = 1500.*1e-9
+        self.gka_node = 1000.*1e-9
+        self.gna_node = 30000.*1e-9
         self.shift_na_act_axon = 7.
         self.shift_na_inact_axon = 3.
 
@@ -145,14 +169,74 @@ class AlmogKorngreenPars(object):
         self.gbk_dend = p[35]*1e-9
         self.dist_bk = p[36]		
         
+        #create inhomogenous pars dict
         self.inhomogeneous_mechs = dict(zip(
             ['na', 'iA','kslow', 'iH', 'sk', 'bk', 'cah', 'car'],
             [self.gna_expr(), self.giA_expr(), self.gkslow_expr(),
              self.giH_expr(), self.gsk_expr(), self.gbk_expr(), 
              self.pcah_expr(), self.pcar_expr()]))
+        
+        #global pars
+        extra_na = {'vshiftm': self.na_shift1, 'vshifth': self.na_shift2, 'taum_scale': self.na_taum_scale, 'tauh_scale': self.na_tauh_scale}
+        extra_iH = {'q10': self.ih_q10}
+        extra_cah = {'GHK_permeability': self.pcah_soma, 'shift': self.cah_shift, 'shifth': self.cah_shifth, 'qm':self.cah_qm, 'qh':self.cah_qh}
+        extra_car = {'GHK_permeability':self.pcar_soma, 'shift': self.car_shift, 'shifth': self.car_shifth, 'qm':self.car_qm, 'qh':self.car_qh}
+        
 
-    def forall(self):
-        return dict(Ra = self.ra, cm = self.c_m, g_pas = 1./self.rm, e_pas = self.epas_sim, vshiftm_na= self.na_shift1, vshifth_na= self.na_shift2, taum_scale_na= self.na_taum_scale, tauh_scale_na= self.na_tauh_scale, q10_iH= self.ih_q10, shift_cah= self.cah_shift, shifth_cah= self.cah_shifth, shift_car= self.car_shift, shifth_car= self.car_shifth, qm_car= self.car_qm)
+        #soma pars
+        mechsoma = [Mechanism('na', self.gna_soma, extra_na),
+                    Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
+                    Mechanism('iA', self.gka_start + self.gka_beta),
+                    Mechanism('iH', self.gih_start, extra_iH),
+                    Mechanism('car', self.pcar_soma, extra_car),
+                    Mechanism('cah', self.pcah_soma, extra_cah),
+                    Mechanism('sk', self.gsk_soma),
+                    Mechanism('bk', self.gbk_soma)]
+        self.soma_group = SectionGroup('soma_group', mechsoma)
+        
+
+        #basal dends pars
+        mechdend = [Mechanism('na', self.gna_soma, extra_na),
+                    Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
+                    Mechanism('iA', self.gka_start + self.gka_beta),
+                    Mechanism('iH', self.gih_start, extra_iH),
+                    Mechanism('car', self.pcar_soma, extra_car),
+                    Mechanism('cah', self.pcah_soma, extra_cah),
+                    Mechanism('sk', self.gsk_dend),
+                    Mechanism('bk', self.gbk_dend)]
+        self.basal_dend_group = SectionGroup('dend_group', mechdend)
+        
+
+        #axon pars
+        extra_na_axon = extra_na
+        extra_na_axon['vshiftm'] = 7
+        extra_na_axon['vshifth'] = 3
+
+        extra_cah_axon = extra_cah
+        extra_cah_axon['GHK_permeability'] = 2e-4
+
+        extra_car_axon = extra_cah
+        extra_car_axon['GHK_permeability'] = 4e-5
+
+        mechaxon = [Mechanism('na', self.gna_node, extra_na_axon),
+                    Mechanism('kslow', self.gkslow_node),
+                    Mechanism('iA', self.gka_node),
+                    Mechanism('car', 0 , extra_car_axon),
+                    Mechanism('cah', 0, extra_cah_axon),
+                    Mechanism('bk', 40.0)]
+        self.hill_group = SectionGroup('hill_group', mechaxon)
+        self.nodes_group = SectionGroup('nodes_group', mechaxon)
+        self.iseg_group = SectionGroup('iseg_group', mechaxon)
+        
+
+        mechmyelin = [Mechanism('na', self.gna_soma, extra_na),
+                      Mechanism('kslow', self.gkslow_beta),
+                      Mechanism('iA', self.gka_beta),
+                      Mechanism('car', 0 , extra_car_axon),
+                      Mechanism('cah', 0, extra_cah_axon),
+                      Mechanism('bk', 40.0)]
+        self.myelin_group = SectionGroup('myelin_group', mechmyelin)
+
 
 
     def giH_expr(self):
@@ -218,6 +302,16 @@ class AlmogKorngreenPars(object):
 if __name__ == '__main__':
     p = AlmogKorngreenPars()
     p.pars_from_file('best.params')
+
+    
+    print p.soma_group
+    print p.basal_dend_group
+    print p.iseg_group
+    print p.hill_group
+    print p.nodes_group
+    print p.myelin_group
+
+
     print 'giH:', p.giH_expr()
     print 'giA:', p.giA_expr()
     print 'gkslow:', p.gkslow_expr()
@@ -227,4 +321,5 @@ if __name__ == '__main__':
     print "attention, the ones below require extra checks\n\t (see last 'forsec ApicalDendSectionName' in model.hoc)"
     print 'pcah:', p.pcah_expr()
     print 'pcar:', p.pcar_expr()
+
 
