@@ -146,9 +146,10 @@ class AlmogKorngreenPars(object):
         self.dist_bk = p[36]		
         
         self.inhomogeneous_mechs = dict(zip(
-            ['na', 'iA','kslow', 'iH', 'sk', 'bk'],
+            ['na', 'iA','kslow', 'iH', 'sk', 'bk', 'cah', 'car'],
             [self.gna_expr(), self.giA_expr(), self.gkslow_expr(),
-             self.giH_expr(), self.gsk_expr(), self.gbk_expr()]))
+             self.giH_expr(), self.gsk_expr(), self.gbk_expr(), 
+             self.pcah_expr(), self.pcar_expr()]))
 
     def forall(self):
         return dict(Ra = self.ra, cm = self.c_m, g_pas = 1./self.rm, e_pas = self.epas_sim, vshiftm_na= self.na_shift1, vshifth_na= self.na_shift2, taum_scale_na= self.na_taum_scale, tauh_scale_na= self.na_tauh_scale, q10_iH= self.ih_q10, shift_cah= self.cah_shift, shifth_cah= self.cah_shifth, shift_car= self.car_shift, shifth_car= self.car_shifth, qm_car= self.car_qm)
