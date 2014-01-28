@@ -8,9 +8,8 @@ from java.util import ArrayList
 
 from ucl.physiol.neuroconstruct.project import ProjectManager
 from ucl.physiol.neuroconstruct.utils.equation import Variable
-from ucl.physiol.neuroconstruct.cell import VariableParameter, VariableMechanism
+from ucl.physiol.neuroconstruct.cell import VariableParameter, VariableMechanism, ChannelMechanism
 from ucl.physiol.neuroconstruct.cell import ParameterisedGroup
-from ucl.physiol.neuroconstruct.cell import Cell
 
 from korngreen_utils import AlmogKorngreenPars
 
@@ -86,16 +85,41 @@ class KorngreenCell(object):
         return pg
 
 
-    def add_inhomogeneous_mechs(self):
+    def add_inhomogeneous_mechanisms(self, mod=False):
         pg = self.create_apical_parametrized_group()
         for mech, expr in self._pars.inhomogeneous_mechs.iteritems():
             if 'ca' in mech:
-                par = 'GHK_permeability'
+                par = 'pbar' if mod else 'permeability'
             else:
-                par = 'gmax'
+                par = 'gbar' if mod else 'gmax'
+            if mod:
+                mech += '_mod'
             vp = VariableParameter(par, expr, Variable(pg.getVariable()), ArrayList())
             vm = VariableMechanism(mech, vp)
             self._cell.associateParamGroupWithVarMech(pg, vm)
+            
+    def add_mechanisms_to_group(self, group_name, list_mechs, mod=False):
+        for m in list_mechs:
+            name = m.name
+            val = m.gmax
+            if mod:
+                name += '_mod'
+                if m.name not in ['cah', 'car']:
+                    #original mod files have a 1e-4 prefactor hardcoded
+                    val = m.gmax * 1e4
+            cm = ChannelMechanism(name, val)
+            for epname, epval in m.extra_parameters.iteritems():
+                cm.setExtraParam(epname, epval)
+            
+            self._cell.associateGroupWithChanMech(group_name, cm)
+    
+    def add_homogeneous_mechanisms(self, mod=False):
+         self.add_mechanisms_to_group('soma_group', self._pars.soma_group.mechanisms, mod)
+         self.add_mechanisms_to_group('hill_group', self._pars.hill_group.mechanisms, mod)
+         self.add_mechanisms_to_group('iseg_group', self._pars.iseg_group.mechanisms, mod)
+         self.add_mechanisms_to_group('node_group', self._pars.node_group.mechanisms, mod)
+         self.add_mechanisms_to_group('myelin_group', self._pars.myelin_group.mechanisms, mod)
+         self.add_mechanisms_to_group('basal_dend_group', self._pars.basal_dend_group.mechanisms, mod)
 
 
 
@@ -109,7 +133,10 @@ if __name__ == '__main__':
     k.add_groups()
     print k.groups
 
-    k.add_inhomogeneous_mechs()
+    k.add_inhomogeneous_mechanisms(mod=True)
+    print k.parametrized_groups
+
+    k.add_homogeneous_mechanisms(mod=True)
     print k.parametrized_groups
 
     proj.add_cell(k.cell)
