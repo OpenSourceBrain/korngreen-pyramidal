@@ -23,7 +23,7 @@ UNITS {
 PARAMETER {
 	v		(mV)
 	celsius		(degC)
-	pbar	=%Max Conductance Density%	(cm/s)	: Maximum Permeability
+	pbar	= 0	(cm/s)	: Maximum Permeability
 	shift	= 2 	(mV)	: corresponds to 2mM ext Ca++
 	shifth   = 0    (mV)	: inactivation shift
 	cai	  (mM) :2.4e-4 (mM)	adjusted foreca=120 mV
