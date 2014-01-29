@@ -14,7 +14,7 @@ INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 NEURON {
 	SUFFIX %Name%
 	USEION na READ ena WRITE ina
-	RANGE m, h, gna, gbar,vshiftm,vshifth,taum_scale,tauh_scale
+	RANGE m, h, gna, gmax,vshiftm,vshifth,taum_scale,tauh_scale
 	RANGE minf, hinf, mtau, htau
 	GLOBAL a1,a2,a3,a4,v05m,km
 	GLOBAL i1,i2,i3,i4,v05h,kh
@@ -22,7 +22,7 @@ NEURON {
 }
 
 PARAMETER {
-	gbar = %Max Conductance Density%   	(pS/um2)	: 0.12 mho/cm2
+	gmax = %Max Conductance Density%   	(pS/um2)	: 0.12 mho/cm2
 	vshiftm =-5	(mV)		: activation voltage shift
 	vshifth =-10  (mV)		: inactivation voltage shift 
 	taum_scale= 1
@@ -81,7 +81,7 @@ INITIAL {
 
 BREAKPOINT {
         SOLVE states METHOD cnexp
-        gna = gbar*m*m*m*h
+        gna = gmax*m*m*m*h
 	ina = (1e-4) * gna * (v - ena)
 } 
 

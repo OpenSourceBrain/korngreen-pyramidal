@@ -9,7 +9,7 @@ INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 NEURON {
 	SUFFIX %Name%
 	USEION h READ eh WRITE ih VALENCE 1
-	RANGE gbar, h_inf, tau, ih  
+	RANGE gmax, h_inf, tau, ih  
 	GLOBAL t0,t1,t2,t3,v05, z
 	GLOBAL q10, temp, tadj, vmin,vmax
 	
@@ -30,7 +30,7 @@ PARAMETER {
 	
 	celsius		(degC)
 	eh	   (mV)     
-	gbar	= %Max Conductance Density%	(pS/um2)
+	gmax	= %Max Conductance Density%	(pS/um2)
 
 	v05 = -91       (mV)   		: V1/2 of activation	
 	z=6		(mV)	 	: slope of activation
@@ -66,7 +66,7 @@ INITIAL {
 
 BREAKPOINT { 
 	SOLVE states METHOD cnexp
-      	ih = (1e-4) * gbar * h * (v-eh)
+      	ih = (1e-4) * gmax * h * (v-eh)
 }
 
 

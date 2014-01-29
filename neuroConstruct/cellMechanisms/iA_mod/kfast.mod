@@ -4,7 +4,7 @@ TITLE K-fast channel from Korngreen and Sakmann 2000
 NEURON {
 	SUFFIX %Name%
 	USEION k READ ek WRITE ik
-        RANGE gbar,ninf,linf,taul,taun
+        RANGE gmax,ninf,linf,taul,taun
         GLOBAL tq,qq, q10,vmin, vmax,tadj,temp
 }
 
@@ -21,7 +21,7 @@ PARAMETER {
 	v (mV)
 	celsius		(degC)
 	Tscale = 10	(degC)
-	gbar=%Max Conductance Density% (pS/um2)
+	gmax=%Max Conductance Density% (pS/um2)
       vhalfn=-47   (mV)
       vhalfl=-66   (mV)
       kn=29   (mV)
@@ -60,7 +60,7 @@ INITIAL {
 
 BREAKPOINT {
 	SOLVE states METHOD cnexp
-	ik = (1e-4)*gbar*n^4*l*(v-ek)
+	ik = (1e-4)*gmax*n^4*l*(v-ek)
 }
 
 

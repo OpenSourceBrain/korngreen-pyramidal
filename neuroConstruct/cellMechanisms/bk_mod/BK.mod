@@ -22,7 +22,7 @@ NEURON {
        SUFFIX %Name%
        USEION k READ ek WRITE ik
        USEION ca READ cai
-       RANGE gbar, gk,  ik, minf, taum, hinf, tauh, zinf, tauz
+       RANGE gmax, gk,  ik, minf, taum, hinf, tauh, zinf, tauz
        GLOBAL zhalf
 }
 
@@ -67,7 +67,7 @@ PARAMETER {
 	v (mV)
 	celsius (degC)
 
-	gbar =  %Max Conductance Density% (pS/um2)
+	gmax =  %Max Conductance Density% (pS/um2)
 
 	ek (mV)
 	cai (mM)
@@ -103,7 +103,7 @@ INITIAL {
 
 BREAKPOINT {
 	SOLVE states METHOD cnexp
-      gk = gbar * m^3 * z^2 * h      
+      gk = gmax * m^3 * z^2 * h      
 	ik = (1e-4)* gk * (v - ek)
 }
 

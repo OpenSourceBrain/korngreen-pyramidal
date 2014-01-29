@@ -4,7 +4,7 @@ NEURON {
 	SUFFIX %Name%
 	USEION k READ ek WRITE ik
         USEION ca READ cai
-        RANGE  gbar,gkahp,ik, inf,tau,g
+        RANGE  gmax,gkahp,ik, inf,tau,g
         GLOBAL Cq10
 }
 
@@ -18,7 +18,7 @@ UNITS {
 }
 
 PARAMETER {
-	gbar = %Max Conductance Density%	(pS/um2)
+	gmax = %Max Conductance Density%	(pS/um2)
         n = 4
         cai = 50.e-6	(mM)
         a0 = 1.3e4	(1/ms-mM-mM-mM-mM)	:b0/(1.4e-4^4)
@@ -41,7 +41,7 @@ ASSIGNED {
 
 BREAKPOINT {
 	SOLVE state METHOD cnexp
-	g = gbar*w
+	g = gmax*w
 	ik = (1e-4)* g*(v-ek)
 }
 

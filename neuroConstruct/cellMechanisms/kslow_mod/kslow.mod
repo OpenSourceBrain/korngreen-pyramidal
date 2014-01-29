@@ -19,7 +19,7 @@ INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 NEURON {
 	SUFFIX %Name%
 	USEION k READ ek WRITE ik
-	RANGE  a, b, b1,gkslow, gbar
+	RANGE  a, b, b1,gkslow, gmax
 	RANGE  ainf, taua, binf, taub,taub1
 	GLOBAL a0, a1, a2, a3, a4, a5, a6
 	GLOBAL b0, b11, b2, b3, b4, b5
@@ -29,7 +29,7 @@ NEURON {
 }
 
 PARAMETER {
-	gbar = %Max Conductance Density%   	(pS/um2)	: 
+	gmax = %Max Conductance Density%   	(pS/um2)	: 
 	vshift = 0	(mV)		: voltage shift (affects all)
 								
 	v05a = -14.3	(mV)		: v 1/2 for act (a) 
@@ -98,7 +98,7 @@ INITIAL {
 
 BREAKPOINT {
         SOLVE states METHOD cnexp
-        gkslow = gbar*a*a*(0.5*b+0.5*b1)
+        gkslow = gmax*a*a*(0.5*b+0.5*b1)
 	  ik = (1e-4) * gkslow * (v - ek)
 } 
 
