@@ -12,6 +12,10 @@ def ineq_to_heaviside(cond, ifTrue, ifFalse):
         harg = f2 + ' - ' + f1
 
     return "(%s) * H(%s) + (%s) * H(-(%s))" % (ifTrue, harg, ifFalse, harg)
+    
+def to_condition_str(el1, op, el2):
+    assert op in ['<', '>']
+    return ' '.join((str(el1), op, str(el2)))
 
 class SectionGroup(object):
     def __init__(self, name, mechs):
@@ -263,40 +267,58 @@ class AlmogKorngreenPars(object):
                                   'gdend':self.gna_api,
                                   'dist':self.dist_na,
                                   'x':self.indepvar}
-        cond = ' '.join((self.indepvar, '<', str(self.dist_na)))
-        return ineq_to_heaviside(cond, distr, self.gna_api)
+        cond1 = to_condition_str(self.indepvar, '<', self.dist_na)
+        condexpr1 = ineq_to_heaviside(cond1, distr, self.gna_api)
+        cond2 = to_condition_str(condexpr1, '<', self.gna_api)
+        return ineq_to_heaviside(cond2, self.gna_api, condexpr1)
 
     def gsk_expr(self):
         distr = self.lin_t%{'gsoma':self.gsk_soma,
                                   'gdend':self.gsk_dend,
                                   'dist':self.dist_sk,
                                   'x':self.indepvar}
-        cond = ' '.join((self.indepvar, '<', str(self.dist_sk)))
-        return ineq_to_heaviside(cond, distr, self.gsk_dend)
+        cond = to_condition_str(self.indepvar, '<', self.dist_sk)
+        condexpr1 =  ineq_to_heaviside(cond, distr, self.gsk_dend)
+        cond2 = to_condition_str(condexpr1, '<', self.gsk_dend)
+        return ineq_to_heaviside(cond2, self.gsk_dend, condexpr1)
 
     def gbk_expr(self):
         distr = self.lin_t%{'gsoma':self.gbk_soma,
                                   'gdend':self.gbk_dend,
                                   'dist':self.dist_bk,
                                   'x':self.indepvar}
-        cond = ' '.join((self.indepvar, '<', str(self.dist_bk)))
-        return ineq_to_heaviside(cond, distr, self.gbk_dend)
+        cond1 = to_condition_str(self.indepvar, '<', self.dist_bk)
+        condexpr1 = ineq_to_heaviside(cond1, distr, self.gbk_dend)
+        cond2 = to_condition_str(condexpr1, '<', self.gbk_dend)
+        return ineq_to_heaviside(cond2, self.gbk_dend, condexpr1)
 
     def pcah_expr(self):
         distr = self.lin_t%{'gsoma':self.pcah_soma,
                                   'gdend':self.pcah_api,
                                   'dist':self.dist_cah,
                                   'x':self.indepvar}
-        cond = ' '.join((self.indepvar, '<', str(self.dist_cah)))
-        return ineq_to_heaviside(cond, distr, self.pcah_api)
+        cond = to_condition_str(self.indepvar, '<', self.dist_cah)
+        condexpr1 = ineq_to_heaviside(cond, distr, self.pcah_api)
+        cond2 = to_condition_str(self.pcah_soma, '<', self.pcah_api)
+        cond3 = to_condition_str(condexpr1, '>', self.pcah_api)
+        cond4 = to_condition_str(condexpr1, '<', self.pcah_api)
+        condexpr3 = ineq_to_heaviside(cond3, self.pcah_api, condexpr1)
+        condexpr4 = ineq_to_heaviside(cond4, self.pcah_api, condexpr1)
+        return ineq_to_heaviside(cond2, condexpr3, condexpr4)
 
     def pcar_expr(self):
         distr = self.lin_t%{'gsoma':self.pcar_soma,
                                   'gdend':self.pcar_api,
                                   'dist':self.dist_car,
                                   'x':self.indepvar}
-        cond = ' '.join((self.indepvar, '<', str(self.dist_car)))
-        return ineq_to_heaviside(cond, distr, self.pcar_api)
+        cond = to_condition_str(self.indepvar, '<', self.dist_car)
+        condexpr1 = ineq_to_heaviside(cond, distr, self.pcar_api)
+        cond2 = to_condition_str(self.pcar_soma, '<', self.pcar_api)
+        cond3 = to_condition_str(condexpr1, '>', self.pcar_api)
+        cond4 = to_condition_str(condexpr1, '<', self.pcar_api)
+        condexpr3 = ineq_to_heaviside(cond3, self.pcar_api, condexpr1)
+        condexpr4 = ineq_to_heaviside(cond4, self.pcar_api, condexpr1)
+        return ineq_to_heaviside(cond2, condexpr3, condexpr4)
     
 
 if __name__ == '__main__':
@@ -318,7 +340,6 @@ if __name__ == '__main__':
     print 'gna:', p.gna_expr()
     print 'gsk:', p.gsk_expr()
     print 'gbk:', p.gbk_expr()
-    print "attention, the ones below require extra checks\n\t (see last 'forsec ApicalDendSectionName' in model.hoc)"
     print 'pcah:', p.pcah_expr()
     print 'pcar:', p.pcar_expr()
 

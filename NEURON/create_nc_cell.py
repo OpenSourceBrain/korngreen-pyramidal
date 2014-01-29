@@ -89,9 +89,9 @@ class KorngreenCell(object):
         pg = self.create_apical_parametrized_group()
         for mech, expr in self._pars.inhomogeneous_mechs.iteritems():
             if 'ca' in mech:
-                par = 'pbar' if mod else 'permeability'
+                par = 'permeability'
             else:
-                par = 'gbar' if mod else 'gmax'
+                 par = 'gmax'
             if mod:
                 mech += '_mod'
             vp = VariableParameter(par, expr, Variable(pg.getVariable()), ArrayList())
@@ -104,9 +104,9 @@ class KorngreenCell(object):
             val = m.gmax
             if mod:
                 name += '_mod'
-                if m.name not in ['cah', 'car']:
-                    #original mod files have a 1e-4 prefactor hardcoded
-                    val = m.gmax * 1e4
+                #if m.name not in ['cah', 'car']:
+                #    #original mod files have a 1e-4 prefactor hardcoded
+                #    val = m.gmax * 1e4
             cm = ChannelMechanism(name, val)
             for epname, epval in m.extra_parameters.iteritems():
                 cm.setExtraParam(epname, epval)
