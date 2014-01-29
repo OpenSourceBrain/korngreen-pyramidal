@@ -6,7 +6,7 @@ INDEPENDENT {t FROM 0 TO 1 WITH 1 (ms)}
 NEURON {
 	SUFFIX %Name%
 	USEION ca READ cai,cao WRITE ica
-	RANGE pbar, minf, taum, hinf, tauh, shift, shifth
+	RANGE permeability, minf, taum, hinf, tauh, shift, shifth
 	GLOBAL qm, qh
 }
 
@@ -23,7 +23,7 @@ UNITS {
 PARAMETER {
 	v		(mV)
 	celsius		(degC)
-	pbar	= 0	(cm/s)	: Maximum Permeability
+	permeability	= 0	(cm/s)	: Maximum Permeability
 	shift	= 2 	(mV)	: corresponds to 2mM ext Ca++
 	shifth   = 0    (mV)	: inactivation shift
 	cai	  (mM) :2.4e-4 (mM)	adjusted foreca=120 mV
@@ -49,7 +49,7 @@ ASSIGNED {
 
 BREAKPOINT {
 	SOLVE castate METHOD cnexp
-	ica = pbar * m*m*h * ghk(v, cai, cao)
+	ica = permeability * m*m*h * ghk(v, cai, cao)
 }
 
 DERIVATIVE castate {
@@ -99,6 +99,6 @@ FUNCTION efun(z) {
 	}
 }
 FUNCTION nongat(v,cai,cao) {	: non gated current
-	nongat = pbar * ghk(v, cai, cao)
+	nongat = permeability * ghk(v, cai, cao)
 }
 UNITSON
