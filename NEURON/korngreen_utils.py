@@ -1,4 +1,4 @@
-
+# Utilities for generating homo and heterogeneuos parameters from a ga fit file (best.params originally)
 def ineq_to_heaviside(cond, ifTrue, ifFalse):
     import re
 
@@ -9,7 +9,7 @@ def ineq_to_heaviside(cond, ifTrue, ifFalse):
     if op == '>':
         harg = f1 + ' - ' + f2
     elif op == '<':
-        harg = f2 + ' - ' + f1
+        harg = f2 + ' - ' + f1  
 
     return "(%s) * H(%s) + (%s) * H(-(%s))" % (ifTrue, harg, ifFalse, harg)
     
@@ -68,25 +68,25 @@ class AlmogKorngreenPars(object):
         self.epas_sim = -31.40480
 
         #gih
-        self.gih_end = 271.90500*1e-9
+        self.gih_end = 271.90500*1e-5
         self.gih_x2 = 382.51900
         self.gih_alpha =-0.08090
-        self.gih_start = 22.51460*1e-9
+        self.gih_start = 22.51460*1e-5
         self.ih_q10 = 2
         
         #kslow
-        self.gkslow_start = 2.03452*1e-9
+        self.gkslow_start = 2.03452*1e-5
         self.gkslow_alpha =-0.00986
-        self.gkslow_beta = 127.82800*1e-9
+        self.gkslow_beta = 127.82800*1e-5
         
         #kfast
-        self.gka_start = 20.34520*1e-9
+        self.gka_start = 20.34520*1e-5
         self.gka_alpha = -0.00297
-        self.gka_beta = 320.43100*1e-9
+        self.gka_beta = 320.43100*1e-5
 
         #na
-        self.gna_soma = 128.14300*1e-9
-        self.gna_api = 2.69229*1e-9
+        self.gna_soma = 128.14300*1e-5
+        self.gna_api = 2.69229*1e-5
         self.dist_na = 687.53800
         self.na_shift1 =-5.56301
         self.na_shift2 =-4.52361
@@ -111,9 +111,9 @@ class AlmogKorngreenPars(object):
         self.car_shifth = 0.
 
         #axon parameters
-        self.gkslow_node = 1500.*1e-9
-        self.gka_node = 1000.*1e-9
-        self.gna_node = 30000.*1e-9
+        self.gkslow_node = 1500.*1e-5
+        self.gka_node = 1000.*1e-5
+        self.gna_node = 30000.*1e-5
         self.shift_na_act_axon = 7.
         self.shift_na_inact_axon = 3.
 
@@ -132,22 +132,22 @@ class AlmogKorngreenPars(object):
         self.c_m = p[2]
         self.epas_sim = p[3]
 
-        self.gih_end  = p[4]*1e-9
+        self.gih_end  = p[4]*1e-5
         self.gih_x2 = p[5]
         self.gih_alpha = p[6]
-        self.gih_start = p[7]*1e-9
+        self.gih_start = p[7]*1e-5
         self.ih_q10 = p[8]
 
-        self.gkslow_start = p[9]*1e-9
+        self.gkslow_start = p[9]*1e-5
         self.gkslow_alpha = p[10]
-        self.gkslow_beta = p[11]*1e-9
+        self.gkslow_beta = p[11]*1e-5
 
-        self.gka_start = p[12]*1e-9
+        self.gka_start = p[12]*1e-5
         self.gka_alpha = p[13]
-        self.gka_beta = p[14]*1e-9
+        self.gka_beta = p[14]*1e-5
 
-        self.gna_soma = p[15]*1e-9
-        self.gna_api = p[16]*1e-9
+        self.gna_soma = p[15]*1e-5
+        self.gna_api = p[16]*1e-5
         self.dist_na = p[17]
         self.na_shift1 = p[18]
         self.na_shift2 = p[19]
@@ -165,12 +165,12 @@ class AlmogKorngreenPars(object):
         self.car_shifth = p[29]
         self.car_qm = p[30]	
 
-        self.gsk_soma = p[31]*1e-9
-        self.gsk_dend = p[32]*1e-9
+        self.gsk_soma = p[31]*1e-5
+        self.gsk_dend = p[32]*1e-5
         self.dist_sk = p[33]
 
-        self.gbk_soma = p[34]*1e-9
-        self.gbk_dend = p[35]*1e-9
+        self.gbk_soma = p[34]*1e-5
+        self.gbk_dend = p[35]*1e-5
         self.dist_bk = p[36]		
         
         #create inhomogenous pars dict
@@ -192,8 +192,8 @@ class AlmogKorngreenPars(object):
                     Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
                     Mechanism('iA', self.gka_start + self.gka_beta),
                     Mechanism('iH', self.gih_start, extra_iH),
-                    Mechanism('car', self.pcar_soma, extra_car),
-                    Mechanism('cah', self.pcah_soma, extra_cah),
+                    Mechanism('car', 0, extra_car),
+                    Mechanism('cah', 0, extra_cah),
                     Mechanism('sk', self.gsk_soma),
                     Mechanism('bk', self.gbk_soma)]
         self.soma_group = SectionGroup('soma_group', mechsoma)
@@ -204,22 +204,22 @@ class AlmogKorngreenPars(object):
                     Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
                     Mechanism('iA', self.gka_start + self.gka_beta),
                     Mechanism('iH', self.gih_start, extra_iH),
-                    Mechanism('car', self.pcar_soma, extra_car),
-                    Mechanism('cah', self.pcah_soma, extra_cah),
+                    Mechanism('car', 0, extra_car),
+                    Mechanism('cah', 0,  extra_cah),
                     Mechanism('sk', self.gsk_dend),
                     Mechanism('bk', self.gbk_dend)]
         self.basal_dend_group = SectionGroup('dend_group', mechdend)
         
 
         #axon pars
-        extra_na_axon = extra_na
+        extra_na_axon = extra_na.copy()
         extra_na_axon['vshiftm'] = 7
         extra_na_axon['vshifth'] = 3
 
-        extra_cah_axon = extra_cah
+        extra_cah_axon = extra_cah.copy()
         extra_cah_axon['GHK_permeability'] = 2e-4
 
-        extra_car_axon = extra_cah
+        extra_car_axon = extra_car.copy()
         extra_car_axon['GHK_permeability'] = 4e-5
 
         mechaxon = [Mechanism('na', self.gna_node, extra_na_axon),
@@ -236,7 +236,7 @@ class AlmogKorngreenPars(object):
         mechmyelin = [Mechanism('na', self.gna_soma, extra_na),
                       Mechanism('kslow', self.gkslow_beta),
                       Mechanism('iA', self.gka_beta),
-                      Mechanism('car', 0 , extra_car_axon),
+                      Mechanism('car', 0, extra_car_axon),
                       Mechanism('cah', 0, extra_cah_axon),
                       Mechanism('bk', 40e-5)]
         self.myelin_group = SectionGroup('myelin_group', mechmyelin)
@@ -299,12 +299,16 @@ class AlmogKorngreenPars(object):
                                   'x':self.indepvar}
         cond = to_condition_str(self.indepvar, '<', self.dist_cah)
         condexpr1 = ineq_to_heaviside(cond, distr, self.pcah_api)
-        cond2 = to_condition_str(self.pcah_soma, '<', self.pcah_api)
-        cond3 = to_condition_str(condexpr1, '>', self.pcah_api)
-        cond4 = to_condition_str(condexpr1, '<', self.pcah_api)
-        condexpr3 = ineq_to_heaviside(cond3, self.pcah_api, condexpr1)
-        condexpr4 = ineq_to_heaviside(cond4, self.pcah_api, condexpr1)
-        return ineq_to_heaviside(cond2, condexpr3, condexpr4)
+        return condexpr1
+        #if self.pcah_soma < self.pcah_api:
+        #    cond2 = to_condition_str(condexpr1, '>', self.pcah_api)
+        #    ret = ineq_to_heaviside(cond2, self.pcah_api, condexpr1)
+        #else:
+        #    cond2 = to_condition_str(condexpr1, '<', self.pcah_api)
+        #    ret = ineq_to_heaviside(cond2, self.pcah_api, condexpr1)
+        #return ret
+            
+            
 
     def pcar_expr(self):
         distr = self.lin_t%{'gsoma':self.pcar_soma,
@@ -313,12 +317,14 @@ class AlmogKorngreenPars(object):
                                   'x':self.indepvar}
         cond = to_condition_str(self.indepvar, '<', self.dist_car)
         condexpr1 = ineq_to_heaviside(cond, distr, self.pcar_api)
-        cond2 = to_condition_str(self.pcar_soma, '<', self.pcar_api)
-        cond3 = to_condition_str(condexpr1, '>', self.pcar_api)
-        cond4 = to_condition_str(condexpr1, '<', self.pcar_api)
-        condexpr3 = ineq_to_heaviside(cond3, self.pcar_api, condexpr1)
-        condexpr4 = ineq_to_heaviside(cond4, self.pcar_api, condexpr1)
-        return ineq_to_heaviside(cond2, condexpr3, condexpr4)
+        return condexpr1
+        #if self.pcar_soma < self.pcar_api:
+        #    cond2 = to_condition_str(condexpr1, '>', self.pcar_api)
+        #    ret = ineq_to_heaviside(cond2, self.pcar_api, condexpr1)
+        #else:
+        #    cond2 = to_condition_str(condexpr1, '<', self.pcar_api)
+        #    ret = ineq_to_heaviside(cond2, self.pcar_api, condexpr1)
+        #return ret
     
 
 if __name__ == '__main__':
