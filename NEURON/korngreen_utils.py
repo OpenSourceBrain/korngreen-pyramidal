@@ -94,7 +94,7 @@ class AlmogKorngreenPars(object):
         self.na_tauh_scale = 1.
 
         #Ca
-        self.pcah_soma = 1.33e-3
+        self.pcah_soma = 1.33e-5
         self.pcah_api = self.pcah_soma
         self.dist_cah = 600.
         self.cah_qm = 2.
@@ -102,7 +102,7 @@ class AlmogKorngreenPars(object):
         self.cah_shift = 0.
         self.cah_shifth = 0.
 
-        self.pcar_soma = 0.27e-3
+        self.pcar_soma = 0.27e-5
         self.pcar_api = self.pcar_soma
         self.dist_car = 600.
         self.car_qh = 1.
@@ -152,14 +152,14 @@ class AlmogKorngreenPars(object):
         self.na_shift1 = p[18]
         self.na_shift2 = p[19]
 
-        self.pcah_soma = p[20]
-        self.pcah_api = p[21]
+        self.pcah_soma = p[20]*1e-2
+        self.pcah_api = p[21]*1e-2
         self.dist_cah = p[22]
         self.cah_shift = p[23]
         self.cah_shifth = p[24]
 
-        self.pcar_soma = p[25]
-        self.pcar_api = p[26]
+        self.pcar_soma = p[25]*1e-2
+        self.pcar_api = p[26]*1e-2
         self.dist_car = p[27]
         self.car_shift = p[28]
         self.car_shifth = p[29]
@@ -217,10 +217,10 @@ class AlmogKorngreenPars(object):
         extra_na_axon['vshifth'] = 3
 
         extra_cah_axon = extra_cah.copy()
-        extra_cah_axon['GHK_permeability'] = 2e-4
+        extra_cah_axon['GHK_permeability'] = 2e-6
 
         extra_car_axon = extra_car.copy()
-        extra_car_axon['GHK_permeability'] = 4e-5
+        extra_car_axon['GHK_permeability'] = 4e-7
 
         mechaxon = [Mechanism('na', self.gna_node, extra_na_axon),
                     Mechanism('kslow', self.gkslow_node),
