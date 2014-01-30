@@ -104,9 +104,6 @@ class KorngreenCell(object):
             val = m.gmax
             if mod:
                 name += '_mod'
-                #if m.name not in ['cah', 'car']:
-                #    #original mod files have a 1e-4 prefactor hardcoded
-                #    val = m.gmax * 1e4
             cm = ChannelMechanism(name, val)
             for epname, epval in m.extra_parameters.iteritems():
                 cm.setExtraParam(epname, epval)
