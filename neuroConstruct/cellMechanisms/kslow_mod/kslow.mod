@@ -99,7 +99,7 @@ INITIAL {
 BREAKPOINT {
         SOLVE states METHOD cnexp
         gkslow = gmax*a*a*(0.5*b+0.5*b1)
-	  ik = (1e-4) * gkslow * (v - ek)
+	  ik = gkslow * (v - ek)
 } 
 
 LOCAL aexp, bexp,b1exp, z 

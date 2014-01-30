@@ -104,7 +104,7 @@ INITIAL {
 BREAKPOINT {
 	SOLVE states METHOD cnexp
       gk = gmax * m^3 * z^2 * h      
-	ik = (1e-4)* gk * (v - ek)
+	ik = gk * (v - ek)
 }
 
 DERIVATIVE states {

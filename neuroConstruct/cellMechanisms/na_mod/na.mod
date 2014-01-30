@@ -82,7 +82,7 @@ INITIAL {
 BREAKPOINT {
         SOLVE states METHOD cnexp
         gna = gmax*m*m*m*h
-	ina = (1e-4) * gna * (v - ena)
+	ina = gna * (v - ena)
 } 
 
 

@@ -42,7 +42,7 @@ ASSIGNED {
 BREAKPOINT {
 	SOLVE state METHOD cnexp
 	g = gmax*w
-	ik = (1e-4)* g*(v-ek)
+	ik = g*(v-ek)
 }
 
 INITIAL {

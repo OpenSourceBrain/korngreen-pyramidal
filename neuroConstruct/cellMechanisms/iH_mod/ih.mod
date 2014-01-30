@@ -66,7 +66,7 @@ INITIAL {
 
 BREAKPOINT { 
 	SOLVE states METHOD cnexp
-      	ih = (1e-4) * gmax * h * (v-eh)
+      	ih = gmax * h * (v-eh)
 }
 
 

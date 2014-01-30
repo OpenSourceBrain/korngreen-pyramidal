@@ -60,7 +60,7 @@ INITIAL {
 
 BREAKPOINT {
 	SOLVE states METHOD cnexp
-	ik = (1e-4)*gmax*n^4*l*(v-ek)
+	ik = gmax*n^4*l*(v-ek)
 }
 
 
