@@ -39,6 +39,18 @@ class Mechanism(object):
         r += "\tgmax:" + str(self.gmax) + "\n"
         r += "\textra pars:" + str(self.extra_parameters) + "\n"
         return r
+
+class VariableMechanism(object):
+    def __init__(self, name, expr, extrapars={}):
+        self.name = name
+        self.expr = expr
+        self.extra_parameters = extrapars
+        
+    def __repr__(self):
+        r = "variable mechanism:" + self.name + "\n"
+        r += "\texpression:" + self.expr + "\n"
+        r += "\textra pars:" + str(self.extra_parameters) + "\n"
+        return r
         
 
 class AlmogKorngreenPars(object):
@@ -173,12 +185,6 @@ class AlmogKorngreenPars(object):
         self.gbk_dend = p[35]*1e-5
         self.dist_bk = p[36]		
         
-        #create inhomogenous pars dict
-        self.inhomogeneous_mechs = dict(zip(
-            ['na', 'iA','kslow', 'iH', 'sk', 'bk', 'cah', 'car'],
-            [self.gna_expr(), self.giA_expr(), self.gkslow_expr(),
-             self.giH_expr(), self.gsk_expr(), self.gbk_expr(), 
-             self.pcah_expr(), self.pcar_expr()]))
         
         #global pars
         extra_na = {'vshiftm': self.na_shift1, 'vshifth': self.na_shift2, 'taum_scale': self.na_taum_scale, 'tauh_scale': self.na_tauh_scale}
@@ -240,7 +246,16 @@ class AlmogKorngreenPars(object):
                       Mechanism('cah', 0, extra_cah_axon),
                       Mechanism('bk', 40e-5)]
         self.myelin_group = SectionGroup('myelin_group', mechmyelin)
-
+        
+        mechapical = [VariableMechanism('na', self.gna_expr(), extra_na),
+                      VariableMechanism('iA', self.giA_expr()),
+                      VariableMechanism('kslow', self.gkslow_expr()),
+                      VariableMechanism('iH', self.giH_expr(), extra_iH),
+                      VariableMechanism('sk', self.gsk_expr()),
+                      VariableMechanism('bk', self.gbk_expr()),
+                      VariableMechanism('cah', self.pcah_expr(), extra_cah),
+                      VariableMechanism('car', self.pcar_expr(), extra_car)]
+        self.inhomogeneous_mechs = mechapical
 
 
     def giH_expr(self):

@@ -87,15 +87,18 @@ class KorngreenCell(object):
 
     def add_inhomogeneous_mechanisms(self, mod=False):
         pg = self.create_apical_parametrized_group()
-        for mech, expr in self._pars.inhomogeneous_mechs.iteritems():
-            if 'ca' in mech:
+        for mech in self._pars.inhomogeneous_mechs:
+            if 'ca' in mech.name:
                 par = 'permeability'
             else:
                  par = 'gmax'
             if mod:
-                mech += '_mod'
-            vp = VariableParameter(par, expr, Variable(pg.getVariable()), ArrayList())
-            vm = VariableMechanism(mech, vp)
+                mech.name += '_mod'
+            vp = VariableParameter(par, mech.expr, Variable(pg.getVariable()), ArrayList())
+            vm = VariableMechanism(mech.name, vp)
+            for epname, epval in mech.extra_parameters.iteritems():
+                print 'extra par: ', epname, epval
+                vm.setExtraParam(epname, epval)
             self._cell.associateParamGroupWithVarMech(pg, vm)
             
     def add_mechanisms_to_group(self, group_name, list_mechs, mod=False):
@@ -125,7 +128,7 @@ if __name__ == '__main__':
     proj = NCProject("../neuroConstruct/KorngreenPyramidal.ncx")
 
     k = KorngreenCell("best.params")
-    k.create_from_passive(proj.get_cell('A140612_pas'), 'test')
+    k.create_from_passive(proj.get_cell('A140612_pas'), 'A140612_mod')
     #k.clear_groups()
     k.add_groups()
     print k.groups
