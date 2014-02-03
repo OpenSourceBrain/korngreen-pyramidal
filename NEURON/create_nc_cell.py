@@ -8,10 +8,9 @@ from java.util import ArrayList
 
 from ucl.physiol.neuroconstruct.project import ProjectManager
 from ucl.physiol.neuroconstruct.utils.equation import Variable
-from ucl.physiol.neuroconstruct.cell import VariableParameter, VariableMechanism, ChannelMechanism
-from ucl.physiol.neuroconstruct.cell import ParameterisedGroup
+from ucl.physiol.neuroconstruct.cell import VariableParameter, VariableMechanism, ChannelMechanism, IonProperties, ParameterisedGroup
 
-from korngreen_utils import AlmogKorngreenPars
+from korngreen_utils import AlmogKorngreenPars, Mechanism
 
 
 class NCProject(object):
@@ -61,7 +60,7 @@ class KorngreenCell(object):
         for sec in self._cell.allSections:
             if not 'all' in sec.getGroups():
                 sec.addToGroup('all')
-            for pat,gname in {'dend':'basal_dend_group', 'apic':'apical_dend_group', 'soma':'soma_group', 'iseg':'iseg_group', 'myelin':'myelin_group', 'hill':'hill_group', 'node':'node_group'}.iteritems():
+            for pat,gname in {'dend':'basal_dend_group', 'apic':'apical_dend_group', 'soma':'soma_group', 'iseg':'iseg_group', 'myelin':'myelin_group', 'hill':'hill_group', 'node':'nodes_group'}.iteritems():
                 if pat in sec.getSectionName():
                     sec.addToGroup(gname)
     
@@ -117,9 +116,19 @@ class KorngreenCell(object):
          self.add_mechanisms_to_group('soma_group', self._pars.soma_group.mechanisms, mod)
          self.add_mechanisms_to_group('hill_group', self._pars.hill_group.mechanisms, mod)
          self.add_mechanisms_to_group('iseg_group', self._pars.iseg_group.mechanisms, mod)
-         self.add_mechanisms_to_group('node_group', self._pars.node_group.mechanisms, mod)
+         self.add_mechanisms_to_group('nodes_group', self._pars.node_group.mechanisms, mod)
          self.add_mechanisms_to_group('myelin_group', self._pars.myelin_group.mechanisms, mod)
          self.add_mechanisms_to_group('basal_dend_group', self._pars.basal_dend_group.mechanisms, mod)
+         self.add_mechanisms_to_group('all', [Mechanism('cad', 0)])
+    
+    def add_ion_properties(self):
+        self._cell.associateGroupWithIonProperties('all', IonProperties('na', self._pars.Ena))
+        self._cell.associateGroupWithIonProperties('all', IonProperties('k', self._pars.Ek))
+        self._cell.associateGroupWithIonProperties('all', IonProperties('ca', self._pars.cai, self._pars.cao))
+        for g in ['apical_dend_group', 'basal_dend_group', 'soma_group']:
+            self._cell.associateGroupWithIonProperties(g, IonProperties('h', -33.0))
+
+
 
 
 
@@ -128,16 +137,13 @@ if __name__ == '__main__':
     proj = NCProject("../neuroConstruct/KorngreenPyramidal.ncx")
 
     k = KorngreenCell("best.params")
-    k.create_from_passive(proj.get_cell('A140612_pas'), 'A140612_mod')
+    #k.create_from_passive(proj.get_cell('A140612_pas'), 'A140612_nml')
+    k.create_from_passive(proj.get_cell('A140612_pas'), 'test')
     #k.clear_groups()
     k.add_groups()
-    print k.groups
-
-    k.add_inhomogeneous_mechanisms(mod=True)
-    print k.parametrized_groups
-
-    k.add_homogeneous_mechanisms(mod=True)
-    print k.parametrized_groups
+    k.add_inhomogeneous_mechanisms(mod=False)
+    k.add_homogeneous_mechanisms(mod=False)
+    k.add_ion_properties()
 
     proj.add_cell(k.cell)
 

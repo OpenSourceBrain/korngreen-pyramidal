@@ -80,25 +80,26 @@ class AlmogKorngreenPars(object):
         self.epas_sim = -31.40480
 
         #gih
-        self.gih_end = 271.90500*1e-5
+        self.gih_end = 271.90500*1e-9
         self.gih_x2 = 382.51900
         self.gih_alpha =-0.08090
-        self.gih_start = 22.51460*1e-5
-        self.ih_q10 = 2
+        self.gih_start = 22.51460*1e-9
+        self.ih_q10 = 2.0
+        self.Eh = -33.0 # from .mod files
         
         #kslow
-        self.gkslow_start = 2.03452*1e-5
+        self.gkslow_start = 2.03452*1e-9
         self.gkslow_alpha =-0.00986
-        self.gkslow_beta = 127.82800*1e-5
+        self.gkslow_beta = 127.82800*1e-9
         
         #kfast
-        self.gka_start = 20.34520*1e-5
+        self.gka_start = 20.34520*1e-9
         self.gka_alpha = -0.00297
-        self.gka_beta = 320.43100*1e-5
+        self.gka_beta = 320.43100*1e-9
 
         #na
-        self.gna_soma = 128.14300*1e-5
-        self.gna_api = 2.69229*1e-5
+        self.gna_soma = 128.14300*1e-9
+        self.gna_api = 2.69229*1e-9
         self.dist_na = 687.53800
         self.na_shift1 =-5.56301
         self.na_shift2 =-4.52361
@@ -113,6 +114,8 @@ class AlmogKorngreenPars(object):
         self.cah_qh = 2.
         self.cah_shift = 0.
         self.cah_shifth = 0.
+        self.cai = 5e-23
+        self.cao = 2e-18 #eca ~140mV
 
         self.pcar_soma = 0.27e-5
         self.pcar_api = self.pcar_soma
@@ -123,9 +126,9 @@ class AlmogKorngreenPars(object):
         self.car_shifth = 0.
 
         #axon parameters
-        self.gkslow_node = 1500.*1e-5
-        self.gka_node = 1000.*1e-5
-        self.gna_node = 30000.*1e-5
+        self.gkslow_node = 1500.*1e-9
+        self.gka_node = 1000.*1e-9
+        self.gna_node = 30000.*1e-9
         self.shift_na_act_axon = 7.
         self.shift_na_inact_axon = 3.
 
@@ -144,22 +147,22 @@ class AlmogKorngreenPars(object):
         self.c_m = p[2]
         self.epas_sim = p[3]
 
-        self.gih_end  = p[4]*1e-5
+        self.gih_end  = p[4]*1e-9
         self.gih_x2 = p[5]
         self.gih_alpha = p[6]
-        self.gih_start = p[7]*1e-5
+        self.gih_start = p[7]*1e-9
         self.ih_q10 = p[8]
 
-        self.gkslow_start = p[9]*1e-5
+        self.gkslow_start = p[9]*1e-9
         self.gkslow_alpha = p[10]
-        self.gkslow_beta = p[11]*1e-5
+        self.gkslow_beta = p[11]*1e-9
 
-        self.gka_start = p[12]*1e-5
+        self.gka_start = p[12]*1e-9
         self.gka_alpha = p[13]
-        self.gka_beta = p[14]*1e-5
+        self.gka_beta = p[14]*1e-9
 
-        self.gna_soma = p[15]*1e-5
-        self.gna_api = p[16]*1e-5
+        self.gna_soma = p[15]*1e-9
+        self.gna_api = p[16]*1e-9
         self.dist_na = p[17]
         self.na_shift1 = p[18]
         self.na_shift2 = p[19]
@@ -177,12 +180,12 @@ class AlmogKorngreenPars(object):
         self.car_shifth = p[29]
         self.car_qm = p[30]	
 
-        self.gsk_soma = p[31]*1e-5
-        self.gsk_dend = p[32]*1e-5
+        self.gsk_soma = p[31]*1e-9
+        self.gsk_dend = p[32]*1e-9
         self.dist_sk = p[33]
 
-        self.gbk_soma = p[34]*1e-5
-        self.gbk_dend = p[35]*1e-5
+        self.gbk_soma = p[34]*1e-9
+        self.gbk_dend = p[35]*1e-9
         self.dist_bk = p[36]		
         
         
@@ -198,8 +201,8 @@ class AlmogKorngreenPars(object):
                     Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
                     Mechanism('iA', self.gka_start + self.gka_beta),
                     Mechanism('iH', self.gih_start, extra_iH),
-                    Mechanism('car', 0, extra_car),
-                    Mechanism('cah', 0, extra_cah),
+                    Mechanism('car', 0., extra_car),
+                    Mechanism('cah', 0., extra_cah),
                     Mechanism('sk', self.gsk_soma),
                     Mechanism('bk', self.gbk_soma)]
         self.soma_group = SectionGroup('soma_group', mechsoma)
@@ -210,8 +213,8 @@ class AlmogKorngreenPars(object):
                     Mechanism('kslow', self.gkslow_start + self.gkslow_beta),
                     Mechanism('iA', self.gka_start + self.gka_beta),
                     Mechanism('iH', self.gih_start, extra_iH),
-                    Mechanism('car', 0, extra_car),
-                    Mechanism('cah', 0,  extra_cah),
+                    Mechanism('car', 0., extra_car),
+                    Mechanism('cah', 0.,  extra_cah),
                     Mechanism('sk', self.gsk_dend),
                     Mechanism('bk', self.gbk_dend)]
         self.basal_dend_group = SectionGroup('dend_group', mechdend)
@@ -219,8 +222,8 @@ class AlmogKorngreenPars(object):
 
         #axon pars
         extra_na_axon = extra_na.copy()
-        extra_na_axon['vshiftm'] = 7
-        extra_na_axon['vshifth'] = 3
+        extra_na_axon['vshiftm'] = 7.
+        extra_na_axon['vshifth'] = 3.
 
         extra_cah_axon = extra_cah.copy()
         extra_cah_axon['GHK_permeability'] = 2e-6
@@ -231,9 +234,10 @@ class AlmogKorngreenPars(object):
         mechaxon = [Mechanism('na', self.gna_node, extra_na_axon),
                     Mechanism('kslow', self.gkslow_node),
                     Mechanism('iA', self.gka_node),
-                    Mechanism('car', 0 , extra_car_axon),
-                    Mechanism('cah', 0, extra_cah_axon),
-                    Mechanism('bk', 40e-5)]
+                    Mechanism('car', 0. , extra_car_axon),
+                    Mechanism('cah', 0., extra_cah_axon),
+                    Mechanism('cad', 0.),
+                    Mechanism('bk', 40*1e-9)]
         self.hill_group = SectionGroup('hill_group', mechaxon)
         self.node_group = SectionGroup('node_group', mechaxon)
         self.iseg_group = SectionGroup('iseg_group', mechaxon)
@@ -242,9 +246,10 @@ class AlmogKorngreenPars(object):
         mechmyelin = [Mechanism('na', self.gna_soma, extra_na),
                       Mechanism('kslow', self.gkslow_beta),
                       Mechanism('iA', self.gka_beta),
-                      Mechanism('car', 0, extra_car_axon),
-                      Mechanism('cah', 0, extra_cah_axon),
-                      Mechanism('bk', 40e-5)]
+                      Mechanism('car', 0., extra_car_axon),
+                      Mechanism('cah', 0., extra_cah_axon),
+                      Mechanism('cad', 0.),
+                      Mechanism('bk', 40*1e-9)]
         self.myelin_group = SectionGroup('myelin_group', mechmyelin)
         
         mechapical = [VariableMechanism('na', self.gna_expr(), extra_na),
