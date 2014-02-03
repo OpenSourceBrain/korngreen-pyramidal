@@ -9,7 +9,11 @@ neuroConstruct/generatedNeuroML
 neuroConstruct/generatedNEURON
 neuroConstruct/generatedGENESIS
 neuroConstruct/simulations
+neuroConstruct/dataSets
 neuroConstruct/generatedNeuroML*
 *.*~
 neuroConstruct/backup*
 *#*#
+.ropeproject
+*.pyc
+*py.class
