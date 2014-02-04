@@ -110,7 +110,7 @@ class AlmogKorngreenPars(object):
         self.pcah_soma = 1.33e-5
         self.pcah_api = self.pcah_soma
         self.dist_cah = 600.
-        self.cah_qm = 2.
+        self.cah_qm = 4.#changed in accordance with modfiles
         self.cah_qh = 2.
         self.cah_shift = 0.
         self.cah_shifth = 0.
