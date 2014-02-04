@@ -22,7 +22,7 @@
         </annotation>
 
         <gate id="m" type="gateHHtauInf" instances="2">
-            <q10Settings type="q10ExpTemp" q10Factor="1" experimentalTemp="24 degC"/>
+            <q10Settings type="q10ExpTemp" q10Factor="1.15288" experimentalTemp="24 degC"/>
             <timeCourse type="car_m_tau_tau"/>
             <steadyState type="car_m_inf_inf"/>
         </gate>
@@ -38,16 +38,13 @@
     <ComponentType name="car_m_tau_tau" extends="baseVoltageDepTime">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".4e-4">
+        <Constant name="shift" dimension="none" value="-9.67845">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
+        <Constant name="shifth" dimension="none" value="-2.1308">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shifth" dimension="none" value="0">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1">
+        <Constant name="qm" dimension="none" value="1.15288">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qh" dimension="none" value="1">
@@ -64,16 +61,13 @@
     <ComponentType name="car_m_inf_inf" extends="baseVoltageDepVariable">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".4e-4">
+        <Constant name="shift" dimension="none" value="-9.67845">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
+        <Constant name="shifth" dimension="none" value="-2.1308">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shifth" dimension="none" value="0">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1">
+        <Constant name="qm" dimension="none" value="1.15288">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qh" dimension="none" value="1">
@@ -90,16 +84,13 @@
     <ComponentType name="car_h_tau_tau" extends="baseVoltageDepTime">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".4e-4">
+        <Constant name="shift" dimension="none" value="-9.67845">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
+        <Constant name="shifth" dimension="none" value="-2.1308">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shifth" dimension="none" value="0">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1">
+        <Constant name="qm" dimension="none" value="1.15288">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qh" dimension="none" value="1">
@@ -116,16 +107,13 @@
     <ComponentType name="car_h_inf_inf" extends="baseVoltageDepVariable">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".4e-4">
+        <Constant name="shift" dimension="none" value="-9.67845">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
+        <Constant name="shifth" dimension="none" value="-2.1308">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shifth" dimension="none" value="0">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1">
+        <Constant name="qm" dimension="none" value="1.15288">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qh" dimension="none" value="1">
