@@ -87,9 +87,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
     </void>
-    <void method="add">
-     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
-    </void>
    </void>
    <void method="get">
     <string>Cell Type</string>
@@ -98,9 +95,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <string>TestCell_mod</string>
-    </void>
-    <void method="add">
-     <string>TestCell_NML</string>
     </void>
     <void method="add">
      <string>test_ca</string>
@@ -128,9 +122,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <int>9</int>
-    </void>
-    <void method="add">
-     <int>8</int>
     </void>
     <void method="add">
      <int>7</int>
@@ -166,14 +157,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <int>153</int>
       <int>48</int>
       <int>157</int>
-      <int>255</int>
-     </object>
-    </void>
-    <void method="add">
-     <object class="java.awt.Color">
-      <int>0</int>
-      <int>204</int>
-      <int>0</int>
       <int>255</int>
      </object>
     </void>
@@ -252,9 +235,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <string>Regions_1</string>
     </void>
-    <void method="add">
-     <string>Regions_1</string>
-    </void>
    </void>
    <void method="get">
     <string>Cell Group Name</string>
@@ -263,9 +243,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <string>TestCell_mod</string>
-    </void>
-    <void method="add">
-     <string>TestCell_NML</string>
     </void>
     <void method="add">
      <string>test_ca</string>
@@ -396,34 +373,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="plotReference">
       <string>TestCell_mod_v</string>
-     </void>
-     <void property="segmentId">
-      <string>0</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
-     <void property="cellGroup">
-      <string>TestCell_NML</string>
-     </void>
-     <void property="cellNumber">
-      <string>*</string>
-     </void>
-     <void property="graphWindow">
-      <string>TestCell_NML_v</string>
-     </void>
-     <void property="maxValue">
-      <float>50.0</float>
-     </void>
-     <void property="minValue">
-      <float>-90.0</float>
-     </void>
-     <void property="plotAndOrSave">
-      <string>Plot and save</string>
-     </void>
-     <void property="plotReference">
-      <string>TestCell_NML_v</string>
      </void>
      <void property="segmentId">
       <string>0</string>
@@ -849,9 +798,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <int>255</int>
    </object>
   </void>
-  <void property="displayOption">
-   <string>Soma solid, neurite lines</string>
-  </void>
   <void property="minRadius">
    <float>1.5</float>
   </void>
@@ -889,7 +835,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_145</string>
+   <string>Sim_157</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -939,16 +885,11 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
      <void property="amp">
       <void property="fixedNum">
-       <float>4000.0</float>
+       <float>0.2</float>
       </void>
      </void>
      <void property="cellGroup">
       <string>TestCell_mod</string>
-     </void>
-     <void property="del">
-      <void property="fixedNum">
-       <float>500.0</float>
-      </void>
      </void>
      <void id="NumberGenerator1" property="dur">
       <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
@@ -957,9 +898,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
         <object idref="NumberGenerator1"/>
         <int>11</int>
        </void>
-      </void>
-      <void property="fixedNum">
-       <float>500.0</float>
       </void>
      </void>
      <void property="reference">
@@ -1106,7 +1044,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       </void>
      </void>
      <void property="simDuration">
-      <float>2000.0</float>
+      <float>200.0</float>
      </void>
     </object>
    </void>
