@@ -35,9 +35,10 @@
     </meta:publication>
 
     <parameters>
-      <parameter name="pbar" value=".2e-3"/> 
-      <parameter name="shift" value="2"/> 
-      <parameter name="shifth" value="0"/> 
+      <!-- The permeability should be set upon insertion of this mechanism into a cell -->
+      <!-- <parameter name="pbar" value=".2e-3"/>  -->
+      <parameter name="shift" value="-4.49601"/> 
+      <parameter name="shifth" value="-7.11157"/> 
       <parameter name="qm" value="4"/> 
       <parameter name="qh" value="2"/> 
     </parameters>
@@ -45,6 +46,7 @@
     <current_voltage_relation cond_law="ohmic" ion="ca" charge="2" default_gmax="0" default_erev="120"> 
 
       <!-- TODO: can't use parameters here... -->
+      <!-- should be qm, qh above -->
       <q10_settings q10_factor="4" gate="m" experimental_temp="24"/>
       <q10_settings q10_factor="2" gate="h" experimental_temp="24"/>
 

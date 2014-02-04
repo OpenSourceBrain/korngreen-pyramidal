@@ -35,10 +35,8 @@
     </meta:publication>
 
     <parameters>
-      <!-- The permeability pertains to the density, not to the channel -->
+      <!-- The permeability should be set upon insertion of this mechanism into a cell -->
       <!-- <parameter name="pbar" value=".4e-4"/>  -->
-
-      <!-- values are defined here due to name changes upon conversion to NeuroML -->
       <parameter name="shift" value="-9.67845"/> 
       <parameter name="shifth" value="-2.1308"/> 
       <parameter name="qm" value="1.15288"/> 

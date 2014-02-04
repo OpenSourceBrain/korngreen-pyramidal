@@ -38,13 +38,10 @@
     <ComponentType name="cah_m_tau_tau" extends="baseVoltageDepTime">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".2e-3">
+        <Constant name="shift" dimension="none" value="-4.49601">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="0">
+        <Constant name="shifth" dimension="none" value="-7.11157">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qm" dimension="none" value="4">
@@ -64,13 +61,10 @@
     <ComponentType name="cah_m_inf_inf" extends="baseVoltageDepVariable">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".2e-3">
+        <Constant name="shift" dimension="none" value="-4.49601">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="0">
+        <Constant name="shifth" dimension="none" value="-7.11157">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qm" dimension="none" value="4">
@@ -90,13 +84,10 @@
     <ComponentType name="cah_h_tau_tau" extends="baseVoltageDepTime">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".2e-3">
+        <Constant name="shift" dimension="none" value="-4.49601">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="0">
+        <Constant name="shifth" dimension="none" value="-7.11157">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qm" dimension="none" value="4">
@@ -116,13 +107,10 @@
     <ComponentType name="cah_h_inf_inf" extends="baseVoltageDepVariable">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="pbar" dimension="none" value=".2e-3">
+        <Constant name="shift" dimension="none" value="-4.49601">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
-        <Constant name="shift" dimension="none" value="2">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="0">
+        <Constant name="shifth" dimension="none" value="-7.11157">
             <!--Note: this parameter should instead be defined only once within the ionChannel!-->
         </Constant>
         <Constant name="qm" dimension="none" value="4">
