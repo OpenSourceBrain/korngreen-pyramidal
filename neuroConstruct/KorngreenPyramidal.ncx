@@ -788,14 +788,11 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <void property="minValue">
       <float>-90.0</float>
      </void>
-     <void property="plotAndOrSave">
-      <string>Plot and save</string>
-     </void>
      <void property="plotReference">
       <string>bac6_v_apic41(0.3)</string>
      </void>
      <void property="segmentId">
-      <string>2685</string>
+      <string>2674</string>
      </void>
     </object>
    </void>
@@ -845,7 +842,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>bac6_v_apic41(0.625)</string>
      </void>
      <void property="segmentId">
-      <string>2685</string>
+      <string>2720</string>
      </void>
     </object>
    </void>
@@ -991,7 +988,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_164</string>
+   <string>Sim_166</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -1425,7 +1422,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>FullCell_mod</string>
+       <string>FullCell_nml</string>
       </void>
      </void>
      <void property="description">
@@ -1433,11 +1430,45 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="inputs">
       <void method="add">
-       <string>bac6_IClamp_Soma_mod</string>
+       <string>bac6_IClamp_Soma_nml</string>
       </void>
      </void>
      <void property="name">
       <string>bac6</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>bac6_v_apic41(0.3)</string>
+      </void>
+      <void method="add">
+       <string>bac6_v_apic41(0.625)</string>
+      </void>
+      <void method="add">
+       <string>bac6_v_soma(0.5)</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>500.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>FullCell_mod</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>Replicating bac6.ses from modelDB, with .mod mechanisms.</string>
+     </void>
+     <void property="inputs">
+      <void method="add">
+       <string>bac6_IClamp_Soma_mod</string>
+      </void>
+     </void>
+     <void property="name">
+      <string>bac6_mod</string>
      </void>
      <void property="plots">
       <void method="add">
