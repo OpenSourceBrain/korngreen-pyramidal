@@ -870,7 +870,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>bac6_v_apic41(0.625)_mod</string>
      </void>
      <void property="segmentId">
-      <string>2685</string>
+      <string>2720</string>
      </void>
     </object>
    </void>
@@ -895,7 +895,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>bac6_v_apic41(0.3)_mod</string>
      </void>
      <void property="segmentId">
-      <string>2685</string>
+      <string>2674</string>
      </void>
     </object>
    </void>
@@ -1427,9 +1427,6 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <void method="add">
        <string>FullCell_mod</string>
       </void>
-      <void method="add">
-       <string>FullCell_nml</string>
-      </void>
      </void>
      <void property="description">
       <string>Replicating bac6.ses from modelDB</string>
@@ -1438,28 +1435,16 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <void method="add">
        <string>bac6_IClamp_Soma_mod</string>
       </void>
-      <void method="add">
-       <string>bac6_IClamp_Soma_nml</string>
-      </void>
      </void>
      <void property="name">
       <string>bac6</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>bac6_v_apic41(0.3)</string>
-      </void>
-      <void method="add">
        <string>bac6_v_apic41(0.3)_mod</string>
       </void>
       <void method="add">
-       <string>bac6_v_apic41(0.625)</string>
-      </void>
-      <void method="add">
        <string>bac6_v_apic41(0.625)_mod</string>
-      </void>
-      <void method="add">
-       <string>bac6_v_soma(0.5)</string>
       </void>
       <void method="add">
        <string>bac6_v_soma(0.5)_mod</string>
