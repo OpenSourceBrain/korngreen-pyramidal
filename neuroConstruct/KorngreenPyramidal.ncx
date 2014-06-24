@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_45" class="java.beans.XMLDecoder">
+<java version="1.7.0_55" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -14,7 +14,7 @@ part of NeuroML or any standardised XML specification. -->
 Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances and Its Application to Dendritic Excitation in Layer 5 Pyramidal Neurons J Neurosci 34(1):182-196</string>
   </void>
   <void property="projectFileVersion">
-   <string>neuroConstruct v1.7.0</string>
+   <string>neuroConstruct v1.7.1</string>
   </void>
   <void property="projectName">
    <string>KorngreenPyramidal</string>
@@ -788,6 +788,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <void property="minValue">
       <float>-90.0</float>
      </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
      <void property="plotReference">
       <string>bac6_v_apic41(0.3)</string>
      </void>
@@ -813,6 +816,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <void property="minValue">
       <float>-90.0</float>
      </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
      <void property="plotReference">
       <string>bac6_v_soma(0.5)</string>
      </void>
@@ -837,6 +843,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="minValue">
       <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
      </void>
      <void property="plotReference">
       <string>bac6_v_apic41(0.625)</string>
