@@ -1,3 +1,6 @@
+/NEURON/params.py
+/NEURON/pp.py
+/NEURON/OSB_test.hoc
 /export_nml_level2.xml
 /test.nml
 x86_64
