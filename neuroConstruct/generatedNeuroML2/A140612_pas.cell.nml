@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta1.xsd" id="A140612_pas">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="A140612_pas">
 
     <include href="pas.channel.nml"/>
 
@@ -21261,7 +21261,11 @@
                 <distal x="-205.152" y="1109.24" z="-81.4496" diameter="0.62"/>
             </segment>
 
-            <segmentGroup id="a_soma">
+            <segmentGroup id="a_soma" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="0"/>
             
                 <member segment="2"/>
@@ -21303,7 +21307,17 @@
                 <member segment="20"/>
             </segmentGroup>
 
-            <segmentGroup id="hill">
+            <segmentGroup id="hill" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="4205"/>
             
                 <member segment="4206"/>
@@ -21317,7 +21331,11 @@
                 <member segment="4210"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_0">
+            <segmentGroup id="apic_0" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1432"/>
             
                 <member segment="1433"/>
@@ -21331,7 +21349,11 @@
                 <member segment="1437"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_41">
+            <segmentGroup id="dend_41" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="927"/>
             
                 <member segment="928"/>
@@ -21345,7 +21367,17 @@
                 <member segment="932"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_30">
+            <segmentGroup id="dend_30" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="676"/>
             
                 <member segment="677"/>
@@ -21365,7 +21397,11 @@
                 <member segment="684"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_23">
+            <segmentGroup id="dend_23" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="555"/>
             
                 <member segment="556"/>
@@ -21381,7 +21417,11 @@
                 <member segment="561"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_11">
+            <segmentGroup id="dend_11" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="238"/>
             
                 <member segment="239"/>
@@ -21397,7 +21437,11 @@
                 <member segment="244"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_8">
+            <segmentGroup id="dend_8" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="155"/>
             
                 <member segment="156"/>
@@ -21411,7 +21455,17 @@
                 <member segment="160"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_7">
+            <segmentGroup id="dend_7" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="136"/>
             
                 <member segment="137"/>
@@ -21451,7 +21505,11 @@
                 <member segment="154"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_6">
+            <segmentGroup id="dend_6" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="130"/>
             
                 <member segment="131"/>
@@ -21465,7 +21523,11 @@
                 <member segment="135"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_0">
+            <segmentGroup id="dend_0" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="21"/>
             
                 <member segment="22"/>
@@ -21479,7 +21541,17 @@
                 <member segment="26"/>
             </segmentGroup>
 
-            <segmentGroup id="iseg">
+            <segmentGroup id="iseg" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="4199"/>
             
                 <member segment="4200"/>
@@ -21493,7 +21565,11 @@
                 <member segment="4204"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_76">
+            <segmentGroup id="apic_76" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3866"/>
             
                 <member segment="3867"/>
@@ -21521,7 +21597,17 @@
                 <member segment="3878"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_1">
+            <segmentGroup id="apic_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="1438"/>
             
                 <member segment="1439"/>
@@ -21543,7 +21629,17 @@
                 <member segment="1447"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_60">
+            <segmentGroup id="dend_60" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 13-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="13"/>
+                </annotation>
+            
                 <member segment="1361"/>
             
                 <member segment="1362"/>
@@ -21687,7 +21783,11 @@
                 <member segment="1431"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_42">
+            <segmentGroup id="dend_42" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="933"/>
             
                 <member segment="934"/>
@@ -21697,7 +21797,11 @@
                 <member segment="936"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_35">
+            <segmentGroup id="dend_35" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="799"/>
             
                 <member segment="800"/>
@@ -21707,7 +21811,17 @@
                 <member segment="802"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_31">
+            <segmentGroup id="dend_31" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="685"/>
             
                 <member segment="686"/>
@@ -21755,7 +21869,11 @@
                 <member segment="707"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_29">
+            <segmentGroup id="dend_29" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="669"/>
             
                 <member segment="670"/>
@@ -21771,7 +21889,17 @@
                 <member segment="675"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_24">
+            <segmentGroup id="dend_24" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="562"/>
             
                 <member segment="563"/>
@@ -21815,7 +21943,17 @@
                 <member segment="582"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_18">
+            <segmentGroup id="dend_18" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="421"/>
             
                 <member segment="422"/>
@@ -21849,7 +21987,17 @@
                 <member segment="436"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_15">
+            <segmentGroup id="dend_15" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="325"/>
             
                 <member segment="326"/>
@@ -21909,7 +22057,17 @@
                 <member segment="353"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_12">
+            <segmentGroup id="dend_12" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="245"/>
             
                 <member segment="246"/>
@@ -21953,7 +22111,17 @@
                 <member segment="265"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_10">
+            <segmentGroup id="dend_10" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 13-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="13"/>
+                </annotation>
+            
                 <member segment="166"/>
             
                 <member segment="167"/>
@@ -22099,7 +22267,11 @@
                 <member segment="237"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_9">
+            <segmentGroup id="dend_9" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="161"/>
             
                 <member segment="162"/>
@@ -22111,7 +22283,11 @@
                 <member segment="165"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_5">
+            <segmentGroup id="dend_5" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="125"/>
             
                 <member segment="126"/>
@@ -22123,7 +22299,17 @@
                 <member segment="129"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_1">
+            <segmentGroup id="dend_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="27"/>
             
                 <member segment="28"/>
@@ -22183,13 +22369,21 @@
                 <member segment="55"/>
             </segmentGroup>
 
-            <segmentGroup id="node_0">
+            <segmentGroup id="node_0" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="4217"/>
             
                 <member segment="4218"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_80">
+            <segmentGroup id="apic_80" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="4019"/>
             
                 <member segment="4020"/>
@@ -22207,7 +22401,17 @@
                 <member segment="4026"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_77">
+            <segmentGroup id="apic_77" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="3879"/>
             
                 <member segment="3880"/>
@@ -22271,7 +22475,17 @@
                 <member segment="3909"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_73">
+            <segmentGroup id="apic_73" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="3807"/>
             
                 <member segment="3808"/>
@@ -22307,7 +22521,11 @@
                 <member segment="3823"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_2">
+            <segmentGroup id="apic_2" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1448"/>
             
                 <member segment="1449"/>
@@ -22315,7 +22533,11 @@
                 <member segment="1450"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_50">
+            <segmentGroup id="dend_50" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1122"/>
             
                 <member segment="1123"/>
@@ -22337,7 +22559,11 @@
                 <member segment="1131"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_43">
+            <segmentGroup id="dend_43" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="937"/>
             
                 <member segment="938"/>
@@ -22347,7 +22573,17 @@
                 <member segment="940"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_37">
+            <segmentGroup id="dend_37" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="807"/>
             
                 <member segment="808"/>
@@ -22405,7 +22641,11 @@
                 <member segment="834"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_36">
+            <segmentGroup id="dend_36" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="803"/>
             
                 <member segment="804"/>
@@ -22415,7 +22655,17 @@
                 <member segment="806"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_34">
+            <segmentGroup id="dend_34" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="755"/>
             
                 <member segment="756"/>
@@ -22505,7 +22755,17 @@
                 <member segment="798"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_33">
+            <segmentGroup id="dend_33" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="733"/>
             
                 <member segment="734"/>
@@ -22551,7 +22811,17 @@
                 <member segment="754"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_32">
+            <segmentGroup id="dend_32" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="708"/>
             
                 <member segment="709"/>
@@ -22603,7 +22873,11 @@
                 <member segment="732"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_26">
+            <segmentGroup id="dend_26" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="605"/>
             
                 <member segment="606"/>
@@ -22615,7 +22889,17 @@
                 <member segment="609"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_25">
+            <segmentGroup id="dend_25" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="583"/>
             
                 <member segment="584"/>
@@ -22661,7 +22945,17 @@
                 <member segment="604"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_20">
+            <segmentGroup id="dend_20" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="467"/>
             
                 <member segment="468"/>
@@ -22711,7 +23005,17 @@
                 <member segment="490"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_19">
+            <segmentGroup id="dend_19" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="437"/>
             
                 <member segment="438"/>
@@ -22773,7 +23077,17 @@
                 <member segment="466"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_17">
+            <segmentGroup id="dend_17" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="388"/>
             
                 <member segment="389"/>
@@ -22841,7 +23155,17 @@
                 <member segment="420"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_16">
+            <segmentGroup id="dend_16" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="354"/>
             
                 <member segment="355"/>
@@ -22911,7 +23235,17 @@
                 <member segment="387"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_14">
+            <segmentGroup id="dend_14" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="290"/>
             
                 <member segment="291"/>
@@ -22983,7 +23317,17 @@
                 <member segment="324"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_13">
+            <segmentGroup id="dend_13" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="266"/>
             
                 <member segment="267"/>
@@ -23033,7 +23377,17 @@
                 <member segment="289"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_4">
+            <segmentGroup id="dend_4" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="98"/>
             
                 <member segment="99"/>
@@ -23089,7 +23443,17 @@
                 <member segment="124"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_3">
+            <segmentGroup id="dend_3" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="70"/>
             
                 <member segment="71"/>
@@ -23147,7 +23511,17 @@
                 <member segment="97"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_2">
+            <segmentGroup id="dend_2" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="56"/>
             
                 <member segment="57"/>
@@ -23177,7 +23551,17 @@
                 <member segment="69"/>
             </segmentGroup>
 
-            <segmentGroup id="myelin_0">
+            <segmentGroup id="myelin_0" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="4211"/>
             
                 <member segment="4212"/>
@@ -23185,7 +23569,17 @@
                 <member segment="4213"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_82">
+            <segmentGroup id="apic_82" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="4098"/>
             
                 <member segment="4099"/>
@@ -23245,7 +23639,17 @@
                 <member segment="4126"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_81">
+            <segmentGroup id="apic_81" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 9-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="9"/>
+                </annotation>
+            
                 <member segment="4027"/>
             
                 <member segment="4028"/>
@@ -23389,7 +23793,17 @@
                 <member segment="4097"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_79">
+            <segmentGroup id="apic_79" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="3966"/>
             
                 <member segment="3967"/>
@@ -23497,7 +23911,17 @@
                 <member segment="4018"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_78">
+            <segmentGroup id="apic_78" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="3910"/>
             
                 <member segment="3911"/>
@@ -23611,7 +24035,11 @@
                 <member segment="3965"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_75">
+            <segmentGroup id="apic_75" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3856"/>
             
                 <member segment="3857"/>
@@ -23633,7 +24061,17 @@
                 <member segment="3865"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_74">
+            <segmentGroup id="apic_74" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="3824"/>
             
                 <member segment="3825"/>
@@ -23699,7 +24137,11 @@
                 <member segment="3855"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_72">
+            <segmentGroup id="apic_72" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3791"/>
             
                 <member segment="3792"/>
@@ -23733,7 +24175,11 @@
                 <member segment="3806"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_3">
+            <segmentGroup id="apic_3" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1451"/>
             
                 <member segment="1452"/>
@@ -23747,7 +24193,11 @@
                 <member segment="1456"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_56">
+            <segmentGroup id="dend_56" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1264"/>
             
                 <member segment="1265"/>
@@ -23757,7 +24207,11 @@
                 <member segment="1267"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_51">
+            <segmentGroup id="dend_51" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1132"/>
             
                 <member segment="1133"/>
@@ -23765,7 +24219,17 @@
                 <member segment="1134"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_47">
+            <segmentGroup id="dend_47" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="1026"/>
             
                 <member segment="1027"/>
@@ -23793,7 +24257,17 @@
                 <member segment="1038"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_44">
+            <segmentGroup id="dend_44" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="941"/>
             
                 <member segment="942"/>
@@ -23821,7 +24295,17 @@
                 <member segment="953"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_40">
+            <segmentGroup id="dend_40" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="894"/>
             
                 <member segment="895"/>
@@ -23889,7 +24373,17 @@
                 <member segment="926"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_39">
+            <segmentGroup id="dend_39" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="872"/>
             
                 <member segment="873"/>
@@ -23935,7 +24429,17 @@
                 <member segment="893"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_38">
+            <segmentGroup id="dend_38" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="835"/>
             
                 <member segment="836"/>
@@ -24011,7 +24515,17 @@
                 <member segment="871"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_28">
+            <segmentGroup id="dend_28" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="646"/>
             
                 <member segment="647"/>
@@ -24059,7 +24573,17 @@
                 <member segment="668"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_27">
+            <segmentGroup id="dend_27" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="610"/>
             
                 <member segment="611"/>
@@ -24133,7 +24657,17 @@
                 <member segment="645"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_22">
+            <segmentGroup id="dend_22" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="538"/>
             
                 <member segment="539"/>
@@ -24169,7 +24703,17 @@
                 <member segment="554"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_21">
+            <segmentGroup id="dend_21" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="491"/>
             
                 <member segment="492"/>
@@ -24265,13 +24809,27 @@
                 <member segment="537"/>
             </segmentGroup>
 
-            <segmentGroup id="node_1">
+            <segmentGroup id="node_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="4219"/>
             
                 <member segment="4220"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_84">
+            <segmentGroup id="apic_84" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="4162"/>
             
                 <member segment="4163"/>
@@ -24347,7 +24905,17 @@
                 <member segment="4198"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_83">
+            <segmentGroup id="apic_83" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="4127"/>
             
                 <member segment="4128"/>
@@ -24419,7 +24987,11 @@
                 <member segment="4161"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_71">
+            <segmentGroup id="apic_71" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3778"/>
             
                 <member segment="3779"/>
@@ -24447,7 +25019,11 @@
                 <member segment="3790"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_4">
+            <segmentGroup id="apic_4" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1457"/>
             
                 <member segment="1458"/>
@@ -24463,7 +25039,11 @@
                 <member segment="1463"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_57">
+            <segmentGroup id="dend_57" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1268"/>
             
                 <member segment="1269"/>
@@ -24491,7 +25071,17 @@
                 <member segment="1280"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_55">
+            <segmentGroup id="dend_55" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="1217"/>
             
                 <member segment="1218"/>
@@ -24587,7 +25177,17 @@
                 <member segment="1263"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_52">
+            <segmentGroup id="dend_52" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="1135"/>
             
                 <member segment="1136"/>
@@ -24665,7 +25265,17 @@
                 <member segment="1172"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_49">
+            <segmentGroup id="dend_49" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="1093"/>
             
                 <member segment="1094"/>
@@ -24725,7 +25335,17 @@
                 <member segment="1121"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_48">
+            <segmentGroup id="dend_48" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 12-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="12"/>
+                </annotation>
+            
                 <member segment="1039"/>
             
                 <member segment="1040"/>
@@ -24835,7 +25455,17 @@
                 <member segment="1092"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_46">
+            <segmentGroup id="dend_46" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 13-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="13"/>
+                </annotation>
+            
                 <member segment="974"/>
             
                 <member segment="975"/>
@@ -24941,7 +25571,17 @@
                 <member segment="1025"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_45">
+            <segmentGroup id="dend_45" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="954"/>
             
                 <member segment="955"/>
@@ -24983,7 +25623,17 @@
                 <member segment="973"/>
             </segmentGroup>
 
-            <segmentGroup id="myelin_1">
+            <segmentGroup id="myelin_1" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="4214"/>
             
                 <member segment="4215"/>
@@ -24991,7 +25641,17 @@
                 <member segment="4216"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_70">
+            <segmentGroup id="apic_70" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 11-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="11"/>
+                </annotation>
+            
                 <member segment="3701"/>
             
                 <member segment="3702"/>
@@ -25147,7 +25807,17 @@
                 <member segment="3777"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_5">
+            <segmentGroup id="apic_5" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="1464"/>
             
                 <member segment="1465"/>
@@ -25175,7 +25845,17 @@
                 <member segment="1476"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_59">
+            <segmentGroup id="dend_59" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 8-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="8"/>
+                </annotation>
+            
                 <member segment="1303"/>
             
                 <member segment="1304"/>
@@ -25293,7 +25973,17 @@
                 <member segment="1360"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_58">
+            <segmentGroup id="dend_58" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="1281"/>
             
                 <member segment="1282"/>
@@ -25339,7 +26029,17 @@
                 <member segment="1302"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_54">
+            <segmentGroup id="dend_54" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="1197"/>
             
                 <member segment="1198"/>
@@ -25381,7 +26081,17 @@
                 <member segment="1216"/>
             </segmentGroup>
 
-            <segmentGroup id="dend_53">
+            <segmentGroup id="dend_53" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="1173"/>
             
                 <member segment="1174"/>
@@ -25431,7 +26141,17 @@
                 <member segment="1196"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_65">
+            <segmentGroup id="apic_65" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="3550"/>
             
                 <member segment="3551"/>
@@ -25467,7 +26187,11 @@
                 <member segment="3566"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_6">
+            <segmentGroup id="apic_6" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1477"/>
             
                 <member segment="1478"/>
@@ -25477,7 +26201,17 @@
                 <member segment="1480"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_69">
+            <segmentGroup id="apic_69" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="3669"/>
             
                 <member segment="3670"/>
@@ -25543,7 +26277,17 @@
                 <member segment="3700"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_66">
+            <segmentGroup id="apic_66" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="3567"/>
             
                 <member segment="3568"/>
@@ -25625,7 +26369,17 @@
                 <member segment="3606"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_64">
+            <segmentGroup id="apic_64" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 12-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="12"/>
+                </annotation>
+            
                 <member segment="3459"/>
             
                 <member segment="3460"/>
@@ -25809,13 +26563,21 @@
                 <member segment="3549"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_7">
+            <segmentGroup id="apic_7" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1481"/>
             
                 <member segment="1482"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_68">
+            <segmentGroup id="apic_68" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3649"/>
             
                 <member segment="3650"/>
@@ -25857,7 +26619,17 @@
                 <member segment="3668"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_67">
+            <segmentGroup id="apic_67" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="3607"/>
             
                 <member segment="3608"/>
@@ -25943,7 +26715,11 @@
                 <member segment="3648"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_61">
+            <segmentGroup id="apic_61" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="3419"/>
             
                 <member segment="3420"/>
@@ -25953,7 +26729,17 @@
                 <member segment="3422"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_8">
+            <segmentGroup id="apic_8" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="1483"/>
             
                 <member segment="1484"/>
@@ -25985,7 +26771,17 @@
                 <member segment="1497"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_63">
+            <segmentGroup id="apic_63" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="3448"/>
             
                 <member segment="3449"/>
@@ -26009,7 +26805,17 @@
                 <member segment="3458"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_62">
+            <segmentGroup id="apic_62" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="3423"/>
             
                 <member segment="3424"/>
@@ -26061,7 +26867,17 @@
                 <member segment="3447"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_60">
+            <segmentGroup id="apic_60" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="3379"/>
             
                 <member segment="3380"/>
@@ -26143,13 +26959,27 @@
                 <member segment="3418"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_9">
+            <segmentGroup id="apic_9" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1498"/>
             
                 <member segment="1499"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_59">
+            <segmentGroup id="apic_59" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 8-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="8"/>
+                </annotation>
+            
                 <member segment="3322"/>
             
                 <member segment="3323"/>
@@ -26265,11 +27095,25 @@
                 <member segment="3378"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_10">
+            <segmentGroup id="apic_10" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1500"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_58">
+            <segmentGroup id="apic_58" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 10-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="10"/>
+                </annotation>
+            
                 <member segment="3241"/>
             
                 <member segment="3242"/>
@@ -26433,7 +27277,17 @@
                 <member segment="3321"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_11">
+            <segmentGroup id="apic_11" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 40-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="40"/>
+                </annotation>
+            
                 <member segment="1501"/>
             
                 <member segment="1502"/>
@@ -26487,7 +27341,17 @@
                 <member segment="1526"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_41">
+            <segmentGroup id="apic_41" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 28-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="28"/>
+                </annotation>
+            
                 <member segment="2629"/>
             
                 <member segment="2630"/>
@@ -26771,7 +27635,17 @@
                 <member segment="2769"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_12">
+            <segmentGroup id="apic_12" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 13-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="13"/>
+                </annotation>
+            
                 <member segment="1527"/>
             
                 <member segment="1528"/>
@@ -26895,7 +27769,17 @@
                 <member segment="1587"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_51">
+            <segmentGroup id="apic_51" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="3019"/>
             
                 <member segment="3020"/>
@@ -26939,7 +27823,11 @@
                 <member segment="3039"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_42">
+            <segmentGroup id="apic_42" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2770"/>
             
                 <member segment="2771"/>
@@ -26957,7 +27845,17 @@
                 <member segment="2777"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_36">
+            <segmentGroup id="apic_36" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 10-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="10"/>
+                </annotation>
+            
                 <member segment="2365"/>
             
                 <member segment="2366"/>
@@ -27103,7 +28001,17 @@
                 <member segment="2436"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_13">
+            <segmentGroup id="apic_13" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 12-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="12"/>
+                </annotation>
+            
                 <member segment="1588"/>
             
                 <member segment="1589"/>
@@ -27235,7 +28143,17 @@
                 <member segment="1652"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_57">
+            <segmentGroup id="apic_57" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 8-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="8"/>
+                </annotation>
+            
                 <member segment="3183"/>
             
                 <member segment="3184"/>
@@ -27353,7 +28271,17 @@
                 <member segment="3240"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_52">
+            <segmentGroup id="apic_52" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="3040"/>
             
                 <member segment="3041"/>
@@ -27403,7 +28331,17 @@
                 <member segment="3063"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_50">
+            <segmentGroup id="apic_50" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="2982"/>
             
                 <member segment="2983"/>
@@ -27479,7 +28417,11 @@
                 <member segment="3018"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_43">
+            <segmentGroup id="apic_43" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2778"/>
             
                 <member segment="2779"/>
@@ -27489,7 +28431,17 @@
                 <member segment="2781"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_38">
+            <segmentGroup id="apic_38" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 9-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="9"/>
+                </annotation>
+            
                 <member segment="2494"/>
             
                 <member segment="2495"/>
@@ -27617,7 +28569,17 @@
                 <member segment="2556"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_37">
+            <segmentGroup id="apic_37" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 9-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="9"/>
+                </annotation>
+            
                 <member segment="2437"/>
             
                 <member segment="2438"/>
@@ -27733,7 +28695,17 @@
                 <member segment="2493"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_31">
+            <segmentGroup id="apic_31" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="2179"/>
             
                 <member segment="2180"/>
@@ -27765,7 +28737,17 @@
                 <member segment="2193"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_14">
+            <segmentGroup id="apic_14" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="1653"/>
             
                 <member segment="1654"/>
@@ -27833,7 +28815,17 @@
                 <member segment="1685"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_56">
+            <segmentGroup id="apic_56" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="3142"/>
             
                 <member segment="3143"/>
@@ -27917,7 +28909,17 @@
                 <member segment="3182"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_53">
+            <segmentGroup id="apic_53" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="3064"/>
             
                 <member segment="3065"/>
@@ -27951,7 +28953,17 @@
                 <member segment="3079"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_49">
+            <segmentGroup id="apic_49" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 11-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="11"/>
+                </annotation>
+            
                 <member segment="2903"/>
             
                 <member segment="2904"/>
@@ -28111,7 +29123,17 @@
                 <member segment="2981"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_44">
+            <segmentGroup id="apic_44" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="2782"/>
             
                 <member segment="2783"/>
@@ -28161,7 +29183,11 @@
                 <member segment="2805"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_40">
+            <segmentGroup id="apic_40" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2616"/>
             
                 <member segment="2617"/>
@@ -28189,7 +29215,17 @@
                 <member segment="2628"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_39">
+            <segmentGroup id="apic_39" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 8-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="8"/>
+                </annotation>
+            
                 <member segment="2557"/>
             
                 <member segment="2558"/>
@@ -28309,7 +29345,17 @@
                 <member segment="2615"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_33">
+            <segmentGroup id="apic_33" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 11-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="11"/>
+                </annotation>
+            
                 <member segment="2247"/>
             
                 <member segment="2248"/>
@@ -28483,7 +29529,17 @@
                 <member segment="2332"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_32">
+            <segmentGroup id="apic_32" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="2194"/>
             
                 <member segment="2195"/>
@@ -28591,7 +29647,17 @@
                 <member segment="2246"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_30">
+            <segmentGroup id="apic_30" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 14-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="14"/>
+                </annotation>
+            
                 <member segment="2077"/>
             
                 <member segment="2078"/>
@@ -28797,7 +29863,11 @@
                 <member segment="2178"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_15">
+            <segmentGroup id="apic_15" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1686"/>
             
                 <member segment="1687"/>
@@ -28817,7 +29887,17 @@
                 <member segment="1694"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_55">
+            <segmentGroup id="apic_55" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="3113"/>
             
                 <member segment="3114"/>
@@ -28877,7 +29957,17 @@
                 <member segment="3141"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_54">
+            <segmentGroup id="apic_54" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 4-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="4"/>
+                </annotation>
+            
                 <member segment="3080"/>
             
                 <member segment="3081"/>
@@ -28945,7 +30035,17 @@
                 <member segment="3112"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_48">
+            <segmentGroup id="apic_48" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 6-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="6"/>
+                </annotation>
+            
                 <member segment="2843"/>
             
                 <member segment="2844"/>
@@ -29067,7 +30167,17 @@
                 <member segment="2902"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_45">
+            <segmentGroup id="apic_45" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="2806"/>
             
                 <member segment="2807"/>
@@ -29123,7 +30233,11 @@
                 <member segment="2832"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_35">
+            <segmentGroup id="apic_35" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2347"/>
             
                 <member segment="2348"/>
@@ -29161,7 +30275,11 @@
                 <member segment="2364"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_34">
+            <segmentGroup id="apic_34" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2333"/>
             
                 <member segment="2334"/>
@@ -29191,7 +30309,17 @@
                 <member segment="2346"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_25">
+            <segmentGroup id="apic_25" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="1952"/>
             
                 <member segment="1953"/>
@@ -29297,7 +30425,17 @@
                 <member segment="2003"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_16">
+            <segmentGroup id="apic_16" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="1695"/>
             
                 <member segment="1696"/>
@@ -29331,7 +30469,11 @@
                 <member segment="1710"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_47">
+            <segmentGroup id="apic_47" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2839"/>
             
                 <member segment="2840"/>
@@ -29341,7 +30483,11 @@
                 <member segment="2842"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_46">
+            <segmentGroup id="apic_46" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2833"/>
             
                 <member segment="2834"/>
@@ -29355,7 +30501,17 @@
                 <member segment="2838"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_29">
+            <segmentGroup id="apic_29" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="2034"/>
             
                 <member segment="2035"/>
@@ -29443,7 +30599,17 @@
                 <member segment="2076"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_26">
+            <segmentGroup id="apic_26" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="2004"/>
             
                 <member segment="2005"/>
@@ -29489,7 +30655,17 @@
                 <member segment="2025"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_20">
+            <segmentGroup id="apic_20" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 3-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="3"/>
+                </annotation>
+            
                 <member segment="1842"/>
             
                 <member segment="1843"/>
@@ -29549,7 +30725,11 @@
                 <member segment="1870"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_17">
+            <segmentGroup id="apic_17" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1711"/>
             
                 <member segment="1712"/>
@@ -29559,7 +30739,11 @@
                 <member segment="1714"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_28">
+            <segmentGroup id="apic_28" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2030"/>
             
                 <member segment="2031"/>
@@ -29569,7 +30753,11 @@
                 <member segment="2033"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_27">
+            <segmentGroup id="apic_27" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="2026"/>
             
                 <member segment="2027"/>
@@ -29579,7 +30767,17 @@
                 <member segment="2029"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_24">
+            <segmentGroup id="apic_24" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 5-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="5"/>
+                </annotation>
+            
                 <member segment="1915"/>
             
                 <member segment="1916"/>
@@ -29655,7 +30853,17 @@
                 <member segment="1951"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_21">
+            <segmentGroup id="apic_21" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 2-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="2"/>
+                </annotation>
+            
                 <member segment="1871"/>
             
                 <member segment="1872"/>
@@ -29689,7 +30897,17 @@
                 <member segment="1886"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_19">
+            <segmentGroup id="apic_19" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 7-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="7"/>
+                </annotation>
+            
                 <member segment="1787"/>
             
                 <member segment="1788"/>
@@ -29801,7 +31019,17 @@
                 <member segment="1841"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_18">
+            <segmentGroup id="apic_18" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <!--This 'Section' has number of internal divisions (nseg) = 9-->
+
+                <annotation>
+                    <property tag="numberInternalDivisions" value="9"/>
+                </annotation>
+            
                 <member segment="1715"/>
             
                 <member segment="1716"/>
@@ -29947,7 +31175,11 @@
                 <member segment="1786"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_23">
+            <segmentGroup id="apic_23" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1903"/>
             
                 <member segment="1904"/>
@@ -29973,7 +31205,11 @@
                 <member segment="1914"/>
             </segmentGroup>
 
-            <segmentGroup id="apic_22">
+            <segmentGroup id="apic_22" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
                 <member segment="1887"/>
             
                 <member segment="1888"/>
@@ -30163,11 +31399,12 @@
                 <include segmentGroup="apic_22"/>
             </segmentGroup>
 
-            <segmentGroup id="soma_group">
+            <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
+
                 <include segmentGroup="a_soma"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_2">
+            <segmentGroup id="soma_iseg_hill_nodes_group">
                 <include segmentGroup="a_soma"/>
                 <include segmentGroup="hill"/>
                 <include segmentGroup="iseg"/>
@@ -30175,7 +31412,7 @@
                 <include segmentGroup="node_1"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_4">
+            <segmentGroup id="soma_iseg_hill_myelin_group">
                 <include segmentGroup="a_soma"/>
                 <include segmentGroup="hill"/>
                 <include segmentGroup="iseg"/>
@@ -30183,295 +31420,7 @@
                 <include segmentGroup="myelin_1"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_9">
-                <include segmentGroup="a_soma"/>
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_15">
-                <include segmentGroup="a_soma"/>
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="myelin_0"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="myelin_1"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_16">
-                <include segmentGroup="a_soma"/>
-                <include segmentGroup="apic_0"/>
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="apic_76"/>
-                <include segmentGroup="apic_1"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="apic_80"/>
-                <include segmentGroup="apic_77"/>
-                <include segmentGroup="apic_73"/>
-                <include segmentGroup="apic_2"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="myelin_0"/>
-                <include segmentGroup="apic_82"/>
-                <include segmentGroup="apic_81"/>
-                <include segmentGroup="apic_79"/>
-                <include segmentGroup="apic_78"/>
-                <include segmentGroup="apic_75"/>
-                <include segmentGroup="apic_74"/>
-                <include segmentGroup="apic_72"/>
-                <include segmentGroup="apic_3"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="apic_84"/>
-                <include segmentGroup="apic_83"/>
-                <include segmentGroup="apic_71"/>
-                <include segmentGroup="apic_4"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="myelin_1"/>
-                <include segmentGroup="apic_70"/>
-                <include segmentGroup="apic_5"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-                <include segmentGroup="apic_65"/>
-                <include segmentGroup="apic_6"/>
-                <include segmentGroup="apic_69"/>
-                <include segmentGroup="apic_66"/>
-                <include segmentGroup="apic_64"/>
-                <include segmentGroup="apic_7"/>
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_61"/>
-                <include segmentGroup="apic_8"/>
-                <include segmentGroup="apic_63"/>
-                <include segmentGroup="apic_62"/>
-                <include segmentGroup="apic_60"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_9">
-                <include segmentGroup="a_soma"/>
-            </segmentGroup>
-
-            <segmentGroup id="dendrite_group">
+            <segmentGroup id="dendold">
                 <include segmentGroup="hill"/>
                 <include segmentGroup="apic_0"/>
                 <include segmentGroup="dend_41"/>
@@ -30626,1030 +31575,172 @@
                 <include segmentGroup="apic_22"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_7">
+            <segmentGroup id="hill_group">
                 <include segmentGroup="hill"/>
+            </segmentGroup>
+
+            <segmentGroup id="dendrite_group" neuroLexId="GO:0030425">    <!--Dendrite group-->
+
+                <include segmentGroup="apic_0"/>
+                <include segmentGroup="dend_41"/>
+                <include segmentGroup="dend_30"/>
+                <include segmentGroup="dend_23"/>
+                <include segmentGroup="dend_11"/>
+                <include segmentGroup="dend_8"/>
+                <include segmentGroup="dend_7"/>
+                <include segmentGroup="dend_6"/>
+                <include segmentGroup="dend_0"/>
+                <include segmentGroup="apic_76"/>
+                <include segmentGroup="apic_1"/>
+                <include segmentGroup="dend_60"/>
+                <include segmentGroup="dend_42"/>
+                <include segmentGroup="dend_35"/>
+                <include segmentGroup="dend_31"/>
+                <include segmentGroup="dend_29"/>
+                <include segmentGroup="dend_24"/>
+                <include segmentGroup="dend_18"/>
+                <include segmentGroup="dend_15"/>
+                <include segmentGroup="dend_12"/>
+                <include segmentGroup="dend_10"/>
+                <include segmentGroup="dend_9"/>
+                <include segmentGroup="dend_5"/>
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="apic_80"/>
+                <include segmentGroup="apic_77"/>
+                <include segmentGroup="apic_73"/>
+                <include segmentGroup="apic_2"/>
+                <include segmentGroup="dend_50"/>
+                <include segmentGroup="dend_43"/>
+                <include segmentGroup="dend_37"/>
+                <include segmentGroup="dend_36"/>
+                <include segmentGroup="dend_34"/>
+                <include segmentGroup="dend_33"/>
+                <include segmentGroup="dend_32"/>
+                <include segmentGroup="dend_26"/>
+                <include segmentGroup="dend_25"/>
+                <include segmentGroup="dend_20"/>
+                <include segmentGroup="dend_19"/>
+                <include segmentGroup="dend_17"/>
+                <include segmentGroup="dend_16"/>
+                <include segmentGroup="dend_14"/>
+                <include segmentGroup="dend_13"/>
+                <include segmentGroup="dend_4"/>
+                <include segmentGroup="dend_3"/>
+                <include segmentGroup="dend_2"/>
+                <include segmentGroup="apic_82"/>
+                <include segmentGroup="apic_81"/>
+                <include segmentGroup="apic_79"/>
+                <include segmentGroup="apic_78"/>
+                <include segmentGroup="apic_75"/>
+                <include segmentGroup="apic_74"/>
+                <include segmentGroup="apic_72"/>
+                <include segmentGroup="apic_3"/>
+                <include segmentGroup="dend_56"/>
+                <include segmentGroup="dend_51"/>
+                <include segmentGroup="dend_47"/>
+                <include segmentGroup="dend_44"/>
+                <include segmentGroup="dend_40"/>
+                <include segmentGroup="dend_39"/>
+                <include segmentGroup="dend_38"/>
+                <include segmentGroup="dend_28"/>
+                <include segmentGroup="dend_27"/>
+                <include segmentGroup="dend_22"/>
+                <include segmentGroup="dend_21"/>
+                <include segmentGroup="apic_84"/>
+                <include segmentGroup="apic_83"/>
+                <include segmentGroup="apic_71"/>
+                <include segmentGroup="apic_4"/>
+                <include segmentGroup="dend_57"/>
+                <include segmentGroup="dend_55"/>
+                <include segmentGroup="dend_52"/>
+                <include segmentGroup="dend_49"/>
+                <include segmentGroup="dend_48"/>
+                <include segmentGroup="dend_46"/>
+                <include segmentGroup="dend_45"/>
+                <include segmentGroup="apic_70"/>
+                <include segmentGroup="apic_5"/>
+                <include segmentGroup="dend_59"/>
+                <include segmentGroup="dend_58"/>
+                <include segmentGroup="dend_54"/>
+                <include segmentGroup="dend_53"/>
+                <include segmentGroup="apic_65"/>
+                <include segmentGroup="apic_6"/>
+                <include segmentGroup="apic_69"/>
+                <include segmentGroup="apic_66"/>
+                <include segmentGroup="apic_64"/>
+                <include segmentGroup="apic_7"/>
+                <include segmentGroup="apic_68"/>
+                <include segmentGroup="apic_67"/>
+                <include segmentGroup="apic_61"/>
+                <include segmentGroup="apic_8"/>
+                <include segmentGroup="apic_63"/>
+                <include segmentGroup="apic_62"/>
+                <include segmentGroup="apic_60"/>
+                <include segmentGroup="apic_9"/>
+                <include segmentGroup="apic_59"/>
+                <include segmentGroup="apic_10"/>
+                <include segmentGroup="apic_58"/>
+                <include segmentGroup="apic_11"/>
+                <include segmentGroup="apic_41"/>
+                <include segmentGroup="apic_12"/>
+                <include segmentGroup="apic_51"/>
+                <include segmentGroup="apic_42"/>
+                <include segmentGroup="apic_36"/>
+                <include segmentGroup="apic_13"/>
+                <include segmentGroup="apic_57"/>
+                <include segmentGroup="apic_52"/>
+                <include segmentGroup="apic_50"/>
+                <include segmentGroup="apic_43"/>
+                <include segmentGroup="apic_38"/>
+                <include segmentGroup="apic_37"/>
+                <include segmentGroup="apic_31"/>
+                <include segmentGroup="apic_14"/>
+                <include segmentGroup="apic_56"/>
+                <include segmentGroup="apic_53"/>
+                <include segmentGroup="apic_49"/>
+                <include segmentGroup="apic_44"/>
+                <include segmentGroup="apic_40"/>
+                <include segmentGroup="apic_39"/>
+                <include segmentGroup="apic_33"/>
+                <include segmentGroup="apic_32"/>
+                <include segmentGroup="apic_30"/>
+                <include segmentGroup="apic_15"/>
+                <include segmentGroup="apic_55"/>
+                <include segmentGroup="apic_54"/>
+                <include segmentGroup="apic_48"/>
+                <include segmentGroup="apic_45"/>
+                <include segmentGroup="apic_35"/>
+                <include segmentGroup="apic_34"/>
+                <include segmentGroup="apic_25"/>
+                <include segmentGroup="apic_16"/>
+                <include segmentGroup="apic_47"/>
+                <include segmentGroup="apic_46"/>
+                <include segmentGroup="apic_29"/>
+                <include segmentGroup="apic_26"/>
+                <include segmentGroup="apic_20"/>
+                <include segmentGroup="apic_17"/>
+                <include segmentGroup="apic_28"/>
+                <include segmentGroup="apic_27"/>
+                <include segmentGroup="apic_24"/>
+                <include segmentGroup="apic_21"/>
+                <include segmentGroup="apic_19"/>
+                <include segmentGroup="apic_18"/>
+                <include segmentGroup="apic_23"/>
+                <include segmentGroup="apic_22"/>
+            </segmentGroup>
+
+            <segmentGroup id="iseg_group">
                 <include segmentGroup="iseg"/>
-                <include segmentGroup="node_0"/>
-                <include segmentGroup="myelin_0"/>
-                <include segmentGroup="node_1"/>
-                <include segmentGroup="myelin_1"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_12">
-                <include segmentGroup="hill"/>
-                <include segmentGroup="iseg"/>
+            <segmentGroup id="nodes_group">
                 <include segmentGroup="node_0"/>
                 <include segmentGroup="node_1"/>
             </segmentGroup>
 
-            <segmentGroup id="ModelViewParmSubset_3">
-                <include segmentGroup="apic_0"/>
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="apic_76"/>
-                <include segmentGroup="apic_1"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="apic_80"/>
-                <include segmentGroup="apic_77"/>
-                <include segmentGroup="apic_73"/>
-                <include segmentGroup="apic_2"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="apic_82"/>
-                <include segmentGroup="apic_81"/>
-                <include segmentGroup="apic_79"/>
-                <include segmentGroup="apic_78"/>
-                <include segmentGroup="apic_75"/>
-                <include segmentGroup="apic_74"/>
-                <include segmentGroup="apic_72"/>
-                <include segmentGroup="apic_3"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="apic_84"/>
-                <include segmentGroup="apic_83"/>
-                <include segmentGroup="apic_71"/>
-                <include segmentGroup="apic_4"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="apic_70"/>
-                <include segmentGroup="apic_5"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-                <include segmentGroup="apic_65"/>
-                <include segmentGroup="apic_6"/>
-                <include segmentGroup="apic_69"/>
-                <include segmentGroup="apic_66"/>
-                <include segmentGroup="apic_64"/>
-                <include segmentGroup="apic_7"/>
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_61"/>
-                <include segmentGroup="apic_8"/>
-                <include segmentGroup="apic_63"/>
-                <include segmentGroup="apic_62"/>
-                <include segmentGroup="apic_60"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_6">
-                <include segmentGroup="apic_0"/>
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="apic_80"/>
-                <include segmentGroup="apic_77"/>
-                <include segmentGroup="apic_73"/>
-                <include segmentGroup="apic_2"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="apic_82"/>
-                <include segmentGroup="apic_81"/>
-                <include segmentGroup="apic_79"/>
-                <include segmentGroup="apic_78"/>
-                <include segmentGroup="apic_75"/>
-                <include segmentGroup="apic_74"/>
-                <include segmentGroup="apic_72"/>
-                <include segmentGroup="apic_3"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="apic_84"/>
-                <include segmentGroup="apic_83"/>
-                <include segmentGroup="apic_71"/>
-                <include segmentGroup="apic_4"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="apic_70"/>
-                <include segmentGroup="apic_5"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-                <include segmentGroup="apic_65"/>
-                <include segmentGroup="apic_6"/>
-                <include segmentGroup="apic_69"/>
-                <include segmentGroup="apic_66"/>
-                <include segmentGroup="apic_64"/>
-                <include segmentGroup="apic_7"/>
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_61"/>
-                <include segmentGroup="apic_8"/>
-                <include segmentGroup="apic_63"/>
-                <include segmentGroup="apic_62"/>
-                <include segmentGroup="apic_60"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_10">
-                <include segmentGroup="apic_0"/>
-                <include segmentGroup="apic_76"/>
-                <include segmentGroup="apic_1"/>
-                <include segmentGroup="apic_80"/>
-                <include segmentGroup="apic_77"/>
-                <include segmentGroup="apic_73"/>
-                <include segmentGroup="apic_2"/>
-                <include segmentGroup="apic_82"/>
-                <include segmentGroup="apic_81"/>
-                <include segmentGroup="apic_79"/>
-                <include segmentGroup="apic_78"/>
-                <include segmentGroup="apic_75"/>
-                <include segmentGroup="apic_74"/>
-                <include segmentGroup="apic_72"/>
-                <include segmentGroup="apic_3"/>
-                <include segmentGroup="apic_84"/>
-                <include segmentGroup="apic_83"/>
-                <include segmentGroup="apic_71"/>
-                <include segmentGroup="apic_4"/>
-                <include segmentGroup="apic_70"/>
-                <include segmentGroup="apic_5"/>
-                <include segmentGroup="apic_65"/>
-                <include segmentGroup="apic_6"/>
-                <include segmentGroup="apic_69"/>
-                <include segmentGroup="apic_66"/>
-                <include segmentGroup="apic_64"/>
-                <include segmentGroup="apic_7"/>
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_61"/>
-                <include segmentGroup="apic_8"/>
-                <include segmentGroup="apic_63"/>
-                <include segmentGroup="apic_62"/>
-                <include segmentGroup="apic_60"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_11">
-                <include segmentGroup="apic_0"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_8">
-                <include segmentGroup="dend_41"/>
-                <include segmentGroup="dend_30"/>
-                <include segmentGroup="dend_23"/>
-                <include segmentGroup="dend_11"/>
-                <include segmentGroup="dend_8"/>
-                <include segmentGroup="dend_7"/>
-                <include segmentGroup="dend_6"/>
-                <include segmentGroup="dend_0"/>
-                <include segmentGroup="dend_60"/>
-                <include segmentGroup="dend_42"/>
-                <include segmentGroup="dend_35"/>
-                <include segmentGroup="dend_31"/>
-                <include segmentGroup="dend_29"/>
-                <include segmentGroup="dend_24"/>
-                <include segmentGroup="dend_18"/>
-                <include segmentGroup="dend_15"/>
-                <include segmentGroup="dend_12"/>
-                <include segmentGroup="dend_10"/>
-                <include segmentGroup="dend_9"/>
-                <include segmentGroup="dend_5"/>
-                <include segmentGroup="dend_1"/>
-                <include segmentGroup="dend_50"/>
-                <include segmentGroup="dend_43"/>
-                <include segmentGroup="dend_37"/>
-                <include segmentGroup="dend_36"/>
-                <include segmentGroup="dend_34"/>
-                <include segmentGroup="dend_33"/>
-                <include segmentGroup="dend_32"/>
-                <include segmentGroup="dend_26"/>
-                <include segmentGroup="dend_25"/>
-                <include segmentGroup="dend_20"/>
-                <include segmentGroup="dend_19"/>
-                <include segmentGroup="dend_17"/>
-                <include segmentGroup="dend_16"/>
-                <include segmentGroup="dend_14"/>
-                <include segmentGroup="dend_13"/>
-                <include segmentGroup="dend_4"/>
-                <include segmentGroup="dend_3"/>
-                <include segmentGroup="dend_2"/>
-                <include segmentGroup="dend_56"/>
-                <include segmentGroup="dend_51"/>
-                <include segmentGroup="dend_47"/>
-                <include segmentGroup="dend_44"/>
-                <include segmentGroup="dend_40"/>
-                <include segmentGroup="dend_39"/>
-                <include segmentGroup="dend_38"/>
-                <include segmentGroup="dend_28"/>
-                <include segmentGroup="dend_27"/>
-                <include segmentGroup="dend_22"/>
-                <include segmentGroup="dend_21"/>
-                <include segmentGroup="dend_57"/>
-                <include segmentGroup="dend_55"/>
-                <include segmentGroup="dend_52"/>
-                <include segmentGroup="dend_49"/>
-                <include segmentGroup="dend_48"/>
-                <include segmentGroup="dend_46"/>
-                <include segmentGroup="dend_45"/>
-                <include segmentGroup="apic_70"/>
-                <include segmentGroup="dend_59"/>
-                <include segmentGroup="dend_58"/>
-                <include segmentGroup="dend_54"/>
-                <include segmentGroup="dend_53"/>
-                <include segmentGroup="apic_65"/>
-                <include segmentGroup="apic_69"/>
-                <include segmentGroup="apic_66"/>
-                <include segmentGroup="apic_64"/>
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_8"/>
-                <include segmentGroup="apic_63"/>
-                <include segmentGroup="apic_62"/>
-                <include segmentGroup="apic_60"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_21">
-                <include segmentGroup="apic_76"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_22">
-                <include segmentGroup="apic_1"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_5">
-                <include segmentGroup="node_0"/>
-                <include segmentGroup="node_1"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_37">
-                <include segmentGroup="apic_80"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_38">
-                <include segmentGroup="apic_77"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_39">
-                <include segmentGroup="apic_73"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_40">
-                <include segmentGroup="apic_2"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_1">
+            <segmentGroup id="myelin_group">
                 <include segmentGroup="myelin_0"/>
                 <include segmentGroup="myelin_1"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_60">
-                <include segmentGroup="apic_82"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_61">
-                <include segmentGroup="apic_81"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_62">
-                <include segmentGroup="apic_79"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_63">
-                <include segmentGroup="apic_78"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_64">
-                <include segmentGroup="apic_75"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_65">
-                <include segmentGroup="apic_74"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_66">
-                <include segmentGroup="apic_72"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_67">
-                <include segmentGroup="apic_3"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_80">
-                <include segmentGroup="apic_84"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_81">
-                <include segmentGroup="apic_83"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_82">
-                <include segmentGroup="apic_71"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_83">
-                <include segmentGroup="apic_4"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_92">
-                <include segmentGroup="apic_70"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_93">
-                <include segmentGroup="apic_5"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_98">
-                <include segmentGroup="apic_65"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_99">
-                <include segmentGroup="apic_6"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_100">
-                <include segmentGroup="apic_69"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_101">
-                <include segmentGroup="apic_66"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_102">
-                <include segmentGroup="apic_64"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_103">
-                <include segmentGroup="apic_7"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_13">
-                <include segmentGroup="apic_68"/>
-                <include segmentGroup="apic_67"/>
-                <include segmentGroup="apic_9"/>
-                <include segmentGroup="apic_59"/>
-                <include segmentGroup="apic_10"/>
-                <include segmentGroup="apic_58"/>
-                <include segmentGroup="apic_11"/>
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_104">
-                <include segmentGroup="apic_68"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_105">
-                <include segmentGroup="apic_67"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_106">
-                <include segmentGroup="apic_61"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_107">
-                <include segmentGroup="apic_8"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_108">
-                <include segmentGroup="apic_63"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_109">
-                <include segmentGroup="apic_62"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_110">
-                <include segmentGroup="apic_60"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_111">
-                <include segmentGroup="apic_9"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_112">
-                <include segmentGroup="apic_59"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_113">
-                <include segmentGroup="apic_10"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_114">
-                <include segmentGroup="apic_58"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_115">
-                <include segmentGroup="apic_11"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_14">
-                <include segmentGroup="apic_41"/>
-                <include segmentGroup="apic_12"/>
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_36"/>
-                <include segmentGroup="apic_13"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_116">
-                <include segmentGroup="apic_41"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_117">
-                <include segmentGroup="apic_12"/>
-            </segmentGroup>
-
-            <segmentGroup id="ModelViewParmSubset_11">
-                <include segmentGroup="apic_51"/>
-                <include segmentGroup="apic_42"/>
-                <include segmentGroup="apic_57"/>
-                <include segmentGroup="apic_52"/>
-                <include segmentGroup="apic_50"/>
-                <include segmentGroup="apic_43"/>
-                <include segmentGroup="apic_38"/>
-                <include segmentGroup="apic_37"/>
-                <include segmentGroup="apic_31"/>
-                <include segmentGroup="apic_14"/>
-                <include segmentGroup="apic_56"/>
-                <include segmentGroup="apic_53"/>
-                <include segmentGroup="apic_49"/>
-                <include segmentGroup="apic_44"/>
-                <include segmentGroup="apic_40"/>
-                <include segmentGroup="apic_39"/>
-                <include segmentGroup="apic_33"/>
-                <include segmentGroup="apic_32"/>
-                <include segmentGroup="apic_30"/>
-                <include segmentGroup="apic_15"/>
-                <include segmentGroup="apic_55"/>
-                <include segmentGroup="apic_54"/>
-                <include segmentGroup="apic_48"/>
-                <include segmentGroup="apic_45"/>
-                <include segmentGroup="apic_35"/>
-                <include segmentGroup="apic_34"/>
-                <include segmentGroup="apic_25"/>
-                <include segmentGroup="apic_16"/>
-                <include segmentGroup="apic_47"/>
-                <include segmentGroup="apic_46"/>
-                <include segmentGroup="apic_29"/>
-                <include segmentGroup="apic_26"/>
-                <include segmentGroup="apic_20"/>
-                <include segmentGroup="apic_17"/>
-                <include segmentGroup="apic_28"/>
-                <include segmentGroup="apic_27"/>
-                <include segmentGroup="apic_24"/>
-                <include segmentGroup="apic_21"/>
-                <include segmentGroup="apic_19"/>
-                <include segmentGroup="apic_18"/>
-                <include segmentGroup="apic_23"/>
-                <include segmentGroup="apic_22"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_118">
-                <include segmentGroup="apic_51"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_119">
-                <include segmentGroup="apic_42"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_120">
-                <include segmentGroup="apic_36"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_121">
-                <include segmentGroup="apic_13"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_122">
-                <include segmentGroup="apic_57"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_123">
-                <include segmentGroup="apic_52"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_124">
-                <include segmentGroup="apic_50"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_125">
-                <include segmentGroup="apic_43"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_126">
-                <include segmentGroup="apic_38"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_127">
-                <include segmentGroup="apic_37"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_128">
-                <include segmentGroup="apic_31"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_129">
-                <include segmentGroup="apic_14"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_130">
-                <include segmentGroup="apic_56"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_131">
-                <include segmentGroup="apic_53"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_132">
-                <include segmentGroup="apic_49"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_133">
-                <include segmentGroup="apic_44"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_134">
-                <include segmentGroup="apic_40"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_135">
-                <include segmentGroup="apic_39"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_136">
-                <include segmentGroup="apic_33"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_137">
-                <include segmentGroup="apic_32"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_138">
-                <include segmentGroup="apic_30"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_139">
-                <include segmentGroup="apic_15"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_140">
-                <include segmentGroup="apic_55"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_141">
-                <include segmentGroup="apic_54"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_142">
-                <include segmentGroup="apic_48"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_143">
-                <include segmentGroup="apic_45"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_144">
-                <include segmentGroup="apic_35"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_145">
-                <include segmentGroup="apic_34"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_146">
-                <include segmentGroup="apic_25"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_147">
-                <include segmentGroup="apic_16"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_148">
-                <include segmentGroup="apic_47"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_149">
-                <include segmentGroup="apic_46"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_150">
-                <include segmentGroup="apic_29"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_151">
-                <include segmentGroup="apic_26"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_152">
-                <include segmentGroup="apic_20"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_153">
-                <include segmentGroup="apic_17"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_154">
-                <include segmentGroup="apic_28"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_155">
-                <include segmentGroup="apic_27"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_156">
-                <include segmentGroup="apic_24"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_157">
-                <include segmentGroup="apic_21"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_158">
-                <include segmentGroup="apic_19"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_159">
-                <include segmentGroup="apic_18"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_160">
-                <include segmentGroup="apic_23"/>
-            </segmentGroup>
-
-            <segmentGroup id="OneSecGrp_SectionRef_161">
-                <include segmentGroup="apic_22"/>
             </segmentGroup>
 
             
@@ -31660,22 +31751,23 @@
         <biophysicalProperties id="biophys">
 
             <membraneProperties>
-
+                
                 <channelDensity condDensity="-1.0E8 mS_per_cm2" id="pas_all" ionChannel="pas" erev="-47.8446 mV" ion="non_specific"/>
-
-                <channelDensity condDensity="20.0 mS_per_cm2" id="pas_ModelViewParmSubset_5" ionChannel="pas" segmentGroup="ModelViewParmSubset_5" ion="non_specific" erev="-59.4 mV"/>
-
-                <channelDensity condDensity="0.0387414 mS_per_cm2" id="pas_ModelViewParmSubset_4" ionChannel="pas" segmentGroup="ModelViewParmSubset_4" ion="non_specific" erev="-59.4 mV"/>
-
-                <channelDensity condDensity="0.0774827 mS_per_cm2" id="pas_ModelViewParmSubset_3" ionChannel="pas" segmentGroup="ModelViewParmSubset_3" ion="non_specific" erev="-59.4 mV"/>
+                
+                <channelDensity condDensity="20.0 mS_per_cm2" id="pas_nodes_group" ionChannel="pas" segmentGroup="nodes_group" ion="non_specific" erev="-59.4 mV"/>
+                
+                <channelDensity condDensity="0.0387414 mS_per_cm2" id="pas_soma_iseg_hill_myelin_group" ionChannel="pas" segmentGroup="soma_iseg_hill_myelin_group" ion="non_specific" erev="-59.4 mV"/>
+                
+                <channelDensity condDensity="0.0774827 mS_per_cm2" id="pas_dendrite_group" ionChannel="pas" segmentGroup="dendrite_group" ion="non_specific" erev="-59.4 mV"/>
+                
 
                 <spikeThresh value="0 mV"/>
 
-                <specificCapacitance segmentGroup="ModelViewParmSubset_2" value="0.602042 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="soma_iseg_hill_nodes_group" value="0.602042 uF_per_cm2"/>
 
-                <specificCapacitance segmentGroup="ModelViewParmSubset_3" value="1.20408 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="dendrite_group" value="1.20408 uF_per_cm2"/>
 
-                <specificCapacitance segmentGroup="ModelViewParmSubset_1" value="0.04 uF_per_cm2"/>
+                <specificCapacitance segmentGroup="myelin_group" value="0.04 uF_per_cm2"/>
 
                 <initMembPotential value="-65.0 mV"/>
 

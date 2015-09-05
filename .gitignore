@@ -1,3 +1,4 @@
+/neuroConstruct/generatedNeuroML2/runsim.sh
 /NEURON/params.py
 /NEURON/pp.py
 /NEURON/OSB_test.hoc
@@ -13,7 +14,8 @@ neuroConstruct/generatedNEURON
 neuroConstruct/generatedGENESIS
 neuroConstruct/simulations
 neuroConstruct/dataSets
-neuroConstruct/generatedNeuroML*
+neuroConstruct/generatedNeuroML/*
+neuroConstruct/generatedNeuroML2/*.dat
 *.*~
 neuroConstruct/backup*
 *#*#
