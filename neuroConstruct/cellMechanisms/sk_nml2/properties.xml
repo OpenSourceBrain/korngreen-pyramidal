@@ -12,7 +12,7 @@ Note the following:
 
 </comment>
 <entry key="Mechanism Model">Template based ChannelML file</entry>
-<entry key="Mechanism Name"></entry>
+<entry key="Mechanism Name">sk_nml2</entry>
 <entry key="Mechanism Type">NeuroML 2 ion channel</entry>
 <entry key="Implementation method">NeuroML 2 Component</entry>
 <entry key="ChannelML file">sk.channel.nml</entry>
