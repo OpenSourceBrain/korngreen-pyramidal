@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>
+Properties associated with the Cell Mechanism which allow it to be loaded into neuroConstruct.
+
+Note the following: 
+   The Cell Mechanism name should not contain spaces and should match the name of the directory it's in
+   The name and description here will be replaced by the corresponding values in a ChannelML file if found
+   The filenames for the mappings are relative to the cellMechanism/(cellMechInstanceName) directory
+   Mechanism Type should only have values: Channel mechanism, Synaptic mechanism, Ion concentration, Point process, Gap junction
+
+</comment>
+<entry key="Mechanism Model">Template based ChannelML file</entry>
+<entry key="Mechanism Name"></entry>
+<entry key="Mechanism Type">NeuroML 2 ion channel</entry>
+<entry key="Implementation method">NeuroML 2 Component</entry>
+<entry key="ChannelML file">sk.channel.nml</entry>
+<entry key="Description">ChannelML file containing a single SK Channel description, from a model of a Globus Pallidus neuron described in Deister, C. A., Chan, C. S., Surmeier, D. J., &amp; Wilson, C. J. (2009). Calcium-activated SK channels influence voltage-gated ion channels to determine the precision of firing in globus pallidus neurons. J Neurosci, 29(26), 8452&#8211;61. doi:10.1523/JNEUROSCI.0576-09.2009 </entry>
+</properties>
