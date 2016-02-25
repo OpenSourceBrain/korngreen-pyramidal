@@ -1,0 +1,10 @@
+system: Korngreen Model
+
+experiments:
+  BAC:
+    expected:
+      spike times: [403441.0, 415563.0]
+      morphology:
+        total area: 59462.574
+        number of cells: 1
+      temperature: 34
