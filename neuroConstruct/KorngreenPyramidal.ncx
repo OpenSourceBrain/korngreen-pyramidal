@@ -416,7 +416,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <string>*</string>
      </void>
      <void property="graphWindow">
-      <string>test_ca_nrn_v</string>
+      <string>test_ca_v</string>
      </void>
      <void property="maxValue">
       <float>50.0</float>
@@ -922,6 +922,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      <void property="minValue">
       <float>-90.0</float>
      </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
      <void property="plotReference">
       <string>bac6_v_soma(0.5)_mod</string>
      </void>
@@ -997,7 +1000,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_166</string>
+   <string>Sim_178</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
