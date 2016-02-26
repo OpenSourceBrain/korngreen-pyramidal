@@ -221,7 +221,7 @@ PROCEDURE rates(v(mV)) {
     ? There is a Q10 factor which will alter the tau of the gates 
                  
 
-    temp_adj_a = 2.3^((celsius - 22)/10)
+    temp_adj_a = q10^((celsius - 22)/10)
             
                 
            
