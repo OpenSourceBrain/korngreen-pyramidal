@@ -678,7 +678,7 @@ DERIVATIVE states {
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose><xsl:when test="count(@q10_factor) &gt; 0">
-                            <xsl:variable name="expression"><xsl:value-of select="@q10_factor" />^((celsius - <xsl:value-of select="@experimental_temp"/>)/10)</xsl:variable>
+                            <xsl:variable name="expression">q10^((celsius - <xsl:value-of select="@experimental_temp"/>)/10)</xsl:variable>
                             <xsl:for-each select="../../cml:gate"> <!-- pre v1.7.3 -->
     temp_adj_<xsl:value-of select="cml:state/@name"/> = <xsl:value-of select="$expression"/>
                             </xsl:for-each>
