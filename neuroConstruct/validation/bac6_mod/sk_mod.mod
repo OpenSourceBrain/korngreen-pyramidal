@@ -73,7 +73,8 @@ PROCEDURE rate(cai (mM)) {
 	LOCAL q10
 	q10 = Cq10^((celsius - 22 (degC))/10 (degC) )
 	a = a0*cai^4
-	tau = q10/(a + b0)
+	? tau = q10/(a + b0) ? error in model!! must divide by q10 not multiply...
+	tau = (a + b0)/q10
 	inf = a/(a + b0)
 }
 
