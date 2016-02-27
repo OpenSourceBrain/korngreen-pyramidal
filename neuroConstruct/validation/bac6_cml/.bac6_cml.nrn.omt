@@ -14,7 +14,7 @@ experiments:
         spike detection:
           method: threshold
           threshold: -0.015
-        tolerance: 1e-4 
+        tolerance: 0.000038
       morphology:
         base section: A140612_nml
       temperature: ~
