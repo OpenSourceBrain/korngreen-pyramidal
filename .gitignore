@@ -22,5 +22,4 @@ neuroConstruct/backup*
 .ropeproject
 *.pyc
 *py.class
-**results/
 **.DS_Store
