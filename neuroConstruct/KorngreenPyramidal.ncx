@@ -11,7 +11,7 @@ part of NeuroML or any standardised XML specification. -->
   <void property="projectDescription">
    <string>Conversion to neuroConstruct and NeuroML of the L5 Pyramidal cell model described in:
 
-Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances and Its Application to Dendritic Excitation in Layer 5 Pyramidal Neurons J Neurosci 34(1):182-196</string>
+Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances and Its Application to Dendritic Excitation in Layer 5 Pyramidal Neurons J Neurosci 34(1):182-196 </string>
   </void>
   <void property="projectFileVersion">
    <string>neuroConstruct v1.7.1</string>
@@ -937,7 +937,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
  </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
   <void property="preferredSaveFormat">
-   <string>Java Serialized Object Format</string>
+   <string>NeuroML v1.8.1 Format</string>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
@@ -1000,7 +1000,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_182</string>
+   <string>Sim_184</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
