@@ -87,6 +87,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
     </void>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
+    </void>
    </void>
    <void method="get">
     <string>Cell Type</string>
@@ -114,6 +117,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     <void method="add">
      <string>A140612_nml</string>
     </void>
+    <void method="add">
+     <string>A140612_nml2</string>
+    </void>
    </void>
    <void method="get">
     <string>Priority</string>
@@ -134,6 +140,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <int>4</int>
+    </void>
+    <void method="add">
+     <int>2</int>
     </void>
     <void method="add">
      <int>2</int>
@@ -208,9 +217,20 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
       <int>255</int>
      </object>
     </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>73</int>
+      <int>149</int>
+      <int>181</int>
+      <int>255</int>
+     </object>
+    </void>
    </void>
    <void method="get">
     <string>Region Name</string>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
     <void method="add">
      <string>Regions_1</string>
     </void>
@@ -261,6 +281,9 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
     </void>
     <void method="add">
      <string>FullCell_nml</string>
+    </void>
+    <void method="add">
+     <string>FullCell_nml2</string>
     </void>
    </void>
   </void>
@@ -933,6 +956,84 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>FullCell_nml2</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>FullCell_mod_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotReference">
+      <string>bac6_v_apic41(0.625)_nml2</string>
+     </void>
+     <void property="segmentId">
+      <string>2720</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>FullCell_nml2</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>FullCell_mod_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>bac6_v_soma(0.5)_nml2</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>FullCell_nml2</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>FullCell_mod_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-90.0</float>
+     </void>
+     <void property="plotReference">
+      <string>bac6_v_apic41(0.3)_nml2</string>
+     </void>
+     <void property="segmentId">
+      <string>2674</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
@@ -1000,7 +1101,7 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
    <float>2000.0</float>
   </void>
   <void property="reference">
-   <string>Sim_203</string>
+   <string>Sim_206</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -1227,6 +1328,38 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="reference">
       <string>bac6_IClamp_Soma_mod</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings" id="IClampSettings8">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>0.5</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>FullCell_nml2</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>400.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator8" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator8"/>
+        <int>11</int>
+       </void>
+      </void>
+      <void property="fixedNum">
+       <float>20.0</float>
+      </void>
+     </void>
+     <void property="reference">
+      <string>bac6_IClamp_Soma_nml2</string>
      </void>
     </object>
    </void>
@@ -1495,6 +1628,35 @@ Almog M, Korngreen A (2014) A Quantitative Description of Dendritic Conductances
      </void>
      <void property="simDuration">
       <float>500.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig" id="SimConfig9">
+     <void property="cellGroups">
+      <void method="add">
+       <string>FullCell_nml2</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>replicating bac6.ses from modelDB</string>
+     </void>
+     <void property="name">
+      <string>bac6_nml2</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>bac6_v_apic41(0.3)_nml2</string>
+      </void>
+      <void method="add">
+       <string>bac6_v_apic41(0.625)_nml2</string>
+      </void>
+      <void method="add">
+       <string>bac6_v_soma(0.5)_nml2</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>2000.0</float>
      </void>
     </object>
    </void>
