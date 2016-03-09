@@ -18466,6 +18466,15 @@
                     <mml:cable id="1"/>
                </mml:cablegroup>
             
+                <mml:cablegroup name="axon_group">
+                    <mml:cable id="1"/>
+                    <mml:cable id="11"/>
+                    <mml:cable id="27"/>
+                    <mml:cable id="50"/>
+                    <mml:cable id="70"/>
+                    <mml:cable id="82"/>
+               </mml:cablegroup>
+            
                 <mml:cablegroup name="dendrite_group">
                     <mml:cable id="2"/>
                     <mml:cable id="3"/>
@@ -19009,7 +19018,6 @@ The scaling factor for converting current into change in ion concentration shoul
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
                     <bio:parameter name="q10" value="1.44732">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
-
                         <bio:group>basal_dend_group</bio:group>
                         <bio:group>soma_group</bio:group>
                     </bio:parameter>
@@ -19101,28 +19109,28 @@ The scaling factor for converting current into change in ion concentration shoul
                 </bio:mechanism>
 
                 <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="e" value="-47.8446">
+                        <bio:group>nodes_group</bio:group>
+                    </bio:parameter>
                     <bio:parameter name="gmax" value="20.0">
                         <bio:group>nodes_group</bio:group>
                     </bio:parameter>
-                    <bio:parameter name="e" value="-47.8446">
-                        <bio:group>nodes_group</bio:group>
-                    </bio:parameter>
                 </bio:mechanism>
 
                 <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
+                    <bio:parameter name="e" value="-47.8446">
+                        <bio:group>soma_iseg_hill_myelin_group</bio:group>
+                    </bio:parameter>
                     <bio:parameter name="gmax" value="0.0387414">
                         <bio:group>soma_iseg_hill_myelin_group</bio:group>
                     </bio:parameter>
-                    <bio:parameter name="e" value="-47.8446">
-                        <bio:group>soma_iseg_hill_myelin_group</bio:group>
-                    </bio:parameter>
                 </bio:mechanism>
 
                 <bio:mechanism name="pas" type="Channel Mechanism" passive_conductance="true">
-                    <bio:parameter name="gmax" value="0.0774827">
+                    <bio:parameter name="e" value="-47.8446">
                         <bio:group>dendrite_group</bio:group>
                     </bio:parameter>
-                    <bio:parameter name="e" value="-47.8446">
+                    <bio:parameter name="gmax" value="0.0774827">
                         <bio:group>dendrite_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
@@ -19139,6 +19147,26 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:parameter>
                 </bio:mechanism>
 
+                <bio:mechanism name="na" type="Channel Mechanism">
+                    <bio:variable_parameter name="gmax">
+                        <bio:group>apical_dend_group</bio:group>
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
+
+                    </bio:variable_parameter>
+                    <bio:parameter name="tauh_scale" value="1.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="taum_scale" value="1.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="vshifth" value="-9.60842">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="vshiftm" value="-10.9975">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="sk" type="Channel Mechanism">
                     <bio:variable_parameter name="gmax">
                         <bio:group>apical_dend_group</bio:group>
@@ -19147,26 +19175,46 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:variable_parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="bk" type="Channel Mechanism">
-                    <bio:variable_parameter name="gmax">
+                <bio:mechanism name="car" type="Channel Mechanism">
+                    <bio:variable_parameter name="permeability">
                         <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
-
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))"/>
                     </bio:variable_parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="iH" type="Channel Mechanism">
-                    <bio:variable_parameter name="gmax">
+                    <bio:parameter name="qm" value="1.15288">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
                         <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
-
-                    </bio:variable_parameter>
+                    </bio:parameter>
+                    <bio:parameter name="shift" value="-9.67845">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shifth" value="-2.1308">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
                 </bio:mechanism>
 
                 <bio:mechanism name="cah" type="Channel Mechanism">
                     <bio:variable_parameter name="permeability">
                         <bio:group>apical_dend_group</bio:group>
                         <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229))))"/>
+                    </bio:variable_parameter>
+                    <bio:parameter name="qh" value="2.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="qm" value="4.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shift" value="-4.49601">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shifth" value="-7.11157">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="kslow" type="Channel Mechanism">
+                    <bio:variable_parameter name="gmax">
+                        <bio:group>apical_dend_group</bio:group>
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
+
                     </bio:variable_parameter>
                 </bio:mechanism>
 
@@ -19178,25 +19226,20 @@ The scaling factor for converting current into change in ion concentration shoul
                     </bio:variable_parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="na" type="Channel Mechanism">
+                <bio:mechanism name="iH" type="Channel Mechanism">
                     <bio:variable_parameter name="gmax">
                         <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
-
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
                     </bio:variable_parameter>
-                </bio:mechanism>
-
-                <bio:mechanism name="car" type="Channel Mechanism">
-                    <bio:variable_parameter name="permeability">
+                    <bio:parameter name="q10" value="1.44732">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
                         <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))"/>
-                    </bio:variable_parameter>
+                    </bio:parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="kslow" type="Channel Mechanism">
+                <bio:mechanism name="bk" type="Channel Mechanism">
                     <bio:variable_parameter name="gmax">
                         <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
 
                     </bio:variable_parameter>
                 </bio:mechanism>

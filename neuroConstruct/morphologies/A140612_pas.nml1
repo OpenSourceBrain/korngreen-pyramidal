@@ -17065,6 +17065,7 @@
                     <meta:group>dendold</meta:group>
                     <meta:group>soma_iseg_hill_myelin_group</meta:group>
                     <meta:group>hill_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="2" name="apic_0" fract_along_parent="0.4499996">
@@ -17145,6 +17146,7 @@
                     <meta:group>dendold</meta:group>
                     <meta:group>soma_iseg_hill_myelin_group</meta:group>
                     <meta:group>iseg_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="12" name="apic_76">
@@ -17296,6 +17298,7 @@
                     <meta:group>soma_iseg_hill_nodes_group</meta:group>
                     <meta:group>dendold</meta:group>
                     <meta:group>nodes_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="28" name="apic_80">
@@ -17537,6 +17540,7 @@
                     <meta:group>myelin_group</meta:group>
                     <meta:group>dendold</meta:group>
                     <meta:group>soma_iseg_hill_myelin_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="51" name="apic_82">
@@ -17742,6 +17746,7 @@
                     <meta:group>soma_iseg_hill_nodes_group</meta:group>
                     <meta:group>dendold</meta:group>
                     <meta:group>nodes_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="71" name="apic_84">
@@ -17869,6 +17874,7 @@
                     <meta:group>myelin_group</meta:group>
                     <meta:group>dendold</meta:group>
                     <meta:group>soma_iseg_hill_myelin_group</meta:group>
+                    <meta:group>dendrite_group</meta:group>
                 </mml:cable>
 
                 <mml:cable id="83" name="apic_70">
