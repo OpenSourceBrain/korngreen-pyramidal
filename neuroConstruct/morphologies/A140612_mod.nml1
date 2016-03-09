@@ -18797,33 +18797,6 @@
                 <mml:cablegroup name="apic41_group">
                     <mml:cable id="107"/>
                </mml:cablegroup>
-            
-                <mml:cablegroup name="terminal_branches_group">
-                    <mml:cable id="113"/>
-                    <mml:cable id="115"/>
-                    <mml:cable id="118"/>
-                    <mml:cable id="121"/>
-                    <mml:cable id="123"/>
-                    <mml:cable id="125"/>
-                    <mml:cable id="126"/>
-                    <mml:cable id="128"/>
-                    <mml:cable id="129"/>
-                    <mml:cable id="131"/>
-                    <mml:cable id="132"/>
-                    <mml:cable id="133"/>
-                    <mml:cable id="135"/>
-                    <mml:cable id="136"/>
-                    <mml:cable id="139"/>
-                    <mml:cable id="140"/>
-                    <mml:cable id="141"/>
-                    <mml:cable id="145"/>
-                    <mml:cable id="146"/>
-                    <mml:cable id="147"/>
-                    <mml:cable id="149"/>
-                    <mml:cable id="150"/>
-                    <mml:cable id="151"/>
-                    <mml:cable id="152"/>
-               </mml:cablegroup>
             </mml:cables>
 
             <!--Adding the biophysical parameters-->
@@ -18854,6 +18827,28 @@
                 <bio:mechanism name="cad_mod" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.0">
                         <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="cah_mod" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="qh" value="2.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="qm" value="4.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shift" value="-4.49601">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shifth" value="-7.11157">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
@@ -18930,6 +18925,24 @@
 
                         <bio:group>basal_dend_group</bio:group>
                         <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="car_mod" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="qm" value="1.15288">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shift" value="-9.67845">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="shifth" value="-2.1308">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
@@ -19037,6 +19050,16 @@
                 </bio:mechanism>
 
                 <bio:mechanism name="iH_mod" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="q10" value="1.44732">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="iH_mod" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="0.25117">
                         <bio:group>basal_dend_group</bio:group>
                         <bio:group>soma_group</bio:group>
@@ -19066,6 +19089,28 @@
                     <bio:parameter name="gmax" value="20.96737">
                         <bio:group>basal_dend_group</bio:group>
                         <bio:group>soma_group</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="na_mod" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="-1.0E8">
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="tauh_scale" value="1.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="taum_scale" value="1.0">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="vshifth" value="-9.60842">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
+                    </bio:parameter>
+                    <bio:parameter name="vshiftm" value="-10.9975">    <!--Note: Units of extra parameters are not known, except if it's e!!-->
+
+                        <bio:group>apical_dend_group</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
 
@@ -19180,17 +19225,17 @@
                     </bio:variable_parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="cah_mod" type="Channel Mechanism">
-                    <bio:variable_parameter name="permeability">
-                        <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229))))"/>
-                    </bio:variable_parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="car_mod" type="Channel Mechanism">
                     <bio:variable_parameter name="permeability">
                         <bio:group>apical_dend_group</bio:group>
                         <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))"/>
+                    </bio:variable_parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="cah_mod" type="Channel Mechanism">
+                    <bio:variable_parameter name="permeability">
+                        <bio:group>apical_dend_group</bio:group>
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229))))"/>
                     </bio:variable_parameter>
                 </bio:mechanism>
 
@@ -19210,18 +19255,18 @@
                     </bio:variable_parameter>
                 </bio:mechanism>
 
-                <bio:mechanism name="kslow_mod" type="Channel Mechanism">
-                    <bio:variable_parameter name="gmax">
-                        <bio:group>apical_dend_group</bio:group>
-                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
-
-                    </bio:variable_parameter>
-                </bio:mechanism>
-
                 <bio:mechanism name="sk_mod" type="Channel Mechanism">
                     <bio:variable_parameter name="gmax">
                         <bio:group>apical_dend_group</bio:group>
                         <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * (5.24016E-10 * H(5.24016E-10 - ((3.18076E-9 + ((p - 16.229) * ((5.24016E-10 - 3.18076E-9) / 238.75))) * (H(238.75 - (p - 16.229)) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229)))))))) + ((((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229))))) * H((-1) * ((5.24016E-10 - ((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229)))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
+
+                    </bio:variable_parameter>
+                </bio:mechanism>
+
+                <bio:mechanism name="kslow_mod" type="Channel Mechanism">
+                    <bio:variable_parameter name="gmax">
+                        <bio:group>apical_dend_group</bio:group>
+                        <bio:inhomogeneous_value param_name="PathLengthApicalDends" value="1.0E8 * 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E8 * ) included to convert to units: GENESIS Physiological Units-->
 
                     </bio:variable_parameter>
                 </bio:mechanism>
