@@ -17,4 +17,5 @@ experiments:
         tolerance: 0.000319564047363
       morphology:
         base section: A140612_mod
+        tolerance: 1e-6
       temperature: ~
