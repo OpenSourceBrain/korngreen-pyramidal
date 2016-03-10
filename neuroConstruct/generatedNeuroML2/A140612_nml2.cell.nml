@@ -5,8 +5,6 @@
 
     <include href="cad.nml"/>
 
-    <include href="epsp_mod.nml"/>
-
     <include href="iA.channel.nml"/>
 
     <include href="iH.channel.nml"/>
@@ -31760,8 +31758,6 @@
                 
                 <channelDensity condDensity="35.99324 mS_per_cm2" id="iA_basal_dend_group" ionChannel="iA" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
                 
-                <channelDensity condDensity="-1.0E8 mS_per_cm2" id="iH_apical_dend_group" ionChannel="iH__q101_44732" segmentGroup="apical_dend_group" ion="h" erev="-33.0 mV"/>
-                
                 <channelDensity condDensity="0.25117 mS_per_cm2" id="iH_soma_group" ionChannel="iH__q101_44732" segmentGroup="soma_group" ion="h" erev="-33.0 mV"/>
                 
                 <channelDensity condDensity="0.25117 mS_per_cm2" id="iH_basal_dend_group" ionChannel="iH__q101_44732" segmentGroup="basal_dend_group" ion="h" erev="-33.0 mV"/>
@@ -31777,8 +31773,6 @@
                 <channelDensity condDensity="20.96737 mS_per_cm2" id="kslow_soma_group" ionChannel="kslow" segmentGroup="soma_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="20.96737 mS_per_cm2" id="kslow_basal_dend_group" ionChannel="kslow" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
-                
-                <channelDensity condDensity="-1.0E8 mS_per_cm2" id="na_apical_dend_group" ionChannel="na__tauh_scale1__taum_scale1__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="apical_dend_group" ion="na" erev="60.0 mV"/>
                 
                 <channelDensity condDensity="3000.0 mS_per_cm2" id="na_nodes_group" ionChannel="na__tauh_scale1__taum_scale1__vshifth3__vshiftm7" segmentGroup="nodes_group" ion="na" erev="60.0 mV"/>
                 
@@ -31807,7 +31801,7 @@
 
                 <channelDensityNonUniform id="bk_apical_dend_group" ionChannel="bk" ion="k" erev="-100.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
 
                     </variableParameter>
                 </channelDensityNonUniform>
@@ -31817,7 +31811,7 @@
 
                 <channelDensityNonUniform id="iA_apical_dend_group" ionChannel="iA" ion="k" erev="-100.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * 2.82824E-8 + (3.3165E-7 * exp(((-1) * 0.0117721) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( 2.82824E-8 + (3.3165E-7 * exp(((-1) * 0.0117721) * (p - 16.229))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
 
                     </variableParameter>
                 </channelDensityNonUniform>
@@ -31827,7 +31821,7 @@
 
                 <channelDensityNonUniform id="iH_apical_dend_group" ionChannel="iH" ion="h" erev="-33.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814))))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814)))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
 
                     </variableParameter>
                 </channelDensityNonUniform>
@@ -31837,7 +31831,7 @@
 
                 <channelDensityNonUniform id="kslow_apical_dend_group" ionChannel="kslow" ion="k" erev="-100.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229)))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( 3.78767E-9 + (2.05886E-7 * exp(((-1) * 0.0915783) * (p - 16.229))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
 
                     </variableParameter>
                 </channelDensityNonUniform>
@@ -31847,8 +31841,7 @@
 
                 <channelDensityNonUniform id="na_apical_dend_group" ionChannel="na" ion="na" erev="60.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
-
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
                     </variableParameter>
                 </channelDensityNonUniform>
                 
@@ -31857,10 +31850,25 @@
 
                 <channelDensityNonUniform id="sk_apical_dend_group" ionChannel="sk" ion="k" erev="-100.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 * (5.24016E-10 * H(5.24016E-10 - ((3.18076E-9 + ((p - 16.229) * ((5.24016E-10 - 3.18076E-9) / 238.75))) * (H(238.75 - (p - 16.229)) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229)))))))) + ((((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229))))) * H((-1) * ((5.24016E-10 - ((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229)))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229)))))))"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
-
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( (5.24016E-10 * H(5.24016E-10 - ((3.18076E-9 + ((p - 16.229) * ((5.24016E-10 - 3.18076E-9) / 238.75))) * (H(238.75 - (p - 16.229)) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229)))))))) + ((((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229))))) * H((-1) * ((5.24016E-10 - ((3.18076E-9 + (((p - 16.229) * (5.24016E-10 - 3.18076E-9)) / 238.75)) * H(238.75 - (p - 16.229)))) + (5.24016E-10 * H((-1) * (238.75 - (p - 16.229))))))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
                     </variableParameter>
                 </channelDensityNonUniform>
+
+
+                <!-- cah with param: permeability = f(p) = ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) --> 
+                <channelDensityNonUniformGHK id="cah_apical_dend_group" ionChannel="cah" ion="ca">
+                    <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="100 *( ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) )"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
+                    </variableParameter>
+                </channelDensityNonUniformGHK>
+
+
+                <!-- car with param: permeability = f(p) = ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))  --> 
+                <channelDensityNonUniformGHK id="car_apical_dend_group" ionChannel="car" ion="ca">
+                    <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="100*( ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229)))) )"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
+                    </variableParameter>
+                </channelDensityNonUniformGHK>
                 
 
                 <spikeThresh value="0.0 mV"/>
