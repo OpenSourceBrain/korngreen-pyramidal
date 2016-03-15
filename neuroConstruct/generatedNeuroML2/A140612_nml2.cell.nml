@@ -3,11 +3,11 @@
 
     <include href="bk.channel.nml"/>
 
-    <include href="cad.nml"/>
+    <include href="HVACa.channel.nml"/>
+
+    <include href="MVACa.channel.nml"/>
 
     <include href="iA.channel.nml"/>
-
-    <include href="iH.channel.nml"/>
 
     <include href="iH__q101_44732.channel.nml"/>
 
@@ -15,9 +15,9 @@
 
     <include href="na.channel.nml"/>
 
-    <include href="na__tauh_scale1__taum_scale1__vshifth3__vshiftm7.channel.nml"/>
+    <include href="na__vshifth3__vshiftm7.channel.nml"/>
 
-    <include href="na__tauh_scale1__taum_scale1__vshifthmin9_60842__vshiftmmin10_9975.channel.nml"/>
+    <include href="na__vshifthmin9_60842__vshiftmmin10_9975.channel.nml"/>
 
     <include href="pas.channel.nml"/>
 
@@ -130,7 +130,7 @@
             </segment>
 
             <segment id="4205" name="Seg0_hill">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-21.5457" y="-30.8743" z="0.0336034" diameter="2.20948"/>
                 <distal x="-19.5468" y="-30.807" z="0.0336034" diameter="2.20948"/>
             </segment>
@@ -161,7 +161,7 @@
             </segment>
 
             <segment id="1432" name="Seg0_apic_0">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-26.5222" y="-19.1544" z="0.550421" diameter="9.04"/>
                 <distal x="-26.5121" y="-19.8244" z="-0.649579" diameter="10.41"/>
             </segment>
@@ -192,7 +192,7 @@
             </segment>
 
             <segment id="927" name="Seg0_dend_41">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-13.1522" y="-36.0944" z="-0.0495786" diameter="4.96"/>
                 <distal x="-11.1722" y="-36.7144" z="-0.0495786" diameter="4.96"/>
             </segment>
@@ -223,7 +223,7 @@
             </segment>
 
             <segment id="676" name="Seg0_dend_30">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-20.4522" y="-43.3144" z="-0.149579" diameter="4.09"/>
                 <distal x="-20.8222" y="-45.8144" z="-3.39958" diameter="4.09"/>
             </segment>
@@ -269,7 +269,7 @@
             </segment>
 
             <segment id="555" name="Seg0_dend_23">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-27.8122" y="-31.1144" z="-0.0495786" diameter="4.09"/>
                 <distal x="-29.9122" y="-32.1044" z="-1.14958" diameter="4.09"/>
             </segment>
@@ -305,7 +305,7 @@
             </segment>
 
             <segment id="238" name="Seg0_dend_11">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-25.3222" y="-38.7544" z="-0.299579" diameter="5.33"/>
                 <distal x="-26.6821" y="-40.3744" z="-4.94958" diameter="5.33"/>
             </segment>
@@ -341,7 +341,7 @@
             </segment>
 
             <segment id="155" name="Seg0_dend_8">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-11.6022" y="-37.1244" z="1.95042" diameter="3.1"/>
                 <distal x="-9.74215" y="-38.9944" z="1.95042" diameter="3.1"/>
             </segment>
@@ -372,7 +372,7 @@
             </segment>
 
             <segment id="136" name="Seg0_dend_7">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-15.5222" y="-38.5744" z="0.750421" diameter="3.96"/>
                 <distal x="-15.5222" y="-38.5744" z="0.700421" diameter="3.96"/>
             </segment>
@@ -468,7 +468,7 @@
             </segment>
 
             <segment id="130" name="Seg0_dend_6">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-15.9422" y="-41.4344" z="1.45042" diameter="3.35"/>
                 <distal x="-15.3222" y="-44.8044" z="0.950421" diameter="3.35"/>
             </segment>
@@ -499,7 +499,7 @@
             </segment>
 
             <segment id="21" name="Seg0_dend_0">
-                <parent segment="10" fractionAlong="1.1752643E-5"/>
+                <parent segment="10" fractionAlong="0"/>
                 <proximal x="-15.3722" y="-26.5044" z="-0.499579" diameter="2.48"/>
                 <distal x="-12.4022" y="-24.5044" z="-0.499579" diameter="2.48"/>
             </segment>
@@ -31774,17 +31774,17 @@
                 
                 <channelDensity condDensity="20.96737 mS_per_cm2" id="kslow_basal_dend_group" ionChannel="kslow" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
                 
-                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_nodes_group" ionChannel="na__tauh_scale1__taum_scale1__vshifth3__vshiftm7" segmentGroup="nodes_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_nodes_group" ionChannel="na__vshifth3__vshiftm7" segmentGroup="nodes_group" ion="na" erev="60.0 mV"/>
                 
-                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_iseg_group" ionChannel="na__tauh_scale1__taum_scale1__vshifth3__vshiftm7" segmentGroup="iseg_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_iseg_group" ionChannel="na__vshifth3__vshiftm7" segmentGroup="iseg_group" ion="na" erev="60.0 mV"/>
                 
-                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_hill_group" ionChannel="na__tauh_scale1__taum_scale1__vshifth3__vshiftm7" segmentGroup="hill_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="3000.0 mS_per_cm2" id="na_hill_group" ionChannel="na__vshifth3__vshiftm7" segmentGroup="hill_group" ion="na" erev="60.0 mV"/>
                 
-                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_soma_group" ionChannel="na__tauh_scale1__taum_scale1__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="soma_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_soma_group" ionChannel="na__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="soma_group" ion="na" erev="60.0 mV"/>
                 
-                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_myelin_group" ionChannel="na__tauh_scale1__taum_scale1__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="myelin_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_myelin_group" ionChannel="na__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="myelin_group" ion="na" erev="60.0 mV"/>
                 
-                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_basal_dend_group" ionChannel="na__tauh_scale1__taum_scale1__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="basal_dend_group" ion="na" erev="60.0 mV"/>
+                <channelDensity condDensity="35.2142 mS_per_cm2" id="na_basal_dend_group" ionChannel="na__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="basal_dend_group" ion="na" erev="60.0 mV"/>
                 
                 <channelDensity condDensity="20.0 mS_per_cm2" id="pas_nodes_group" ionChannel="pas" segmentGroup="nodes_group" erev="-47.8446 mV" ion="non_specific"/>
                 
@@ -31819,7 +31819,7 @@
 
                 <!--iH with param: gmax = f(p) = 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814)))) on ParameterisedGroup: PathLengthApicalDends on: apical_dend_group with metric: Path Length from root (NO_TRANSLATION, NO_NORMALISATION), var: p-->
 
-                <channelDensityNonUniform id="iH_apical_dend_group" ionChannel="iH" ion="h" erev="-33.0 mV">
+                <channelDensityNonUniform id="iH_apical_dend_group" ionChannel="iH__q101_44732" ion="h" erev="-33.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
                         <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( 2.5117E-9 + (1.18437E-7 / (1 + exp(((-1) * 0.0137979) * ((p - 16.229) - 351.814)))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
 
@@ -31839,7 +31839,7 @@
 
                 <!--na with param: gmax = f(p) = (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))))) on ParameterisedGroup: PathLengthApicalDends on: apical_dend_group with metric: Path Length from root (NO_TRANSLATION, NO_NORMALISATION), var: p-->
 
-                <channelDensityNonUniform id="na_apical_dend_group" ionChannel="na" ion="na" erev="60.0 mV">
+                <channelDensityNonUniform id="na_apical_dend_group" ionChannel="na__vshifthmin9_60842__vshiftmmin10_9975" ion="na" erev="60.0 mV">
                     <variableParameter parameter="condDensity" segmentGroup="apical_dend_group">
                         <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="1.0E9 *( (5.64519E-8 * H(5.64519E-8 - ((3.52142E-7 + ((p - 16.229) * ((5.64519E-8 - 3.52142E-7) / 480.929))) * (H(480.929 - (p - 16.229)) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229)))))))) + ((((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))) * H((-1) * ((5.64519E-8 - ((3.52142E-7 + (((p - 16.229) * (5.64519E-8 - 3.52142E-7)) / 480.929)) * H(480.929 - (p - 16.229)))) + (5.64519E-8 * H((-1) * (480.929 - (p - 16.229))))))) )"/>    <!--Note: conversion factor (1.0E9 * ) included to convert to units: GENESIS SI Units-->
                     </variableParameter>
