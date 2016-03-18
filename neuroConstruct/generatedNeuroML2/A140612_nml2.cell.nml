@@ -31745,6 +31745,7 @@
                 <channelDensity condDensity="4.0 mS_per_cm2" id="bk_hill_group" ionChannel="bk" segmentGroup="hill_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="0.0638741 mS_per_cm2" id="bk_soma_group" ionChannel="bk" segmentGroup="soma_group" ion="k" erev="-100.0 mV"/>
+
                 
                 <channelDensity condDensity="100.0 mS_per_cm2" id="iA_nodes_group" ionChannel="iA" segmentGroup="nodes_group" ion="k" erev="-100.0 mV"/>
                 
@@ -31757,11 +31758,12 @@
                 <channelDensity condDensity="35.99324 mS_per_cm2" id="iA_soma_group" ionChannel="iA" segmentGroup="soma_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="35.99324 mS_per_cm2" id="iA_basal_dend_group" ionChannel="iA" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
+
                 
                 <channelDensity condDensity="0.25117 mS_per_cm2" id="iH_soma_group" ionChannel="iH__q101_44732" segmentGroup="soma_group" ion="h" erev="-33.0 mV"/>
                 
                 <channelDensity condDensity="0.25117 mS_per_cm2" id="iH_basal_dend_group" ionChannel="iH__q101_44732" segmentGroup="basal_dend_group" ion="h" erev="-33.0 mV"/>
-                
+
                 <channelDensity condDensity="150.0 mS_per_cm2" id="kslow_nodes_group" ionChannel="kslow" segmentGroup="nodes_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="150.0 mS_per_cm2" id="kslow_iseg_group" ionChannel="kslow" segmentGroup="iseg_group" ion="k" erev="-100.0 mV"/>
@@ -31773,6 +31775,7 @@
                 <channelDensity condDensity="20.96737 mS_per_cm2" id="kslow_soma_group" ionChannel="kslow" segmentGroup="soma_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="20.96737 mS_per_cm2" id="kslow_basal_dend_group" ionChannel="kslow" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
+                
                 
                 <channelDensity condDensity="3000.0 mS_per_cm2" id="na_nodes_group" ionChannel="na__vshifth3__vshiftm7" segmentGroup="nodes_group" ion="na" erev="60.0 mV"/>
                 
@@ -31786,15 +31789,21 @@
                 
                 <channelDensity condDensity="35.2142 mS_per_cm2" id="na_basal_dend_group" ionChannel="na__vshifthmin9_60842__vshiftmmin10_9975" segmentGroup="basal_dend_group" ion="na" erev="60.0 mV"/>
                 
+
                 <channelDensity condDensity="20.0 mS_per_cm2" id="pas_nodes_group" ionChannel="pas" segmentGroup="nodes_group" erev="-47.8446 mV" ion="non_specific"/>
                 
                 <channelDensity condDensity="0.0387414 mS_per_cm2" id="pas_soma_iseg_hill_myelin_group" ionChannel="pas" segmentGroup="soma_iseg_hill_myelin_group" erev="-47.8446 mV" ion="non_specific"/>
                 
                 <channelDensity condDensity="0.0774827 mS_per_cm2" id="pas_dendrite_group" ionChannel="pas" segmentGroup="dendrite_group" erev="-47.8446 mV" ion="non_specific"/>
                 
+                
                 <channelDensity condDensity="0.318076 mS_per_cm2" id="sk_soma_group" ionChannel="sk" segmentGroup="soma_group" ion="k" erev="-100.0 mV"/>
                 
                 <channelDensity condDensity="0.0524016 mS_per_cm2" id="sk_basal_dend_group" ionChannel="sk" segmentGroup="basal_dend_group" ion="k" erev="-100.0 mV"/>
+
+                <channelDensityGHK permeability="0.00314901 cm_per_s" id="car_soma_group" ionChannel="car" segmentGroup="soma_group" ion="ca"/>
+
+                <channelDensityGHK permeability="9.27521e-05 cm_per_s" id="car_soma_group" ionChannel="cah" segmentGroup="soma_group" ion="ca"/>
                 
 
                 <!--bk with param: gmax = f(p) = (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))))) on ParameterisedGroup: PathLengthApicalDends on: apical_dend_group with metric: Path Length from root (NO_TRANSLATION, NO_NORMALISATION), var: p-->
@@ -31858,7 +31867,7 @@
                 <!-- cah with param: permeability = f(p) = ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) --> 
                 <channelDensityNonUniformGHK id="cah_apical_dend_group" ionChannel="cah" ion="ca">
                     <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="100 *( ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) )"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229))))"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
                     </variableParameter>
                 </channelDensityNonUniformGHK>
 
@@ -31866,7 +31875,7 @@
                 <!-- car with param: permeability = f(p) = ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))  --> 
                 <channelDensityNonUniformGHK id="car_apical_dend_group" ionChannel="car" ion="ca">
                     <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="100*( ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229)))) )"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))"/>    
                     </variableParameter>
                 </channelDensityNonUniformGHK>
                 
