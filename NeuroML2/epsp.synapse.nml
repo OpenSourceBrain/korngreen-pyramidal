@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="network_KorngreenPyramidal">
+
+    <expTwoSynapse id="syn_exc1" erev="0mV" gbase="0.06nS" tauDecay="9ms" tauRise="1ms"/>
+    <timedSynapticInput id="epsp" synapse="syn_exc1" spikeTarget="./syn_exc1">
+        <spike  time="404 ms"/>
+    </timedSynapticInput>
+
+</neuroml>

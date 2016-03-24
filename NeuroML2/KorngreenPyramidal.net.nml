@@ -2,13 +2,9 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="network_KorngreenPyramidal">
 
     <notes>
-
 Network structure (NeuroML 2beta4) for project: KorngreenPyramidal saved with neuroConstruct v1.7.1 on: 17:36:59, 09-Mar-16
 
 Cell Group: FullCell_nml2 contains 1 cells
-
-
-
     </notes>
 
 
@@ -23,9 +19,10 @@ Cell Group: FullCell_nml2 contains 1 cells
     <include href="na__vshifthmin9_60842__vshiftmmin10_9975.channel.nml"/>
     <include href="pas.channel.nml"/>
     <include href="sk.channel.nml"/>
-    <network id="network_KorngreenPyramidal" type="networkWithTemperature" temperature="34.0 degC">
+    <include href="epsp.synapse.nml"/>
 
-        
+
+    <network id="network_KorngreenPyramidal" type="networkWithTemperature" temperature="34.0 degC">
 
         <population id="FullCell_nml2" component="A140612_nml2" type="populationList" size="1">
            <annotation>
@@ -36,15 +33,9 @@ Cell Group: FullCell_nml2 contains 1 cells
             </instance>
         </population>
 
-
-
-            <!--There are no synaptic connections present in the network-->
-
-
-            <!--There are no electrical inputs present in the network-->
-
-
-
+        <inputList id="timedEPSP" component="epsp" population="FullCell_nml2">
+            <input id="0" target="../FullCell_nml2/0/" segmentId="2629" destination="synapses"/>
+        </inputList>
 
     </network>
 

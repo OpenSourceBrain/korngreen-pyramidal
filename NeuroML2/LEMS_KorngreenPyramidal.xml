@@ -25,6 +25,7 @@
     <Include file="sk.channel.nml"/>
     <Include file="MVACa.channel.nml"/>
     <Include file="HVACa.channel.nml"/>
+    <Include file="epsp.synapse.nml"/>
     <!--   Cell files-->
     <Include file="A140612_nml2.cell.nml"/>
     <!--   Network file-->
@@ -33,7 +34,7 @@
 
         <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
         is used to allow validation of this file according to the LEMS schema specified above...-->
-    <Component type="Simulation" id="sim1" length="2000.0ms" step="0.0125ms" target="network_KorngreenPyramidal">
+    <Component type="Simulation" id="sim1" length="500.0ms" step="0.0125ms" target="network_KorngreenPyramidal">
         
         <Display id="FullCell_mod_v" title="KorngreenPyramidal: bac6_nml2, FullCell_nml2, VOLTAGE, VOLTAGE, VOLTAGE" xmin="-0.2" xmax="2.2" ymin="-0.104" ymax="0.064" timeScale="1s">
             <Line id="v" timeScale="1s" quantity="FullCell_nml2/0/A140612_nml2/2674/v" scale="1 V" color="#000000"/>
