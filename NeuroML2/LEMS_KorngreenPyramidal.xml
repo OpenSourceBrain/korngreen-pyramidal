@@ -8,12 +8,6 @@
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
 
-    
-
-     <!--Include the generated NeuroML 2 files-->
-
-
-     <!--   Channel/synapse files-->
     <Include file="bk.channel.nml"/>
     <Include file="cad.nml"/>
     <Include file="iA.channel.nml"/>
@@ -25,10 +19,8 @@
     <Include file="sk.channel.nml"/>
     <Include file="MVACa.channel.nml"/>
     <Include file="HVACa.channel.nml"/>
-    <Include file="epsp.synapse.nml"/>
-    <!--   Cell files-->
+    <Include file="epsp_fixed.synapse.nml"/>
     <Include file="A140612_nml2.cell.nml"/>
-    <!--   Network file-->
     <Include file="KorngreenPyramidal.net.nml"/>
     
 

@@ -19,7 +19,7 @@ Cell Group: FullCell_nml2 contains 1 cells
     <include href="na__vshifthmin9_60842__vshiftmmin10_9975.channel.nml"/>
     <include href="pas.channel.nml"/>
     <include href="sk.channel.nml"/>
-    <include href="epsp.synapse.nml"/>
+    <include href="epsp_fixed.synapse.nml"/>
 
 
     <network id="network_KorngreenPyramidal" type="networkWithTemperature" temperature="34.0 degC">
@@ -34,6 +34,7 @@ Cell Group: FullCell_nml2 contains 1 cells
         </population>
 
         <inputList id="timedEPSP" component="epsp" population="FullCell_nml2">
+            <!-- <input id="0" target="../FullCell_nml2/0/" segmentId="2629" destination="synapses"/> -->
             <input id="0" target="../FullCell_nml2/0/" segmentId="2629" destination="synapses"/>
         </inputList>
 

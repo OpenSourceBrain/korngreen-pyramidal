@@ -2,25 +2,15 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="A140612_nml2">
 
     <include href="bk.channel.nml"/>
-
     <include href="HVACa.channel.nml"/>
-
     <include href="MVACa.channel.nml"/>
-
     <include href="iA.channel.nml"/>
-
     <include href="iH__q101_44732.channel.nml"/>
-
     <include href="kslow.channel.nml"/>
-
     <include href="na.channel.nml"/>
-
     <include href="na__vshifth3__vshiftm7.channel.nml"/>
-
     <include href="na__vshifthmin9_60842__vshiftmmin10_9975.channel.nml"/>
-
     <include href="pas.channel.nml"/>
-
     <include href="sk.channel.nml"/>
 
     <cell id="A140612_nml2">

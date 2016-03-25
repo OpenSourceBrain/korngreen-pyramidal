@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="K_Pst">
+    
+
+    <SinglePSP id="epsp" onset="404ms" tau0="1ms" tau1="9ms" imax="0.6nA"/>
+                
+    <ComponentType name="SinglePSP" extends="basePointCurrent">
+        <!-- 
+         Voltage independent double exponential current injection
+                
+        Comment from original mod file: 
+
+            modified from syn2.mod
+            injected current with exponential rise and decay current defined by
+                     i = 0 for t < onset and
+                     i=amp*((1-exp(-(t-onset)/tau0))-(1-exp(-(t-onset)/tau1)))
+                      for t > onset
+            
+            	compare to experimental current injection:
+             	i = - amp*(1-exp(-t/t1))*(exp(-t/t2))
+            
+            	-> tau1==t2   tau0 ^-1 = t1^-1 + t2^-1
+        -->
+
+        <Parameter name="onset" dimension="time"/>
+        <Parameter name="tau0" dimension="time"/>
+        <Parameter name="tau1" dimension="time"/>
+        <Parameter name="imax" dimension="current"/>
+
+        <Dynamics>
+            <DerivedVariable name="tpeak" value="tau0*tau1*log(tau0/tau1)/(tau0-tau1)" dimension="time"/>
+            <DerivedVariable name="adjust" value="1/((1-exp(-tpeak/tau0))-(1-exp(-tpeak/tau1)))" dimension="none"/>
+            <DerivedVariable name="amp" value="adjust*imax" dimension="current"/>
+            <ConditionalDerivedVariable name="i" exposure="i" dimension="current">
+                <Case condition="t .lt. onset" value="0"/>
+                <Case condition="t .gt. onset" value="amp*((1-exp(-(t-onset)/tau0))-(1-exp(-(t-onset)/tau1)))"/>
+            </ConditionalDerivedVariable>
+        </Dynamics>
+
+    </ComponentType>
+
+</neuroml>
