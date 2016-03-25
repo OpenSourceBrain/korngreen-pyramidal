@@ -20,6 +20,7 @@ Cell Group: FullCell_nml2 contains 1 cells
     <include href="pas.channel.nml"/>
     <include href="sk.channel.nml"/>
     <include href="epsp_fixed.synapse.nml"/>
+    <include href="iclamp.input.nml"/>
 
 
     <network id="network_KorngreenPyramidal" type="networkWithTemperature" temperature="34.0 degC">
@@ -33,9 +34,13 @@ Cell Group: FullCell_nml2 contains 1 cells
             </instance>
         </population>
 
-        <inputList id="timedEPSP" component="epsp" population="FullCell_nml2">
+        <inputList id="apicalEPSP" component="epsp" population="FullCell_nml2">
             <!-- <input id="0" target="../FullCell_nml2/0/" segmentId="2629" destination="synapses"/> -->
             <input id="0" target="../FullCell_nml2/0/" segmentId="2629" destination="synapses"/>
+        </inputList>
+
+        <inputList id="somaIClamp" component="IClamp" population="FullCell_nml2">
+            <input id="1" target="../FullCell_nml2/0/" segmentId="0" destination="synapses"/>
         </inputList>
 
     </network>
