@@ -31793,7 +31793,15 @@
 
                 <channelDensityGHK permeability="0.00314901 cm_per_s" id="car_soma_group" ionChannel="car" segmentGroup="soma_group" ion="ca"/>
 
-                <channelDensityGHK permeability="9.27521e-05 cm_per_s" id="car_soma_group" ionChannel="cah" segmentGroup="soma_group" ion="ca"/>
+                <channelDensityGHK permeability="4e-5 cm_per_s" id="car_hill_group" ionChannel="car" segmentGroup="hill_group" ion="ca"/>
+
+                <channelDensityGHK permeability="0.00314901 cm_per_s" id="car_basal_dend_group" ionChannel="car" segmentGroup="basal_dend_group" ion="ca"/>
+
+                <channelDensityGHK permeability="9.27521e-05 cm_per_s" id="cah_soma_group" ionChannel="cah" segmentGroup="soma_group" ion="ca"/>
+
+                <channelDensityGHK permeability="2e-04 cm_per_s" id="cah_hill_group" ionChannel="cah" segmentGroup="hill_group" ion="ca"/>
+
+                <channelDensityGHK permeability="9.27521e-5 cm_per_s" id="cah_basal_dend_group" ionChannel="cah" segmentGroup="basal_dend_group" ion="ca"/>
                 
 
                 <!--bk with param: gmax = f(p) = (1.22971E-9 * H(1.22971E-9 - ((6.38741E-10 + ((p - 16.229) * ((1.22971E-9 - 6.38741E-10) / 27.5943))) * (H(27.5943 - (p - 16.229)) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229)))))))) + ((((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))) * H((-1) * ((1.22971E-9 - ((6.38741E-10 + (((p - 16.229) * (1.22971E-9 - 6.38741E-10)) / 27.5943)) * H(27.5943 - (p - 16.229)))) + (1.22971E-9 * H((-1) * (27.5943 - (p - 16.229))))))) on ParameterisedGroup: PathLengthApicalDends on: apical_dend_group with metric: Path Length from root (NO_TRANSLATION, NO_NORMALISATION), var: p-->
@@ -31857,7 +31865,7 @@
                 <!-- cah with param: permeability = f(p) = ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) --> 
                 <channelDensityNonUniformGHK id="cah_apical_dend_group" ionChannel="cah" ion="ca">
                     <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229))))"/>    <!--Note: conversion factor (100 * ) included to convert to units: GENESIS SI Units-->
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value=" ( ((9.27521E-7 + (((p - 16.229) * (1.55847E-6 - 9.27521E-7)) / 10.3458)) * H(10.3458 - (p - 16.229))) + (1.55847E-6 * H((-1) * (10.3458 - (p - 16.229)))) )"/>    
                     </variableParameter>
                 </channelDensityNonUniformGHK>
 
@@ -31865,7 +31873,7 @@
                 <!-- car with param: permeability = f(p) = ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))  --> 
                 <channelDensityNonUniformGHK id="car_apical_dend_group" ionChannel="car" ion="ca">
                     <variableParameter parameter="permeability" segmentGroup="apical_dend_group">
-                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229))))"/>    
+                        <inhomogeneousValue inhomogeneousParameter="PathLengthApicalDends" value="( ((3.14901E-5 + (((p - 16.229) * (4.88401E-6 - 3.14901E-5)) / 924.858)) * H(924.858 - (p - 16.229))) + (4.88401E-6 * H((-1) * (924.858 - (p - 16.229)))) ) "/>    
                     </variableParameter>
                 </channelDensityNonUniformGHK>
                 
