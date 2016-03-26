@@ -11,7 +11,7 @@
     <Include file="bk.channel.nml"/>
     <Include file="cad.nml"/>
     <Include file="iA.channel.nml"/>
-    <Include file="iH__q101_44732.channel.nml"/>
+    <Include file="iH.channel.nml"/>
     <Include file="kslow.channel.nml"/>
     <Include file="na__vshifth3__vshiftm7.channel.nml"/>
     <Include file="na__vshifth-9_60842__vshiftm-10_9975.channel.nml"/>
@@ -27,7 +27,7 @@
 
         <!--Note: this could be: Simulation id="sim1" ... , but Component type="Simulation" ... 
         is used to allow validation of this file according to the LEMS schema specified above...-->
-    <Component type="Simulation" id="sim1" length="500.0ms" step="0.02ms" target="network_KorngreenPyramidal">
+    <Component type="Simulation" id="sim1" length="500.0ms" step="0.0125ms" target="network_KorngreenPyramidal">
         
         <Display id="FullCell_mod_v" title="KorngreenPyramidal: bac6_nml2, FullCell_nml2, VOLTAGE, VOLTAGE, VOLTAGE" xmin="-0.2" xmax="2.2" ymin="-0.104" ymax="0.064" timeScale="1s">
             <Line id="v" timeScale="1s" quantity="FullCell_nml2/0/A140612_nml2/2674/v" scale="1 V" color="#000000"/>
