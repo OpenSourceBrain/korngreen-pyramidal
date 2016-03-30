@@ -35,20 +35,26 @@
         </gateKS>
 
         <gateKS id="b" instances="1">
-            <q10Settings type="q10ExpTemp" q10Factor="2.3" experimentalTemp="21 degC"/>
             <KSState id="bc" relativeConductance="0"/>
-            <KSState id="bo" relativeConductance="0.5"/>
-            <KSState id="bo1" relativeConductance="0.5"/>
-            <tauInfTransition from="bc" to="bo" id="tauinf0" >
-                <steadyState type="kslow_b_inf"/>
+            <KSState id="bc1" relativeConductance="0"/>
+            <KSState id="bo" relativeConductance="1"/>
+            <KSState id="bo1" relativeConductance="1"/>
+            <tauInfTransition from="bc" to="bo" id="tauinf0">
+                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
                 <timeCourse type="kslow_b_tau"/>
             </tauInfTransition> 
-            <tauInfTransition from="bc" to="bo1" id="tauinf1">
-                <steadyState type="kslow_b_inf"/>
+            <tauInfTransition from="bc1" to="bo1" id="tauinf1">
+                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
                 <timeCourse type="kslow_b1_tau"/>
             </tauInfTransition> 
+            <!--
+            <tauInfTransition from="bc1" to="bo1" id="tauinf" >
+                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
+                <timeCourse type="kslow_b1_tau"/>
+            </tauInfTransition> 
+            -->
         </gateKS>
-                            
+
     </ionChannelKS>
 
     <ComponentType name="kslow_a_alpha_rate" extends="baseVoltageDepRate">
@@ -61,10 +67,11 @@
         <Constant name="a4" dimension="none" value="-1.27"/>
         <Constant name="a5" dimension="none" value="71"/>
         <Constant name="a6" dimension="none" value="-0.0053"/>
+        <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a0*(V-a1)/(1-exp(-(V-a1)/a2))) / TIME_SCALE"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a0*(V-a1)/(1-exp(-(V-a1)/a2))) / TIME_SCALE * rateScale"/>
         </Dynamics>
 
     </ComponentType>
@@ -83,7 +90,8 @@
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a3*exp(-(V-a4)/a5)+a6) / TIME_SCALE"/>
+            <!-- notice that a6 is not q10 scaled in the original mod file! -->
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a3*exp(-(V-a4)/a5)+a6/rateScale) / TIME_SCALE * rateScale"/>
         </Dynamics>
 
     </ComponentType>
@@ -93,19 +101,17 @@
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
         <Constant name="v05b" dimension="none" value="-58"/>
-        <Constant name="zb" dimension="none" value="-11"/>
         <Constant name="b0" dimension="none" value="360"/>
         <Constant name="b11" dimension="none" value="1010"/>
         <Constant name="b2" dimension="none" value="-75"/>
         <Constant name="b3" dimension="none" value="48"/>
         <Constant name="b4" dimension="none" value="23.7"/>
         <Constant name="b5" dimension="none" value="-54"/>
-
         <Requirement name="rateScale" dimension="none"/>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="t" exposure="t" dimension="time" value="(b0+(b11+b4*(V-b5))*exp(-(V-b2)*(V-b2)/(b3*b3))) * TIME_SCALE"/>
+            <DerivedVariable name="t" exposure="t" dimension="time" value="(b0+(b11+b4*(V-b5))*exp(-(V-b2)*(V-b2)/(b3*b3))) * TIME_SCALE "/>
         </Dynamics>
 
     </ComponentType>
@@ -124,25 +130,10 @@
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="t" exposure="t" dimension="time" value="(bb0+bb1*exp(-bb2*V)+bb3*exp(-bb4*V)) * TIME_SCALE"/>
+            <DerivedVariable name="t" exposure="t" dimension="time" value="(bb0+bb1*exp(-bb2*V)+bb3*exp(-bb4*V)) * TIME_SCALE "/>
         </Dynamics>
 
     </ComponentType>
 
-
-    <ComponentType name="kslow_b_inf" extends="baseVoltageDepVariable">
-        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
-        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="v05b" dimension="none" value="-58"/>
-        <Constant name="zb" dimension="none" value="-11"/>
-        <Requirement name="rateScale" dimension="none"/>
-
-        <Dynamics>
-            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="V05b" dimension="none" value="v05b"/>
-            <DerivedVariable name="x" exposure="x" dimension="none" value="rateScale * 1/(1 + exp(-(V-V05b)/zb))"/>
-        </Dynamics>
-
-    </ComponentType>
 
 </neuroml>
