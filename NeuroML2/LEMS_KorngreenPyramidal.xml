@@ -13,8 +13,7 @@
     <Include file="iA.channel.nml"/>
     <Include file="iH.channel.nml"/>
     <Include file="kslow.channel.nml"/>
-    <Include file="na__vshifth3__vshiftm7.channel.nml"/>
-    <Include file="na__vshifth-9_60842__vshiftm-10_9975.channel.nml"/>
+    <Include file="na.channel.nml"/>
     <Include file="pas.channel.nml"/>
     <Include file="sk.channel.nml"/>
     <Include file="MVACa.channel.nml"/>
