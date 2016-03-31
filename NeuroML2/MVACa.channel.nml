@@ -1,10 +1,8 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:ns_1="http://www.w3.org/2001/XMLSchema-instance" ns_1:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" id="car">
 
-    <notes>ChannelML file containing a single Medium Voltage Activated (MVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730&#8211;42.</notes>
-
     <ionChannel id="car" conductance="10pS" type="ionChannelHH" species="ca">
 
-        <notes>ChannelML file containing a single Medium Voltage Activated (MVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730&#8211;42.</notes>
+        <notes>Medium Voltage Activated (MVA) Ca Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730&#8211;42.</notes>
                 
         <annotation>
             <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -23,33 +21,22 @@
 
         <gate id="m" type="gateHHtauInf" instances="2">
             <q10Settings type="q10ExpTemp" q10Factor="1.15288" experimentalTemp="24 degC"/>
-            <timeCourse type="car_m_tau_tau"/>
-            <steadyState type="car_m_inf_inf"/>
+            <timeCourse type="car_m_tau" shift="-9.67845"/>
+            <steadyState type="car_m_inf" shift="-9.67845"/>
         </gate>
 
         <gate id="h" type="gateHHtauInf" instances="1">
             <q10Settings type="q10ExpTemp" q10Factor="1" experimentalTemp="24 degC"/>
-            <timeCourse type="car_h_tau_tau"/>
-            <steadyState type="car_h_inf_inf"/>
+            <timeCourse type="car_h_tau" shifth="-2.1308"/>
+            <steadyState type="car_h_inf" shifth="-2.1308"/>
         </gate>
                             
     </ionChannel>
 
-    <ComponentType name="car_m_tau_tau" extends="baseVoltageDepTime">
+    <ComponentType name="car_m_tau" extends="baseVoltageDepTime">
+        <Parameter name="shift" dimension="none"/>
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="shift" dimension="none" value="-9.67845">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="-2.1308">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1.15288">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qh" dimension="none" value="1">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -58,21 +45,10 @@
 
     </ComponentType>
 
-    <ComponentType name="car_m_inf_inf" extends="baseVoltageDepVariable">
+    <ComponentType name="car_m_inf" extends="baseVoltageDepVariable">
+        <Parameter name="shift" dimension="none"/>
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="shift" dimension="none" value="-9.67845">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="-2.1308">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1.15288">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qh" dimension="none" value="1">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -81,21 +57,10 @@
 
     </ComponentType>
 
-    <ComponentType name="car_h_tau_tau" extends="baseVoltageDepTime">
+    <ComponentType name="car_h_tau" extends="baseVoltageDepTime">
+        <Parameter name="shifth" dimension="none"/>
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="shift" dimension="none" value="-9.67845">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="-2.1308">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1.15288">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qh" dimension="none" value="1">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
@@ -104,21 +69,10 @@
 
     </ComponentType>
 
-    <ComponentType name="car_h_inf_inf" extends="baseVoltageDepVariable">
+    <ComponentType name="car_h_inf" extends="baseVoltageDepVariable">
+        <Parameter name="shifth" dimension="none"/>
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
         <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
-        <Constant name="shift" dimension="none" value="-9.67845">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="shifth" dimension="none" value="-2.1308">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qm" dimension="none" value="1.15288">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
-        <Constant name="qh" dimension="none" value="1">
-            <!--Note: this parameter should instead be defined only once within the ionChannel!-->
-        </Constant>
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
