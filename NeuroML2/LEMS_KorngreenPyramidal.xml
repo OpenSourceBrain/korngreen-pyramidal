@@ -36,11 +36,10 @@
             <Line id="v" timeScale="1s" quantity="FullCell_nml2/0/A140612_nml2/0/v" scale="1 V" color="#0000ff"/>
         </Display>
     
-        <!--
-        <OutputFile id="bac6_v_soma" fileName="/Users/borismarin/git/korngreen-pyramidal/neuroConstruct/simulations/Sim_206/FullCell_nml2.dat">
+        <OutputFile id="bac6_v_soma" fileName="./bac6_soma_v.dat">
             <OutputColumn id="v" quantity="FullCell_nml2/0/A140612_nml2/0/v"/>
         </OutputFile>
-        -->
+
     </Component>
 
 
