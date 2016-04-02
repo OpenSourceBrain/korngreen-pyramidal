@@ -3,7 +3,7 @@
 
     <notes>ChannelML file containing a single slow K+ Channel description from a cortical layer V pyramidal neuron, described in Keren, N., Peled, N., and Korngreen, A. (2005). Constraining compartmental models using multiple voltage recordings and genetic algorithms. Journal of neurophysiology, 94(6), 3730&#8211;42.</notes>
 
-    <ionChannelKS id="kslow" conductance="10pS" species="k">
+    <ionChannelHH id="kslow" conductance="10pS" species="k">
 
         <notes/>
                 
@@ -22,40 +22,25 @@
             </rdf:RDF>
         </annotation>
 
-        <gateKS id="a" instances="2">
-            <openState id="ao"/>
-            <closedState id="ac"/>
+        <gateHHrates id="a" instances="2">
             <q10Settings type="q10ExpTemp" q10Factor="2.3" experimentalTemp="21 degC"/>
-            <forwardTransition id="ft" from="ac" to="ao" >
-                <rate type="kslow_a_alpha_rate"/>
-            </forwardTransition>
-            <reverseTransition id="rt" from="ac" to="ao">
-                <rate type="kslow_a_beta_rate"/>
-            </reverseTransition>
-        </gateKS>
+            <forwardRate type="kslow_a_alpha_rate"/>
+            <reverseRate type="kslow_a_beta_rate"/>
+        </gateHHrates>
 
-        <gateKS id="b" instances="1">
-            <KSState id="bc" relativeConductance="0"/>
-            <KSState id="bc1" relativeConductance="0"/>
-            <KSState id="bo" relativeConductance="1"/>
-            <KSState id="bo1" relativeConductance="1"/>
-            <tauInfTransition from="bc" to="bo" id="tauinf0">
+        <gateFractional id="b" instances="1">
+            <subGate id="bb" fractionalConductance="0.5">
                 <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
                 <timeCourse type="kslow_b_tau"/>
-            </tauInfTransition> 
-            <tauInfTransition from="bc1" to="bo1" id="tauinf1">
-                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
-                <timeCourse type="kslow_b1_tau"/>
-            </tauInfTransition> 
-            <!--
-            <tauInfTransition from="bc1" to="bo1" id="tauinf" >
-                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
-                <timeCourse type="kslow_b1_tau"/>
-            </tauInfTransition> 
-            -->
-        </gateKS>
+            </subGate>
 
-    </ionChannelKS>
+            <subGate id="bb1" fractionalConductance="0.5">
+                <steadyState type="HHSigmoidVariable" rate="1" midpoint="-58mV" scale="-11mV"/>
+                <timeCourse type="kslow_b1_tau"/>
+            </subGate>
+        </gateFractional>
+
+    </ionChannelHH>
 
     <ComponentType name="kslow_a_alpha_rate" extends="baseVoltageDepRate">
         <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
@@ -71,7 +56,7 @@
 
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a0*(V-a1)/(1-exp(-(V-a1)/a2))) / TIME_SCALE * rateScale"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a0*(V-a1)/(1-exp(-(V-a1)/a2))) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
@@ -91,7 +76,7 @@
         <Dynamics>
             <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
             <!-- notice that a6 is not q10 scaled in the original mod file! -->
-            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a3*exp(-(V-a4)/a5)+a6/rateScale) / TIME_SCALE * rateScale"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="(a3*exp(-(V-a4)/a5)+a6/rateScale) / TIME_SCALE"/>
         </Dynamics>
 
     </ComponentType>
