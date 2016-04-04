@@ -1,0 +1,17 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+target: ./LEMS_KorngreenPyramidal.xml
+mep: ../bac.mep
+engine: jNeuroML_NEURON
+experiments: 
+  BAC:
+    observables:
+      spike times:
+        file:
+          path: ./bac6_soma_v.dat
+          columns: [0,1]
+          scaling: [1000000, 1000000]
+          header: 2
+        spike detection:
+          method: threshold
+          threshold: -0.015
+        tolerance: 0.00102
